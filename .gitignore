@@ -1,0 +1,13 @@
+# 构建产物
+bin/
+obj/
+publish/
+publish2/
+publish3/
+build/
+dist/
+.vs/
+*.pdb
+
+# 签名密钥（不公开）
+*.keystore

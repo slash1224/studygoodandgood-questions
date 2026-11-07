@@ -1,0 +1,5537 @@
+[
+    {
+        "id":  1,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "计算：(-3) + (-5) = ?",
+        "options":  [
+                        "-8",
+                        "8",
+                        "-2",
+                        "2"
+                    ],
+        "answer":  0,
+        "explain":  "同号两数相加，取相同符号，绝对值相加：3+5=8，结果为-8。"
+    },
+    {
+        "id":  2,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "计算：(-2) × (-6) = ?",
+        "options":  [
+                        "-12",
+                        "12",
+                        "-8",
+                        "4"
+                    ],
+        "answer":  1,
+        "explain":  "负负得正，2×6=12。"
+    },
+    {
+        "id":  3,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "若 2x + 3 = 11，则 x = ?",
+        "options":  [
+                        "3",
+                        "4",
+                        "5",
+                        "7"
+                    ],
+        "answer":  1,
+        "explain":  "2x = 11-3 = 8，x = 4。"
+    },
+    {
+        "id":  4,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "下列哪个是有理数？",
+        "options":  [
+                        "√2",
+                        "π",
+                        "0.75",
+                        "√3"
+                    ],
+        "answer":  2,
+        "explain":  "0.75 是有限小数，可化为分数 3/4，属于有理数；√2、π、√3 是无理数。"
+    },
+    {
+        "id":  5,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "数轴上表示 -2 的点到原点的距离是？",
+        "options":  [
+                        "-2",
+                        "2",
+                        "0",
+                        "1/2"
+                    ],
+        "answer":  1,
+        "explain":  "距离是绝对值，|-2| = 2。"
+    },
+    {
+        "id":  6,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "计算：a³ · a² = ?",
+        "options":  [
+                        "a⁵",
+                        "a⁶",
+                        "a⁹",
+                        "2a⁵"
+                    ],
+        "answer":  0,
+        "explain":  "同底数幂相乘，指数相加：3+2=5。"
+    },
+    {
+        "id":  7,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "分解因式：x² - 9 = ?",
+        "options":  [
+                        "(x-3)²",
+                        "(x+3)²",
+                        "(x+3)(x-3)",
+                        "x(x-9)"
+                    ],
+        "answer":  2,
+        "explain":  "平方差公式：a²-b²=(a+b)(a-b)。"
+    },
+    {
+        "id":  8,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "直角三角形两条直角边分别为 3 和 4，斜边长为？",
+        "options":  [
+                        "5",
+                        "6",
+                        "7",
+                        "√7"
+                    ],
+        "answer":  0,
+        "explain":  "勾股定理：√(3²+4²)=√25=5。"
+    },
+    {
+        "id":  9,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "一次函数 y = 2x + 1 的图象经过哪个象限一定成立？",
+        "options":  [
+                        "第一象限",
+                        "第二象限",
+                        "第三象限",
+                        "第四象限"
+                    ],
+        "answer":  0,
+        "explain":  "x\u003e0 时 y=2x+1\u003e1\u003e0，必过第一象限。"
+    },
+    {
+        "id":  10,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "一元二次方程 x² - 5x + 6 = 0 的两根是？",
+        "options":  [
+                        "2和3",
+                        "-2和-3",
+                        "1和6",
+                        "-1和-6"
+                    ],
+        "answer":  0,
+        "explain":  "因式分解 (x-2)(x-3)=0，x=2 或 x=3。"
+    },
+    {
+        "id":  11,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "抛物线 y = (x-1)² + 2 的顶点坐标是？",
+        "options":  [
+                        "(1, 2)",
+                        "(-1, 2)",
+                        "(1, -2)",
+                        "(2, 1)"
+                    ],
+        "answer":  0,
+        "explain":  "顶点式 y=(x-h)²+k 的顶点为 (h,k)。"
+    },
+    {
+        "id":  12,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "sin 30° 的值是？",
+        "options":  [
+                        "1/2",
+                        "√2/2",
+                        "√3/2",
+                        "1"
+                    ],
+        "answer":  0,
+        "explain":  "特殊角三角函数值：sin30°=1/2。"
+    },
+    {
+        "id":  13,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "「床前明月光，疑是地上霜」的作者是？",
+        "options":  [
+                        "杜甫",
+                        "李白",
+                        "白居易",
+                        "王维"
+                    ],
+        "answer":  1,
+        "explain":  "出自李白《静夜思》。"
+    },
+    {
+        "id":  14,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "成语「亡羊补牢」中「牢」的意思是？",
+        "options":  [
+                        "监狱",
+                        "羊圈",
+                        "房子",
+                        "笼子"
+                    ],
+        "answer":  1,
+        "explain":  "牢：关牲口的圈。比喻出了问题及时补救。"
+    },
+    {
+        "id":  15,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "《论语》是记录谁及其弟子言行的书？",
+        "options":  [
+                        "孟子",
+                        "老子",
+                        "孔子",
+                        "庄子"
+                    ],
+        "answer":  2,
+        "explain":  "《论语》记录孔子及其弟子言行，儒家经典。"
+    },
+    {
+        "id":  16,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "下列词语书写完全正确的一项是？",
+        "options":  [
+                        "按步就班",
+                        "一如既往",
+                        "一如继往",
+                        "穿流不息"
+                    ],
+        "answer":  1,
+        "explain":  "应为「按部就班」「一如既往」「川流不息」。"
+    },
+    {
+        "id":  17,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "「先天下之忧而忧，后天下之乐而乐」出自？",
+        "options":  [
+                        "《岳阳楼记》",
+                        "《醉翁亭记》",
+                        "《桃花源记》",
+                        "《出师表》"
+                    ],
+        "answer":  0,
+        "explain":  "范仲淹《岳阳楼记》。"
+    },
+    {
+        "id":  18,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "下列加点词不是通假字的一项是？",
+        "options":  [
+                        "学而时习之，不亦说乎",
+                        "诲女知之乎",
+                        "温故而知新",
+                        "曾益其所不能"
+                    ],
+        "answer":  2,
+        "explain":  "说通悦、女通汝、曾通增；「温故而知新」无通假字。"
+    },
+    {
+        "id":  19,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "《背影》的作者是？",
+        "options":  [
+                        "鲁迅",
+                        "朱自清",
+                        "老舍",
+                        "冰心"
+                    ],
+        "answer":  1,
+        "explain":  "朱自清的散文名篇，写父爱。"
+    },
+    {
+        "id":  20,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "「人生自古谁无死，留取丹心照汗青」的作者是？",
+        "options":  [
+                        "岳飞",
+                        "文天祥",
+                        "辛弃疾",
+                        "陆游"
+                    ],
+        "answer":  1,
+        "explain":  "文天祥《过零丁洋》。"
+    },
+    {
+        "id":  21,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "下列句子没有语病的一项是？",
+        "options":  [
+                        "通过努力，使我取得了进步",
+                        "我们要养成认真学习的习惯",
+                        "他的成绩不但很好，而且品德也很高尚",
+                        "是否坚持锻炼，是身体健康的关键"
+                    ],
+        "answer":  1,
+        "explain":  "A缺主语；C语序不当，应「不但品德高尚，而且成绩很好」；D两面对一面。"
+    },
+    {
+        "id":  22,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "「但愿人长久，千里共婵娟」中「婵娟」指？",
+        "options":  [
+                        "美女",
+                        "月亮",
+                        "花朵",
+                        "故乡"
+                    ],
+        "answer":  1,
+        "explain":  "苏轼《水调歌头》，婵娟指明月。"
+    },
+    {
+        "id":  23,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "下列标点使用正确的一项是？",
+        "options":  [
+                        "他问：你去哪儿。",
+                        "妈妈说：「快回家吃饭！」",
+                        "我喜欢吃苹果、香蕉、和橘子",
+                        "这本书真好看？"
+                    ],
+        "answer":  1,
+        "explain":  "A 句末应为问号；C 顿号与「和」重复；D 是陈述句应用句号。"
+    },
+    {
+        "id":  24,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "「锲而不舍，金石可镂」中「锲」的意思是？",
+        "options":  [
+                        "放弃",
+                        "雕刻",
+                        "坚持",
+                        "打磨"
+                    ],
+        "answer":  1,
+        "explain":  "锲：用刀雕刻。出自《荀子·劝学》。"
+    },
+    {
+        "id":  25,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "—____ is your schoolbag? —It\u0027s blue.",
+        "options":  [
+                        "What",
+                        "What color",
+                        "Where",
+                        "How"
+                    ],
+        "answer":  1,
+        "explain":  "回答是颜色，问句用 What color。"
+    },
+    {
+        "id":  26,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "There ____ a book and two pens on the desk.",
+        "options":  [
+                        "is",
+                        "are",
+                        "am",
+                        "be"
+                    ],
+        "answer":  0,
+        "explain":  "there be 句型就近原则，a book 是单数。"
+    },
+    {
+        "id":  27,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "My brother ____ TV every evening.",
+        "options":  [
+                        "watch",
+                        "watches",
+                        "watching",
+                        "watched"
+                    ],
+        "answer":  1,
+        "explain":  "every evening 表习惯，用一般现在时，主语第三人称单数。"
+    },
+    {
+        "id":  28,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "选出与其他三项不同类的一项：",
+        "options":  [
+                        "apple",
+                        "banana",
+                        "carrot",
+                        "orange"
+                    ],
+        "answer":  2,
+        "explain":  "carrot（胡萝卜）是蔬菜，其余是水果。"
+    },
+    {
+        "id":  29,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "I ____ my homework when my mother came back.",
+        "options":  [
+                        "do",
+                        "did",
+                        "was doing",
+                        "am doing"
+                    ],
+        "answer":  2,
+        "explain":  "when 引导的从句用一般过去时，主句表示当时正在做的事，用过去进行时。"
+    },
+    {
+        "id":  30,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "The boy is ____ young ____ go to school.",
+        "options":  [
+                        "too; to",
+                        "so; that",
+                        "enough; to",
+                        "very; that"
+                    ],
+        "answer":  0,
+        "explain":  "too...to... 表示「太……而不能……」。"
+    },
+    {
+        "id":  31,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "—____ have you lived here? —For ten years.",
+        "options":  [
+                        "How often",
+                        "How long",
+                        "How soon",
+                        "How far"
+                    ],
+        "answer":  1,
+        "explain":  "回答是一段时间，用 How long 提问。"
+    },
+    {
+        "id":  32,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "The book ____ by Lu Xun is very famous.",
+        "options":  [
+                        "write",
+                        "wrote",
+                        "written",
+                        "writing"
+                    ],
+        "answer":  2,
+        "explain":  "过去分词作后置定语，表被动：被鲁迅写的书。"
+    },
+    {
+        "id":  33,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "He asked me ____ I liked English.",
+        "options":  [
+                        "that",
+                        "if",
+                        "what",
+                        "which"
+                    ],
+        "answer":  1,
+        "explain":  "宾语从句表「是否」，用 if/whether。"
+    },
+    {
+        "id":  34,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "By the end of last year, we ____ 2000 English words.",
+        "options":  [
+                        "learn",
+                        "learned",
+                        "have learned",
+                        "had learned"
+                    ],
+        "answer":  3,
+        "explain":  "by the end of + 过去时间，用过去完成时。"
+    },
+    {
+        "id":  35,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "The comparative of \"good\" is ____.",
+        "options":  [
+                        "gooder",
+                        "better",
+                        "best",
+                        "more good"
+                    ],
+        "answer":  1,
+        "explain":  "good 的比较级是不规则变化 better。"
+    },
+    {
+        "id":  36,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "____ exciting news it is!",
+        "options":  [
+                        "What",
+                        "What an",
+                        "How",
+                        "How an"
+                    ],
+        "answer":  0,
+        "explain":  "感叹句：What + 形容词 + 不可数名词 + 主谓！news 不可数。"
+    },
+    {
+        "id":  37,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "Python 中输出 \"Hello\" 的正确写法是？",
+        "options":  [
+                        "print(\"Hello\")",
+                        "echo \"Hello\"",
+                        "console.log(\"Hello\")",
+                        "printf(\"Hello\")"
+                    ],
+        "answer":  0,
+        "explain":  "Python 用 print() 输出。"
+    },
+    {
+        "id":  38,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "Python 中 7 // 2 的结果是？",
+        "options":  [
+                        "3.5",
+                        "3",
+                        "4",
+                        "2"
+                    ],
+        "answer":  1,
+        "explain":  "// 是整除（向下取整），7//2=3。"
+    },
+    {
+        "id":  39,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "Python 中哪个是合法的变量名？",
+        "options":  [
+                        "2name",
+                        "my-name",
+                        "_count",
+                        "class"
+                    ],
+        "answer":  2,
+        "explain":  "变量名不能以数字开头、不能含连字符、不能用关键字 class。"
+    },
+    {
+        "id":  40,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "Python 中 len([1, 2, 3, 4]) 返回？",
+        "options":  [
+                        "3",
+                        "4",
+                        "10",
+                        "报错"
+                    ],
+        "answer":  1,
+        "explain":  "len() 返回列表元素个数。"
+    },
+    {
+        "id":  41,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "Python 中 range(5) 生成的数字是？",
+        "options":  [
+                        "1到5",
+                        "0到5",
+                        "0到4",
+                        "1到4"
+                    ],
+        "answer":  2,
+        "explain":  "range(5) 生成 0,1,2,3,4，不含5。"
+    },
+    {
+        "id":  42,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下列代码输出什么？x = 5\nif x \u003e 3:\n    print(\"big\")\nelse:\n    print(\"small\")",
+        "options":  [
+                        "big",
+                        "small",
+                        "报错",
+                        "无输出"
+                    ],
+        "answer":  0,
+        "explain":  "x=5\u003e3 条件成立，输出 big。"
+    },
+    {
+        "id":  43,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "C++ 程序的执行入口是哪个函数？",
+        "options":  [
+                        "start()",
+                        "main()",
+                        "run()",
+                        "init()"
+                    ],
+        "answer":  1,
+        "explain":  "C++ 程序从 main() 函数开始执行。"
+    },
+    {
+        "id":  44,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "C++ 中输出 \"Hi\" 并换行的写法是？",
+        "options":  [
+                        "cout \u003c\u003c \"Hi\" \u003c\u003c endl;",
+                        "print(\"Hi\");",
+                        "echo \"Hi\";",
+                        "printf \"Hi\";"
+                    ],
+        "answer":  0,
+        "explain":  "C++ 用 cout 配合 \u003c\u003c 输出，endl 换行，语句以分号结尾。"
+    },
+    {
+        "id":  45,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "计算机中 1 字节（Byte）等于多少位（bit）？",
+        "options":  [
+                        "4",
+                        "8",
+                        "16",
+                        "32"
+                    ],
+        "answer":  1,
+        "explain":  "1 Byte = 8 bit。"
+    },
+    {
+        "id":  46,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "二进制数 101 等于十进制的？",
+        "options":  [
+                        "3",
+                        "4",
+                        "5",
+                        "6"
+                    ],
+        "answer":  2,
+        "explain":  "1×4 + 0×2 + 1×1 = 5。"
+    },
+    {
+        "id":  47,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下列哪个是循环结构的关键字（Python）？",
+        "options":  [
+                        "if",
+                        "for",
+                        "def",
+                        "import"
+                    ],
+        "answer":  1,
+        "explain":  "for 和 while 是循环关键字；if 是分支，def 定义函数。"
+    },
+    {
+        "id":  48,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  3,
+        "text":  "Python 中 a = [3,1,2]; a.sort(); print(a[0]) 输出？",
+        "options":  [
+                        "3",
+                        "1",
+                        "2",
+                        "0"
+                    ],
+        "answer":  1,
+        "explain":  "排序后为 [1,2,3]，下标0是1。"
+    },
+    {
+        "id":  49,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  3,
+        "text":  "算法的时间复杂度 O(n) 表示？",
+        "options":  [
+                        "运行时间固定不变",
+                        "运行时间与数据量成正比",
+                        "运行时间与数据量的平方成正比",
+                        "运行时间与数据量的对数成正比"
+                    ],
+        "answer":  1,
+        "explain":  "O(n) 是线性复杂度，数据量翻倍时间也大致翻倍。"
+    },
+    {
+        "id":  50,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在 Python 中，以下哪个能正确交换变量 a 和 b 的值？",
+        "options":  [
+                        "a = b; b = a",
+                        "a, b = b, a",
+                        "swap(a, b)",
+                        "a = b + a"
+                    ],
+        "answer":  1,
+        "explain":  "Python 支持元组解包：a, b = b, a 一步完成交换。"
+    },
+    {
+        "id":  51,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "下列加点字注音完全正确的一项是",
+        "options":  [
+                        "粗犷（kuàng） 应和（hè）",
+                        "莅临（wèi） 静谧（mì）",
+                        "贮蓄（zhù） 咄咄逼人（duō）",
+                        "棱镜（líng） 确凿（záo）"
+                    ],
+        "answer":  2,
+        "explain":  "粗犷应读guǎng，莅临应读lì，棱镜应读léng，只有第三项全部正确。"
+    },
+    {
+        "id":  52,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "下列词语书写完全正确的一项是",
+        "options":  [
+                        "憔悴 翻来覆去",
+                        "决别 分歧",
+                        "烂曼 烘托",
+                        "瞭亮 抖擞"
+                    ],
+        "answer":  0,
+        "explain":  "诀别、烂漫、嘹亮为正确写法，只有第一项无错别字。"
+    },
+    {
+        "id":  53,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "下列句子中加点成语使用恰当的一项是",
+        "options":  [
+                        "他演讲时夸夸其谈，赢得阵阵掌声",
+                        "同学们不耻下问，经常向老师请教",
+                        "他比赛失利了，大家却喜出望外",
+                        "这本书情节曲折，令人爱不释手"
+                    ],
+        "answer":  3,
+        "explain":  "夸夸其谈含贬义；不耻下问指向不如自己的人请教；喜出望外与失利矛盾。"
+    },
+    {
+        "id":  54,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "下列句子没有语病的一项是",
+        "options":  [
+                        "通过老师的帮助，使我提高了成绩",
+                        "我们要养成爱读书、读好书的习惯",
+                        "能否坚持锻炼，是身体健康的关键",
+                        "学校开展并策划了读书节活动"
+                    ],
+        "answer":  1,
+        "explain":  "第一项缺主语，第三项两面对一面，第四项语序不当，应先策划后开展。"
+    },
+    {
+        "id":  55,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "曹操《观沧海》中，日月之行，若出其中的下一句是",
+        "options":  [
+                        "水何澹澹，山岛竦峙",
+                        "秋风萧瑟，洪波涌起",
+                        "星汉灿烂，若出其里",
+                        "幸甚至哉，歌以咏志"
+                    ],
+        "answer":  2,
+        "explain":  "原句为日月之行，若出其中；星汉灿烂，若出其里。"
+    },
+    {
+        "id":  56,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "《世说新语》是南朝宋刘义庆组织编写的一部",
+        "options":  [
+                        "志人小说集",
+                        "志怪小说集",
+                        "历史散文集",
+                        "语录体散文集"
+                    ],
+        "answer":  0,
+        "explain":  "《世说新语》是志人小说集，记载汉末至东晋士大夫的言谈逸事。"
+    },
+    {
+        "id":  57,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "朱自清《春》中，红的像火，粉的像霞，白的像雪运用的修辞手法是",
+        "options":  [
+                        "拟人、夸张",
+                        "对偶、反问",
+                        "设问、反复",
+                        "比喻、排比"
+                    ],
+        "answer":  3,
+        "explain":  "把花比作火、霞、雪是比喻，三个结构相似的句子连用是排比。"
+    },
+    {
+        "id":  58,
+        "subject":  "chinese",
+        "grade":  7,
+        "difficulty":  3,
+        "text":  "王湾《次北固山下》中海日生残夜，江春入旧年蕴含的哲理是",
+        "options":  [
+                        "时光易逝，应及时行乐",
+                        "游子思乡之情油然而生",
+                        "新事物必将取代旧事物",
+                        "人生道路曲折而漫长"
+                    ],
+        "answer":  2,
+        "explain":  "残夜未尽红日已升，旧年未过春意已现，蕴含新旧交替的哲理。"
+    },
+    {
+        "id":  59,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "崔颢《黄鹤楼》中，晴川历历汉阳树的下一句是",
+        "options":  [
+                        "烟波江上使人愁",
+                        "芳草萋萋鹦鹉洲",
+                        "白云千载空悠悠",
+                        "日暮乡关何处是"
+                    ],
+        "answer":  1,
+        "explain":  "原句为晴川历历汉阳树，芳草萋萋鹦鹉洲。"
+    },
+    {
+        "id":  60,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "散文《背影》的作者是",
+        "options":  [
+                        "老舍",
+                        "冰心",
+                        "茅盾",
+                        "朱自清"
+                    ],
+        "answer":  3,
+        "explain":  "《背影》是朱自清回忆父亲送别的经典散文。"
+    },
+    {
+        "id":  61,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "《桃花源记》中率妻子邑人来此绝境一句里，妻子的古义是",
+        "options":  [
+                        "男子的配偶",
+                        "家中的女儿",
+                        "妻子和儿女",
+                        "年幼的儿子"
+                    ],
+        "answer":  2,
+        "explain":  "妻子在古汉语中指妻子和儿女，今义仅指男子的配偶，属古今异义。"
+    },
+    {
+        "id":  62,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "苏州园林与北京的园林不同，极少使用彩绘，这句话运用的说明方法是",
+        "options":  [
+                        "举例子",
+                        "作比较",
+                        "列数字",
+                        "打比方"
+                    ],
+        "answer":  1,
+        "explain":  "把苏州园林与北京园林加以对比，突出其特点，是作比较。"
+    },
+    {
+        "id":  63,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "下列句子中之字用法与其他三项不同的是",
+        "options":  [
+                        "渔人甚异之",
+                        "闻之，欣然规往",
+                        "具答之",
+                        "忘路之远近"
+                    ],
+        "answer":  3,
+        "explain":  "前三项之均作代词，忘路之远近的之是结构助词，相当于的。"
+    },
+    {
+        "id":  64,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "安得广厦千万间，大庇天下寒士俱欢颜表达了诗人",
+        "options":  [
+                        "忧国忧民的博大胸怀",
+                        "对个人身世的悲叹",
+                        "对田园生活的热爱",
+                        "对远方友人的思念"
+                    ],
+        "answer":  0,
+        "explain":  "诗人由己及人，希望天下寒士都有安身之所，体现忧国忧民情怀。"
+    },
+    {
+        "id":  65,
+        "subject":  "chinese",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "纪实作品《红星照耀中国》的作者是",
+        "options":  [
+                        "奥斯特洛夫斯基",
+                        "傅雷",
+                        "埃德加·斯诺",
+                        "法布尔"
+                    ],
+        "answer":  2,
+        "explain":  "《红星照耀中国》是美国记者埃德加·斯诺所著的纪实作品。"
+    },
+    {
+        "id":  66,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "范仲淹《岳阳楼记》中，先天下之忧而忧的下一句是",
+        "options":  [
+                        "后天下之乐而乐",
+                        "不以物喜，不以己悲",
+                        "居庙堂之高则忧其民",
+                        "处江湖之远则忧其君"
+                    ],
+        "answer":  0,
+        "explain":  "原句为先天下之忧而忧，后天下之乐而乐。"
+    },
+    {
+        "id":  67,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "《醉翁亭记》中醉翁之意不在酒一句里，意的意思是",
+        "options":  [
+                        "意思",
+                        "企图",
+                        "心情",
+                        "意趣、情趣"
+                    ],
+        "answer":  3,
+        "explain":  "此句中意指意趣、情趣，醉翁的情趣不在酒而在山水。"
+    },
+    {
+        "id":  68,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "下列句子中而字用法与其他三项不同的是",
+        "options":  [
+                        "人不知而不愠",
+                        "温故而知新",
+                        "学而不思则罔",
+                        "思而不学则殆"
+                    ],
+        "answer":  1,
+        "explain":  "温故而知新的而表承接，其余三项的而均表转折。"
+    },
+    {
+        "id":  69,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "小说《我的叔叔于勒》的作者是法国作家",
+        "options":  [
+                        "莫泊桑",
+                        "契诃夫",
+                        "欧·亨利",
+                        "都德"
+                    ],
+        "answer":  0,
+        "explain":  "《我的叔叔于勒》是法国短篇小说家莫泊桑的代表作。"
+    },
+    {
+        "id":  70,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "苏轼《江城子·密州出猎》中会挽雕弓如满月，西北望，射天狼表达了词人",
+        "options":  [
+                        "对家乡亲人的思念",
+                        "对隐逸生活的向往",
+                        "渴望建功立业、报效国家的壮志",
+                        "对自然风光的由衷赞美"
+                    ],
+        "answer":  2,
+        "explain":  "天狼喻指侵扰西北的敌人，词句表达杀敌报国的豪情壮志。"
+    },
+    {
+        "id":  71,
+        "subject":  "chinese",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "长篇讽刺小说《儒林外史》的作者是",
+        "options":  [
+                        "罗贯中",
+                        "施耐庵",
+                        "蒲松龄",
+                        "吴敬梓"
+                    ],
+        "answer":  3,
+        "explain":  "《儒林外史》是清代吴敬梓创作的长篇讽刺小说。"
+    },
+    {
+        "id":  72,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "This is ___ apple.",
+        "options":  [
+                        "a",
+                        "an",
+                        "the",
+                        "/"
+                    ],
+        "answer":  1,
+        "explain":  "apple以元音音素开头，表示一个用不定冠词an。"
+    },
+    {
+        "id":  73,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "Look! The boys ___ football on the playground.",
+        "options":  [
+                        "play",
+                        "plays",
+                        "played",
+                        "are playing"
+                    ],
+        "answer":  3,
+        "explain":  "Look提示动作正在进行，用现在进行时，主语复数用are playing。"
+    },
+    {
+        "id":  74,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "There are three ___ on the desk.",
+        "options":  [
+                        "box",
+                        "boxs",
+                        "boxes",
+                        "boxies"
+                    ],
+        "answer":  2,
+        "explain":  "three后接可数名词复数，box的复数形式是boxes。"
+    },
+    {
+        "id":  75,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "—How are you? —___",
+        "options":  [
+                        "I\u0027m fine, thanks.",
+                        "How do you do?",
+                        "I\u0027m ten years old.",
+                        "Goodbye!"
+                    ],
+        "answer":  0,
+        "explain":  "How are you的常用答语是I\u0027m fine, thanks。"
+    },
+    {
+        "id":  76,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "This is my ruler. ___ is new.",
+        "options":  [
+                        "He",
+                        "She",
+                        "It",
+                        "They"
+                    ],
+        "answer":  2,
+        "explain":  "指代无生命的单数物品ruler，主格代词用It。"
+    },
+    {
+        "id":  77,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "My birthday is ___ June 1st.",
+        "options":  [
+                        "in",
+                        "on",
+                        "at",
+                        "for"
+                    ],
+        "answer":  1,
+        "explain":  "在具体某一天前用介词on。"
+    },
+    {
+        "id":  78,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "—___ you swim? —Yes, I can.",
+        "options":  [
+                        "Must",
+                        "Need",
+                        "May",
+                        "Can"
+                    ],
+        "answer":  3,
+        "explain":  "答语用can，问句用Can提问，表示询问能力。"
+    },
+    {
+        "id":  79,
+        "subject":  "english",
+        "grade":  7,
+        "difficulty":  3,
+        "text":  "There ___ some bread and two eggs on the table.",
+        "options":  [
+                        "is",
+                        "are",
+                        "have",
+                        "has"
+                    ],
+        "answer":  0,
+        "explain":  "there be句型遵循就近原则，靠近的bread不可数，故用is。"
+    },
+    {
+        "id":  80,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "Tom is ___ than Jack.",
+        "options":  [
+                        "taller",
+                        "tall",
+                        "tallest",
+                        "the tallest"
+                    ],
+        "answer":  0,
+        "explain":  "than提示用比较级，tall的比较级是taller。"
+    },
+    {
+        "id":  81,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "The Yangtze River is ___ river in China.",
+        "options":  [
+                        "longer",
+                        "long",
+                        "the longest",
+                        "most long"
+                    ],
+        "answer":  2,
+        "explain":  "in China表示比较范围，用最高级，形容词最高级前要加the。"
+    },
+    {
+        "id":  82,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "I ___ my homework already.",
+        "options":  [
+                        "finish",
+                        "have finished",
+                        "will finish",
+                        "am finishing"
+                    ],
+        "answer":  1,
+        "explain":  "already是现在完成时的标志词，结构为have加过去分词。"
+    },
+    {
+        "id":  83,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "There is ___ wrong with my bike. Can you help me?",
+        "options":  [
+                        "anything",
+                        "nothing",
+                        "everything",
+                        "something"
+                    ],
+        "answer":  3,
+        "explain":  "肯定句中表示出了毛病用There is something wrong句型。"
+    },
+    {
+        "id":  84,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "I ___ my homework when the phone rang.",
+        "options":  [
+                        "was doing",
+                        "do",
+                        "did",
+                        "am doing"
+                    ],
+        "answer":  0,
+        "explain":  "when引导的从句用一般过去时，主句动作正在进行，用过去进行时。"
+    },
+    {
+        "id":  85,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "—Would you mind opening the window? —___",
+        "options":  [
+                        "You are welcome.",
+                        "Yes, I do.",
+                        "Not at all.",
+                        "Thank you very much."
+                    ],
+        "answer":  2,
+        "explain":  "回答Would you mind句型，Not at all表示不介意。"
+    },
+    {
+        "id":  86,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "___ it was raining heavily, they kept on working.",
+        "options":  [
+                        "Because",
+                        "Although",
+                        "If",
+                        "So"
+                    ],
+        "answer":  1,
+        "explain":  "前后两句为让步关系，用Although引导让步状语从句。"
+    },
+    {
+        "id":  87,
+        "subject":  "english",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "—I have a headache. —You ___ see a doctor.",
+        "options":  [
+                        "would",
+                        "had better to",
+                        "must to",
+                        "should"
+                    ],
+        "answer":  3,
+        "explain":  "提建议用should；had better和must后直接接动词原形，不能加to。"
+    },
+    {
+        "id":  88,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "Could you tell me ___?",
+        "options":  [
+                        "where is the library",
+                        "where the library is",
+                        "where was the library",
+                        "the library is where"
+                    ],
+        "answer":  1,
+        "explain":  "宾语从句要用陈述语序，且此处用一般现在时。"
+    },
+    {
+        "id":  89,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "The girl ___ is singing over there is my sister.",
+        "options":  [
+                        "who",
+                        "which",
+                        "what",
+                        "it"
+                    ],
+        "answer":  0,
+        "explain":  "先行词girl指人，关系代词在从句中作主语，用who。"
+    },
+    {
+        "id":  90,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "English ___ widely in the world.",
+        "options":  [
+                        "speaks",
+                        "spoke",
+                        "is spoken",
+                        "is speaking"
+                    ],
+        "answer":  2,
+        "explain":  "英语是被人们说，用一般现在时的被动语态is spoken。"
+    },
+    {
+        "id":  91,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "The book ___ be Tom\u0027s. His name is on it.",
+        "options":  [
+                        "can\u0027t",
+                        "might not",
+                        "may",
+                        "must"
+                    ],
+        "answer":  3,
+        "explain":  "由名字在书上可知是肯定的推测，must表示一定是。"
+    },
+    {
+        "id":  92,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "He ___ get up late, but now he gets up early.",
+        "options":  [
+                        "used to",
+                        "is used to",
+                        "uses to",
+                        "use to"
+                    ],
+        "answer":  0,
+        "explain":  "used to do表示过去常常做某事，与后面的now形成对比。"
+    },
+    {
+        "id":  93,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "___ beautiful the flower is!",
+        "options":  [
+                        "What",
+                        "What a",
+                        "How",
+                        "How a"
+                    ],
+        "answer":  2,
+        "explain":  "感叹形容词beautiful用How引导，结构为How加形容词加主语谓语。"
+    },
+    {
+        "id":  94,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "I study English ___ listening to English songs.",
+        "options":  [
+                        "with",
+                        "by",
+                        "in",
+                        "on"
+                    ],
+        "answer":  1,
+        "explain":  "by doing sth表示通过某种方式做某事，by后接动名词。"
+    },
+    {
+        "id":  95,
+        "subject":  "english",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "When I got to the station, the train ___ already.",
+        "options":  [
+                        "has left",
+                        "will leave",
+                        "left",
+                        "had left"
+                    ],
+        "answer":  3,
+        "explain":  "火车离开发生在我到达之前，表示过去的过去，用过去完成时。"
+    },
+    {
+        "id":  96,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "-5的绝对值是",
+        "options":  [
+                        "-5",
+                        "5",
+                        "1/5",
+                        "-1/5"
+                    ],
+        "answer":  1,
+        "explain":  "负数的绝对值是它的相反数，所以-5的绝对值是5。"
+    },
+    {
+        "id":  97,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "计算 (-3) + 7 的结果是",
+        "options":  [
+                        "-10",
+                        "-4",
+                        "4",
+                        "10"
+                    ],
+        "answer":  2,
+        "explain":  "异号两数相加取绝对值较大加数的符号，7-3=4，结果为4。"
+    },
+    {
+        "id":  98,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "单项式 -2x²y 的次数是",
+        "options":  [
+                        "1",
+                        "2",
+                        "-2",
+                        "3"
+                    ],
+        "answer":  3,
+        "explain":  "单项式的次数是所有字母的指数之和，2+1=3。"
+    },
+    {
+        "id":  99,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "化简 3a + 2b - a 的结果是",
+        "options":  [
+                        "2a + 2b",
+                        "4a + 2b",
+                        "3a + b",
+                        "5ab"
+                    ],
+        "answer":  0,
+        "explain":  "合并同类项，3a - a = 2a，结果为2a + 2b。"
+    },
+    {
+        "id":  100,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "一元一次方程 2x - 3 = 7 的解是",
+        "options":  [
+                        "x = 2",
+                        "x = 3",
+                        "x = 4",
+                        "x = 5"
+                    ],
+        "answer":  3,
+        "explain":  "移项得2x=10，两边同除以2得x=5。"
+    },
+    {
+        "id":  101,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "某数的3倍减去2等于10，设这个数为x，所列方程正确的是",
+        "options":  [
+                        "3x + 2 = 10",
+                        "3(x - 2) = 10",
+                        "3x - 2 = 10",
+                        "x÷3 - 2 = 10"
+                    ],
+        "answer":  2,
+        "explain":  "某数的3倍为3x，减去2即3x-2，故方程为3x-2=10。"
+    },
+    {
+        "id":  102,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "一个角的度数是35°，它的余角是",
+        "options":  [
+                        "145°",
+                        "65°",
+                        "55°",
+                        "35°"
+                    ],
+        "answer":  2,
+        "explain":  "互为余角的两角之和为90°，90°-35°=55°。"
+    },
+    {
+        "id":  103,
+        "subject":  "math",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "下列说法正确的是",
+        "options":  [
+                        "两点之间，直线最短",
+                        "两点确定一条直线",
+                        "射线可以向两端无限延伸",
+                        "相等的角一定是对顶角"
+                    ],
+        "answer":  1,
+        "explain":  "两点确定一条直线；两点之间线段最短，射线只向一端延伸。"
+    },
+    {
+        "id":  104,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "计算 a² · a³ 的结果是",
+        "options":  [
+                        "a⁵",
+                        "a⁶",
+                        "a⁸",
+                        "a⁹"
+                    ],
+        "answer":  0,
+        "explain":  "同底数幂相乘，底数不变，指数相加：2+3=5。"
+    },
+    {
+        "id":  105,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "因式分解 x² - 9 的结果是",
+        "options":  [
+                        "(x - 3)²",
+                        "(x + 3)²",
+                        "(x + 3)(x - 3)",
+                        "x(x - 9)"
+                    ],
+        "answer":  2,
+        "explain":  "用平方差公式：x²-9=(x+3)(x-3)。"
+    },
+    {
+        "id":  106,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "使分式 1/(x - 2) 无意义的x的值是",
+        "options":  [
+                        "x = 0",
+                        "x = 2",
+                        "x = -2",
+                        "x = 1"
+                    ],
+        "answer":  1,
+        "explain":  "分母为0时分式无意义，由x-2=0得x=2。"
+    },
+    {
+        "id":  107,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "下列条件中，不能判定两个三角形全等的是",
+        "options":  [
+                        "三边分别相等",
+                        "两边及其夹角分别相等",
+                        "两角及其夹边分别相等",
+                        "两边及其中一边的对角分别相等"
+                    ],
+        "answer":  3,
+        "explain":  "SSA不能判定全等，SSS、SAS、ASA均可判定。"
+    },
+    {
+        "id":  108,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "一次函数 y = 2x + 1 的图象与y轴的交点坐标是",
+        "options":  [
+                        "(0, 1)",
+                        "(1, 0)",
+                        "(0, 2)",
+                        "(2, 1)"
+                    ],
+        "answer":  0,
+        "explain":  "令x=0得y=1，图象与y轴交于点(0,1)。"
+    },
+    {
+        "id":  109,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "直角三角形的两条直角边长分别为3和4，则斜边长为",
+        "options":  [
+                        "√7",
+                        "5",
+                        "6",
+                        "7"
+                    ],
+        "answer":  1,
+        "explain":  "由勾股定理：斜边²=3²+4²=25，斜边长为5。"
+    },
+    {
+        "id":  110,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "化简 √12 的结果是",
+        "options":  [
+                        "2√3",
+                        "3√2",
+                        "4√3",
+                        "6"
+                    ],
+        "answer":  0,
+        "explain":  "√12=√(4×3)=2√3。"
+    },
+    {
+        "id":  111,
+        "subject":  "math",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "一次函数 y = kx + b 的图象经过第一、二、四象限，则k和b的符号是",
+        "options":  [
+                        "k\u003e0，b\u003e0",
+                        "k\u003c0，b\u003e0",
+                        "k\u003e0，b\u003c0",
+                        "k\u003c0，b\u003c0"
+                    ],
+        "answer":  1,
+        "explain":  "图象从左上方到右下方则k\u003c0，与y轴正半轴相交则b\u003e0。"
+    },
+    {
+        "id":  112,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "一元二次方程 x² - 5x + 6 = 0 的两根是",
+        "options":  [
+                        "1和6",
+                        "-2和-3",
+                        "-1和-6",
+                        "2和3"
+                    ],
+        "answer":  3,
+        "explain":  "因式分解得(x-2)(x-3)=0，两根为2和3。"
+    },
+    {
+        "id":  113,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "关于x的方程 x² + 2x + 5 = 0 的根的情况是",
+        "options":  [
+                        "有两个不相等的实数根",
+                        "有两个相等的实数根",
+                        "没有实数根",
+                        "只有一个实数根"
+                    ],
+        "answer":  2,
+        "explain":  "判别式Δ=2²-4×1×5=-16\u003c0，方程没有实数根。"
+    },
+    {
+        "id":  114,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "抛物线 y = x² - 2x + 3 的顶点坐标是",
+        "options":  [
+                        "(1, 2)",
+                        "(-1, 2)",
+                        "(1, -2)",
+                        "(2, 3)"
+                    ],
+        "answer":  0,
+        "explain":  "配方得y=(x-1)²+2，顶点坐标为(1,2)。"
+    },
+    {
+        "id":  115,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "抛物线 y = -3x² 的开口方向是",
+        "options":  [
+                        "向上",
+                        "向下",
+                        "向左",
+                        "向右"
+                    ],
+        "answer":  1,
+        "explain":  "二次项系数-3\u003c0，抛物线开口向下。"
+    },
+    {
+        "id":  116,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "两个相似三角形的相似比为1:2，则它们的面积比为",
+        "options":  [
+                        "1:2",
+                        "1:4",
+                        "1:8",
+                        "2:1"
+                    ],
+        "answer":  1,
+        "explain":  "相似三角形的面积比等于相似比的平方，即1:4。"
+    },
+    {
+        "id":  117,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "圆O的半径为5，圆心O到直线l的距离为3，则直线l与圆O的位置关系是",
+        "options":  [
+                        "相离",
+                        "相切",
+                        "无法确定",
+                        "相交"
+                    ],
+        "answer":  3,
+        "explain":  "圆心到直线的距离3小于半径5，直线与圆相交。"
+    },
+    {
+        "id":  118,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "一条弧所对的圆心角为80°，则这条弧所对的圆周角为",
+        "options":  [
+                        "160°",
+                        "80°",
+                        "40°",
+                        "20°"
+                    ],
+        "answer":  2,
+        "explain":  "同弧所对的圆周角等于圆心角的一半，即40°。"
+    },
+    {
+        "id":  119,
+        "subject":  "math",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "掷一枚质地均匀的骰子，朝上一面的点数大于4的概率是",
+        "options":  [
+                        "1/3",
+                        "1/6",
+                        "1/2",
+                        "2/3"
+                    ],
+        "answer":  0,
+        "explain":  "点数大于4的有5和6两种结果，概率为2/6=1/3。"
+    },
+    {
+        "id":  120,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "声音在15°C的空气中的传播速度约为",
+        "options":  [
+                        "34 m/s",
+                        "340 m/s",
+                        "3400 m/s",
+                        "3×10⁸ m/s"
+                    ],
+        "answer":  1,
+        "explain":  "15°C时声音在空气中的传播速度约为340 m/s。"
+    },
+    {
+        "id":  121,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "关于声音的传播，下列说法正确的是",
+        "options":  [
+                        "声音可以在真空中传播",
+                        "声音不能在固体中传播",
+                        "声音的传播需要介质",
+                        "声音在空气中传播最快"
+                    ],
+        "answer":  2,
+        "explain":  "声音靠介质传播，真空不能传声，固体中传声更快。"
+    },
+    {
+        "id":  122,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "一束光射到平面镜上，入射角为30°，则反射角为",
+        "options":  [
+                        "0°",
+                        "60°",
+                        "30°",
+                        "90°"
+                    ],
+        "answer":  2,
+        "explain":  "光的反射定律：反射角等于入射角，故为30°。"
+    },
+    {
+        "id":  123,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "人站在平面镜前2m处，他在镜中的像到镜面的距离是",
+        "options":  [
+                        "1 m",
+                        "4 m",
+                        "2 m",
+                        "0.5 m"
+                    ],
+        "answer":  2,
+        "explain":  "平面镜成像时，像到镜面的距离等于物到镜面的距离2m。"
+    },
+    {
+        "id":  124,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "在标准大气压下，冰水混合物的温度是",
+        "options":  [
+                        "-4°C",
+                        "100°C",
+                        "4°C",
+                        "0°C"
+                    ],
+        "answer":  3,
+        "explain":  "标准大气压下冰水混合物的温度规定为0°C。"
+    },
+    {
+        "id":  125,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "某同学跑完100m用了20s，他的平均速度是",
+        "options":  [
+                        "0.2 m/s",
+                        "10 m/s",
+                        "20 m/s",
+                        "5 m/s"
+                    ],
+        "answer":  3,
+        "explain":  "v=s÷t=100m÷20s=5 m/s。"
+    },
+    {
+        "id":  126,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "重力的方向总是",
+        "options":  [
+                        "竖直向上",
+                        "垂直于支持面",
+                        "沿斜面向下",
+                        "竖直向下"
+                    ],
+        "answer":  3,
+        "explain":  "重力是地球吸引产生的，方向总是竖直向下。"
+    },
+    {
+        "id":  127,
+        "subject":  "physics",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "一个金属块的质量为54g，体积为20cm³，它的密度是",
+        "options":  [
+                        "0.37 g/cm³",
+                        "5.4 g/cm³",
+                        "1080 g/cm³",
+                        "2.7 g/cm³"
+                    ],
+        "answer":  3,
+        "explain":  "ρ=m÷V=54g÷20cm³=2.7 g/cm³。"
+    },
+    {
+        "id":  128,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "电流的国际单位是",
+        "options":  [
+                        "伏特",
+                        "安培",
+                        "欧姆",
+                        "瓦特"
+                    ],
+        "answer":  1,
+        "explain":  "电流单位是安培；伏特是电压单位，欧姆是电阻单位。"
+    },
+    {
+        "id":  129,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "串联电路中各处的电流",
+        "options":  [
+                        "处处相等",
+                        "靠近电源正极处最大",
+                        "靠近电源负极处最大",
+                        "电阻越大处电流越小"
+                    ],
+        "answer":  0,
+        "explain":  "串联电路只有一条电流路径，各处电流处处相等。"
+    },
+    {
+        "id":  130,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "一段导体两端电压为6V，电阻为3Ω，通过它的电流是",
+        "options":  [
+                        "0.5 A",
+                        "2 A",
+                        "3 A",
+                        "18 A"
+                    ],
+        "answer":  1,
+        "explain":  "由欧姆定律I=U÷R=6V÷3Ω=2A。"
+    },
+    {
+        "id":  131,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "某导体两端电压为10V时通过的电流为2A，则它的电阻是",
+        "options":  [
+                        "0.2 Ω",
+                        "5 Ω",
+                        "12 Ω",
+                        "20 Ω"
+                    ],
+        "answer":  1,
+        "explain":  "R=U÷I=10V÷2A=5Ω。"
+    },
+    {
+        "id":  132,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "一个标有“220V 100W”的灯泡，正常工作时的电功率是",
+        "options":  [
+                        "2.2 W",
+                        "220 W",
+                        "100 W",
+                        "320 W"
+                    ],
+        "answer":  2,
+        "explain":  "灯泡正常工作时的实际功率等于其额定功率100W。"
+    },
+    {
+        "id":  133,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "家庭电路中，测量用电器消耗电能多少的仪表是",
+        "options":  [
+                        "电流表",
+                        "电压表",
+                        "电能表",
+                        "验电器"
+                    ],
+        "answer":  2,
+        "explain":  "电能表用来测量用电器在一段时间内消耗的电能。"
+    },
+    {
+        "id":  134,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "奥斯特实验说明了",
+        "options":  [
+                        "磁体周围存在磁场",
+                        "磁场对电流有力的作用",
+                        "电磁感应现象",
+                        "电流周围存在磁场"
+                    ],
+        "answer":  3,
+        "explain":  "奥斯特实验首次表明通电导线周围存在磁场。"
+    },
+    {
+        "id":  135,
+        "subject":  "physics",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "电阻R₁=2Ω与R₂=4Ω串联接在6V电源上，电路中的电流是",
+        "options":  [
+                        "0.5 A",
+                        "1 A",
+                        "1.5 A",
+                        "3 A"
+                    ],
+        "answer":  1,
+        "explain":  "串联总电阻为2+4=6Ω，I=U÷R=6V÷6Ω=1A。"
+    },
+    {
+        "id":  136,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "保持水的化学性质的最小粒子是",
+        "options":  [
+                        "氢原子",
+                        "氧原子",
+                        "氢元素",
+                        "水分子"
+                    ],
+        "answer":  3,
+        "explain":  "分子是保持物质化学性质的最小粒子，水由水分子构成。"
+    },
+    {
+        "id":  137,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "氧元素的元素符号是",
+        "options":  [
+                        "C",
+                        "H",
+                        "O",
+                        "N"
+                    ],
+        "answer":  2,
+        "explain":  "氧的元素符号是O；C是碳，H是氢，N是氮。"
+    },
+    {
+        "id":  138,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "下列化学式书写正确的是",
+        "options":  [
+                        "氧气 O",
+                        "水 HO",
+                        "二氧化碳 CO₂",
+                        "氧化镁 MgO₂"
+                    ],
+        "answer":  2,
+        "explain":  "氧气为O₂，水为H₂O，氧化镁为MgO，CO₂书写正确。"
+    },
+    {
+        "id":  139,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "对于化学方程式 2H₂ + O₂ → 2H₂O（反应条件为点燃），其微观意义是",
+        "options":  [
+                        "氢气加氧气等于水",
+                        "2个氢分子和1个氧分子反应生成2个水分子",
+                        "氢气和氧气混合就生成水",
+                        "2份质量的氢气与1份质量的氧气反应"
+                    ],
+        "answer":  1,
+        "explain":  "化学计量数表示粒子个数比：2个氢分子与1个氧分子生成2个水分子。"
+    },
+    {
+        "id":  140,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "下列关于氧气的说法错误的是",
+        "options":  [
+                        "氧气能支持燃烧",
+                        "氧气约占空气体积的21%",
+                        "氧气不易溶于水",
+                        "氧气具有可燃性"
+                    ],
+        "answer":  3,
+        "explain":  "氧气有助燃性，但本身不能燃烧，不具有可燃性。"
+    },
+    {
+        "id":  141,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "检验二氧化碳气体常用的试剂是",
+        "options":  [
+                        "紫色石蕊溶液",
+                        "澄清石灰水",
+                        "燃着的木条",
+                        "氯化钠溶液"
+                    ],
+        "answer":  1,
+        "explain":  "CO₂能使澄清石灰水变浑浊，常用于检验二氧化碳。"
+    },
+    {
+        "id":  142,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "把铁钉放入硫酸铜溶液中，一段时间后铁钉表面会",
+        "options":  [
+                        "有气泡产生",
+                        "析出红色物质",
+                        "变成银白色",
+                        "没有任何变化"
+                    ],
+        "answer":  1,
+        "explain":  "铁比铜活泼，能置换出硫酸铜中的铜，红色铜附着在铁钉表面。"
+    },
+    {
+        "id":  143,
+        "subject":  "chemistry",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "紫色石蕊溶液遇酸性溶液会变成",
+        "options":  [
+                        "红色",
+                        "蓝色",
+                        "紫色不变",
+                        "无色"
+                    ],
+        "answer":  0,
+        "explain":  "紫色石蕊溶液遇酸变红、遇碱变蓝，可检验溶液酸碱性。"
+    },
+    {
+        "id":  144,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "地球上最大的生态系统是",
+        "options":  [
+                        "海洋生态系统",
+                        "森林生态系统",
+                        "生物圈",
+                        "草原生态系统"
+                    ],
+        "answer":  2,
+        "explain":  "生物圈包括地球上所有生物及其生存环境，是最大的生态系统。"
+    },
+    {
+        "id":  145,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "植物细胞中，控制物质进出细胞的结构是",
+        "options":  [
+                        "细胞壁",
+                        "细胞膜",
+                        "细胞核",
+                        "液泡"
+                    ],
+        "answer":  1,
+        "explain":  "细胞膜具有控制物质进出细胞的功能。"
+    },
+    {
+        "id":  146,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "绿色植物进行光合作用的主要场所是",
+        "options":  [
+                        "线粒体",
+                        "细胞核",
+                        "液泡",
+                        "叶绿体"
+                    ],
+        "answer":  3,
+        "explain":  "叶绿体含叶绿素，是光合作用的场所。"
+    },
+    {
+        "id":  147,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  3,
+        "text":  "用显微镜观察时，物像偏在视野左上方，要移到视野中央，应将玻片向哪个方向移动",
+        "options":  [
+                        "左上方",
+                        "右下方",
+                        "左下方",
+                        "右上方"
+                    ],
+        "answer":  0,
+        "explain":  "显微镜成倒像，物像偏向哪边，玻片就向哪边移动。"
+    },
+    {
+        "id":  148,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "人体消化食物和吸收营养物质的主要器官是",
+        "options":  [
+                        "胃",
+                        "小肠",
+                        "大肠",
+                        "口腔"
+                    ],
+        "answer":  1,
+        "explain":  "小肠长且有皱襞和小肠绒毛，是消化吸收的主要场所。"
+    },
+    {
+        "id":  149,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  3,
+        "text":  "与吸入的气体相比，人体呼出气体中含量明显增加的是",
+        "options":  [
+                        "氧气",
+                        "氮气",
+                        "二氧化碳",
+                        "稀有气体"
+                    ],
+        "answer":  2,
+        "explain":  "细胞呼吸消耗氧气产生二氧化碳，呼出气体中二氧化碳增多。"
+    },
+    {
+        "id":  150,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "菜豆种子中，将来发育成新植株幼体的结构是",
+        "options":  [
+                        "种皮",
+                        "胚乳",
+                        "子叶",
+                        "胚"
+                    ],
+        "answer":  3,
+        "explain":  "胚是新植物的幼体，由胚芽、胚轴、胚根和子叶组成。"
+    },
+    {
+        "id":  151,
+        "subject":  "biology",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "人体血液中，具有运输氧气功能的是",
+        "options":  [
+                        "红细胞",
+                        "血浆",
+                        "白细胞",
+                        "血小板"
+                    ],
+        "answer":  0,
+        "explain":  "红细胞含血红蛋白，能结合并运输氧气。"
+    },
+    {
+        "id":  152,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "与真菌细胞相比，细菌细胞结构上没有",
+        "options":  [
+                        "细胞壁",
+                        "细胞膜",
+                        "成形的细胞核",
+                        "细胞质"
+                    ],
+        "answer":  2,
+        "explain":  "细菌没有成形的细胞核，属于原核生物。"
+    },
+    {
+        "id":  153,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "下列关于病毒的说法正确的是",
+        "options":  [
+                        "病毒能独立生活",
+                        "病毒有细胞结构",
+                        "病毒可用肉眼观察",
+                        "病毒必须寄生在活细胞内"
+                    ],
+        "answer":  3,
+        "explain":  "病毒无细胞结构，只能寄生在活细胞内进行生命活动。"
+    },
+    {
+        "id":  154,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "下列动物中属于脊椎动物的是",
+        "options":  [
+                        "蚯蚓",
+                        "蝗虫",
+                        "鲫鱼",
+                        "蜗牛"
+                    ],
+        "answer":  2,
+        "explain":  "鲫鱼是鱼类，体内有脊柱，属于脊椎动物。"
+    },
+    {
+        "id":  155,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "染色体主要由哪两种物质组成",
+        "options":  [
+                        "脂肪和蛋白质",
+                        "DNA和蛋白质",
+                        "DNA和糖类",
+                        "蛋白质和糖类"
+                    ],
+        "answer":  1,
+        "explain":  "染色体主要由DNA和蛋白质组成，DNA是主要遗传物质。"
+    },
+    {
+        "id":  156,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "豌豆高茎基因D对矮茎基因d为显性，基因型为Dd的豌豆表现为",
+        "options":  [
+                        "高茎",
+                        "矮茎",
+                        "中等高度",
+                        "无法确定"
+                    ],
+        "answer":  0,
+        "explain":  "有显性基因存在时，杂合子表现显性性状即高茎。"
+    },
+    {
+        "id":  157,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "按照达尔文的进化学说，生物进化的主要原因是",
+        "options":  [
+                        "上帝创造",
+                        "自然选择",
+                        "用进废退",
+                        "环境保持不变"
+                    ],
+        "answer":  1,
+        "explain":  "达尔文提出自然选择学说，适者生存推动生物进化。"
+    },
+    {
+        "id":  158,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "下列繁殖方式中属于有性生殖的是",
+        "options":  [
+                        "扦插",
+                        "嫁接",
+                        "组织培养",
+                        "种子繁殖"
+                    ],
+        "answer":  3,
+        "explain":  "种子由受精卵发育而来，经过两性生殖细胞结合，属有性生殖。"
+    },
+    {
+        "id":  159,
+        "subject":  "biology",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "与人体的非特异性免疫相比，特异性免疫的特点是",
+        "options":  [
+                        "生来就有",
+                        "只针对特定病原体起作用",
+                        "不需要免疫细胞参与",
+                        "人人都完全相同"
+                    ],
+        "answer":  1,
+        "explain":  "特异性免疫是后天获得的，只对特定病原体或异物起作用。"
+    },
+    {
+        "id":  160,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "我国境内目前已确认的最早的古人类是",
+        "options":  [
+                        "北京人",
+                        "山顶洞人",
+                        "河姆渡人",
+                        "元谋人"
+                    ],
+        "answer":  3,
+        "explain":  "元谋人距今约170万年，是目前确认的我国最早古人类。"
+    },
+    {
+        "id":  161,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "距今约七千年、会种植水稻的原始农耕居民遗址是",
+        "options":  [
+                        "河姆渡遗址",
+                        "半坡遗址",
+                        "大汶口遗址",
+                        "良渚遗址"
+                    ],
+        "answer":  0,
+        "explain":  "河姆渡居民种植水稻，半坡居民种植粟。"
+    },
+    {
+        "id":  162,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "使秦国国力大为增强、为以后统一全国奠定基础的变法是",
+        "options":  [
+                        "管仲改革",
+                        "李悝变法",
+                        "商鞅变法",
+                        "吴起变法"
+                    ],
+        "answer":  2,
+        "explain":  "商鞅变法使秦国富强，成为战国后期最强大的诸侯国。"
+    },
+    {
+        "id":  163,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "我国历史上第一个统一的多民族的封建国家是",
+        "options":  [
+                        "夏朝",
+                        "商朝",
+                        "周朝",
+                        "秦朝"
+                    ],
+        "answer":  3,
+        "explain":  "公元前221年秦灭六国，建立第一个统一的多民族封建国家。"
+    },
+    {
+        "id":  164,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "汉武帝为削弱诸侯王势力而采取的措施是",
+        "options":  [
+                        "颁布推恩令",
+                        "实行焚书坑儒",
+                        "推行郡县制",
+                        "开创科举制"
+                    ],
+        "answer":  0,
+        "explain":  "汉武帝采纳主父偃建议颁布推恩令，使诸侯国越分越小。"
+    },
+    {
+        "id":  165,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "西汉时两次出使西域、为丝绸之路开通作出重要贡献的人物是",
+        "options":  [
+                        "班超",
+                        "张骞",
+                        "甘英",
+                        "玄奘"
+                    ],
+        "answer":  1,
+        "explain":  "张骞两次出使西域，促进了汉朝与西域的相互了解。"
+    },
+    {
+        "id":  166,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "我国科举制度正式确立于哪个朝代",
+        "options":  [
+                        "汉朝",
+                        "隋朝",
+                        "唐朝",
+                        "宋朝"
+                    ],
+        "answer":  1,
+        "explain":  "隋炀帝时设进士科，标志着科举制度正式确立。"
+    },
+    {
+        "id":  167,
+        "subject":  "history",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "唐太宗统治时期出现的治世局面被称为",
+        "options":  [
+                        "文景之治",
+                        "光武中兴",
+                        "贞观之治",
+                        "开元盛世"
+                    ],
+        "answer":  2,
+        "explain":  "唐太宗年号贞观，其统治时期政治清明，史称贞观之治。"
+    },
+    {
+        "id":  168,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "中国近代史的开端是",
+        "options":  [
+                        "虎门销烟",
+                        "鸦片战争",
+                        "第二次鸦片战争",
+                        "甲午中日战争"
+                    ],
+        "answer":  1,
+        "explain":  "鸦片战争使中国开始沦为半殖民地半封建社会。"
+    },
+    {
+        "id":  169,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "中国近代史上第一个不平等条约是",
+        "options":  [
+                        "马关条约",
+                        "辛丑条约",
+                        "南京条约",
+                        "北京条约"
+                    ],
+        "answer":  2,
+        "explain":  "1842年签订的南京条约是中国近代第一个不平等条约。"
+    },
+    {
+        "id":  170,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "洋务运动的口号是",
+        "options":  [
+                        "自强与求富",
+                        "民主与科学",
+                        "扶清灭洋",
+                        "变法图强"
+                    ],
+        "answer":  0,
+        "explain":  "洋务派以自强、求富为口号，创办近代军事和民用企业。"
+    },
+    {
+        "id":  171,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "标志着中国全民族抗战开始的事件是",
+        "options":  [
+                        "九一八事变",
+                        "西安事变",
+                        "七七事变",
+                        "八一三事变"
+                    ],
+        "answer":  2,
+        "explain":  "1937年七七事变爆发，标志着中国全民族抗战的开始。"
+    },
+    {
+        "id":  172,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "辛亥革命的指导思想是",
+        "options":  [
+                        "三民主义",
+                        "马克思主义",
+                        "君主立宪",
+                        "实业救国"
+                    ],
+        "answer":  0,
+        "explain":  "孙中山提出民族、民权、民生三民主义，指导辛亥革命。"
+    },
+    {
+        "id":  173,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "中国新民主主义革命的开端是",
+        "options":  [
+                        "辛亥革命",
+                        "五四运动",
+                        "中国共产党成立",
+                        "南昌起义"
+                    ],
+        "answer":  1,
+        "explain":  "五四运动中工人阶级登上政治舞台，是新民主主义革命开端。"
+    },
+    {
+        "id":  174,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "1921年标志着中国共产党诞生的会议是",
+        "options":  [
+                        "中共二大",
+                        "中共三大",
+                        "遵义会议",
+                        "中共一大"
+                    ],
+        "answer":  3,
+        "explain":  "中共一大的召开标志着中国共产党的诞生。"
+    },
+    {
+        "id":  175,
+        "subject":  "history",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "长征途中，成为党的历史上生死攸关转折点的会议是",
+        "options":  [
+                        "八七会议",
+                        "古田会议",
+                        "瓦窑堡会议",
+                        "遵义会议"
+                    ],
+        "answer":  3,
+        "explain":  "遵义会议确立了毛泽东的领导地位，挽救了党和红军。"
+    },
+    {
+        "id":  176,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "古代埃及文明的象征是",
+        "options":  [
+                        "空中花园",
+                        "金字塔",
+                        "帕特农神庙",
+                        "罗马斗兽场"
+                    ],
+        "answer":  1,
+        "explain":  "金字塔是古埃及法老的陵墓，是古埃及文明的象征。"
+    },
+    {
+        "id":  177,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "迄今已知世界上第一部较为完整的成文法典是",
+        "options":  [
+                        "十二铜表法",
+                        "查士丁尼法典",
+                        "汉谟拉比法典",
+                        "拿破仑法典"
+                    ],
+        "answer":  2,
+        "explain":  "汉谟拉比法典是古巴比伦王国留给人类的宝贵文化遗产。"
+    },
+    {
+        "id":  178,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "文艺复兴运动最早兴起于哪个国家",
+        "options":  [
+                        "英国",
+                        "法国",
+                        "意大利",
+                        "德国"
+                    ],
+        "answer":  2,
+        "explain":  "14世纪中叶文艺复兴首先在意大利兴起。"
+    },
+    {
+        "id":  179,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "1492年率船队横渡大西洋、发现美洲新大陆的航海家是",
+        "options":  [
+                        "达伽马",
+                        "麦哲伦",
+                        "迪亚士",
+                        "哥伦布"
+                    ],
+        "answer":  3,
+        "explain":  "哥伦布在西班牙王室支持下横渡大西洋，到达美洲。"
+    },
+    {
+        "id":  180,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "1689年英国议会通过、为君主立宪制奠定基础的文献是",
+        "options":  [
+                        "独立宣言",
+                        "权利法案",
+                        "人权宣言",
+                        "大宪章"
+                    ],
+        "answer":  1,
+        "explain":  "权利法案限制了王权，英国君主立宪制逐渐形成。"
+    },
+    {
+        "id":  181,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "第一次工业革命中瓦特的重大贡献是",
+        "options":  [
+                        "改良蒸汽机",
+                        "发明珍妮机",
+                        "发明火车机车",
+                        "发明电灯"
+                    ],
+        "answer":  0,
+        "explain":  "瓦特改良蒸汽机，为工业生产提供了更便利的动力。"
+    },
+    {
+        "id":  182,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "马克思主义诞生的标志是",
+        "options":  [
+                        "资本论的出版",
+                        "共产党宣言的发表",
+                        "巴黎公社的建立",
+                        "十月革命的胜利"
+                    ],
+        "answer":  1,
+        "explain":  "1848年共产党宣言发表，标志着马克思主义的诞生。"
+    },
+    {
+        "id":  183,
+        "subject":  "history",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "人类历史上第一次取得胜利的社会主义革命是",
+        "options":  [
+                        "巴黎公社",
+                        "俄国二月革命",
+                        "俄国十月革命",
+                        "法国大革命"
+                    ],
+        "answer":  2,
+        "explain":  "十月革命建立了第一个无产阶级专政的社会主义国家。"
+    },
+    {
+        "id":  184,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "地球的平均半径约为",
+        "options":  [
+                        "6371千米",
+                        "4万千米",
+                        "5.1亿平方千米",
+                        "12742千米"
+                    ],
+        "answer":  0,
+        "explain":  "地球平均半径约6371千米，赤道周长约4万千米。"
+    },
+    {
+        "id":  185,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "在地球仪上，最长的纬线是",
+        "options":  [
+                        "本初子午线",
+                        "赤道",
+                        "北极圈",
+                        "南回归线"
+                    ],
+        "answer":  1,
+        "explain":  "赤道是最大的纬线圈，长约4万千米。"
+    },
+    {
+        "id":  186,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "在比例尺为1比1000000的地图上，图上1厘米代表实地距离",
+        "options":  [
+                        "1千米",
+                        "100千米",
+                        "10千米",
+                        "1000千米"
+                    ],
+        "answer":  2,
+        "explain":  "图上1厘米代表实地100万厘米，合10千米。"
+    },
+    {
+        "id":  187,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  3,
+        "text":  "在等高线地形图上，等高线越密集的地方坡度",
+        "options":  [
+                        "越陡",
+                        "越缓",
+                        "为零",
+                        "无法判断"
+                    ],
+        "answer":  0,
+        "explain":  "等高线密集表示单位距离内高差大，坡度陡。"
+    },
+    {
+        "id":  188,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "世界上面积最大的大洲是",
+        "options":  [
+                        "非洲",
+                        "北美洲",
+                        "南极洲",
+                        "亚洲"
+                    ],
+        "answer":  3,
+        "explain":  "亚洲面积约4400万平方千米，是世界第一大洲。"
+    },
+    {
+        "id":  189,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "赤道附近地区主要的气候类型是",
+        "options":  [
+                        "热带雨林气候",
+                        "热带沙漠气候",
+                        "温带季风气候",
+                        "地中海气候"
+                    ],
+        "answer":  0,
+        "explain":  "赤道附近终年高温多雨，形成热带雨林气候。"
+    },
+    {
+        "id":  190,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "世界上使用人数最多的语言是",
+        "options":  [
+                        "英语",
+                        "汉语",
+                        "西班牙语",
+                        "阿拉伯语"
+                    ],
+        "answer":  1,
+        "explain":  "汉语是使用人数最多的语言，英语使用范围最广。"
+    },
+    {
+        "id":  191,
+        "subject":  "geography",
+        "grade":  7,
+        "difficulty":  3,
+        "text":  "喜马拉雅山脉的形成原因是",
+        "options":  [
+                        "板块张裂拉伸",
+                        "风力堆积",
+                        "板块碰撞挤压",
+                        "火山喷发"
+                    ],
+        "answer":  2,
+        "explain":  "喜马拉雅山脉由亚欧板块与印度洋板块碰撞挤压形成。"
+    },
+    {
+        "id":  192,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "我国领土的最南端位于",
+        "options":  [
+                        "海南岛",
+                        "帕米尔高原",
+                        "黑龙江漠河",
+                        "曾母暗沙"
+                    ],
+        "answer":  3,
+        "explain":  "我国领土最南端为南沙群岛的曾母暗沙。"
+    },
+    {
+        "id":  193,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "我国人口地理分界线大致是",
+        "options":  [
+                        "秦岭淮河一线",
+                        "黑河腾冲一线",
+                        "大兴安岭太行山一线",
+                        "长城沿线"
+                    ],
+        "answer":  1,
+        "explain":  "黑河腾冲一线东南人口稠密，西北人口稀疏。"
+    },
+    {
+        "id":  194,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "我国地势的主要特征是",
+        "options":  [
+                        "东高西低，呈阶梯状分布",
+                        "西高东低，呈阶梯状分布",
+                        "南高北低，起伏和缓",
+                        "中部高，四周低"
+                    ],
+        "answer":  1,
+        "explain":  "我国地势西高东低，呈三级阶梯状分布。"
+    },
+    {
+        "id":  195,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "我国长度最长、水量最大的河流是",
+        "options":  [
+                        "黄河",
+                        "珠江",
+                        "长江",
+                        "黑龙江"
+                    ],
+        "answer":  2,
+        "explain":  "长江全长6300多千米，是我国第一大河。"
+    },
+    {
+        "id":  196,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "影响我国的夏季风主要来自",
+        "options":  [
+                        "太平洋和印度洋",
+                        "大西洋和北冰洋",
+                        "太平洋和北冰洋",
+                        "印度洋和大西洋"
+                    ],
+        "answer":  0,
+        "explain":  "夏季风包括来自太平洋的东南季风和印度洋的西南季风。"
+    },
+    {
+        "id":  197,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "我国北方地区的主要粮食作物是",
+        "options":  [
+                        "水稻",
+                        "小麦",
+                        "青稞",
+                        "甘蔗"
+                    ],
+        "answer":  1,
+        "explain":  "北方以旱地为主，主要种植小麦；南方多种水稻。"
+    },
+    {
+        "id":  198,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "我国最大的综合性工业基地是",
+        "options":  [
+                        "辽中南工业基地",
+                        "京津唐工业基地",
+                        "长江三角洲工业基地",
+                        "珠江三角洲工业基地"
+                    ],
+        "answer":  2,
+        "explain":  "长江三角洲工业基地是我国最大的综合性工业基地。"
+    },
+    {
+        "id":  199,
+        "subject":  "geography",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "有世界屋脊之称、位于我国西南部的地形区是",
+        "options":  [
+                        "黄土高原",
+                        "云贵高原",
+                        "青藏高原",
+                        "内蒙古高原"
+                    ],
+        "answer":  2,
+        "explain":  "青藏高原平均海拔4000米以上，被称为世界屋脊。"
+    },
+    {
+        "id":  200,
+        "subject":  "politics",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "进入中学，面对新的学习生活，我们应该",
+        "options":  [
+                        "消极逃避",
+                        "封闭自己",
+                        "沉迷网络游戏",
+                        "积极适应新环境"
+                    ],
+        "answer":  3,
+        "explain":  "中学生活是新起点，我们要主动适应、珍视当下。"
+    },
+    {
+        "id":  201,
+        "subject":  "politics",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "少年有梦，实现梦想的正确途径是",
+        "options":  [
+                        "等待机会降临",
+                        "脚踏实地努力",
+                        "完全依赖父母",
+                        "只想不做"
+                    ],
+        "answer":  1,
+        "explain":  "努力是梦想与现实之间的桥梁。"
+    },
+    {
+        "id":  202,
+        "subject":  "politics",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "关于学习，下列说法正确的是",
+        "options":  [
+                        "学习只是为了考高分",
+                        "学习是件轻松的事",
+                        "学习需要自觉主动的态度",
+                        "学习只在学校里进行"
+                    ],
+        "answer":  2,
+        "explain":  "学习需要自觉主动的态度，且伴随成长没有终点。"
+    },
+    {
+        "id":  203,
+        "subject":  "politics",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "呵护友谊，需要学会",
+        "options":  [
+                        "尊重对方并正确处理冲突",
+                        "替朋友做所有决定",
+                        "对朋友百依百顺",
+                        "发生矛盾就绝交"
+                    ],
+        "answer":  0,
+        "explain":  "呵护友谊要用心关怀、尊重对方、正确处理冲突。"
+    },
+    {
+        "id":  204,
+        "subject":  "politics",
+        "grade":  7,
+        "difficulty":  2,
+        "text":  "下列关于生命的认识，正确的是",
+        "options":  [
+                        "生命短暂应及时行乐",
+                        "生命来之不易，要珍爱生命",
+                        "遇到挫折可以放弃生命",
+                        "生命与他人无关"
+                    ],
+        "answer":  1,
+        "explain":  "生命来之不易且不可逆，我们要敬畏生命、珍爱生命。"
+    },
+    {
+        "id":  205,
+        "subject":  "politics",
+        "grade":  7,
+        "difficulty":  1,
+        "text":  "面对生活中的挫折，正确的态度是",
+        "options":  [
+                        "及时调整自己，正确对待挫折",
+                        "一蹶不振，自暴自弃",
+                        "逃避现实，怨天尤人",
+                        "把责任推给别人"
+                    ],
+        "answer":  0,
+        "explain":  "挫折是成长的一部分，要及时调整自己，发掘生命力量。"
+    },
+    {
+        "id":  206,
+        "subject":  "politics",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "关于社会规则与自由的关系，正确的是",
+        "options":  [
+                        "规则限制自由",
+                        "规则与自由无关",
+                        "规则是人们享有自由的保障",
+                        "自由可以凌驾于规则之上"
+                    ],
+        "answer":  2,
+        "explain":  "社会规则划定了自由的边界，也是自由的保障。"
+    },
+    {
+        "id":  207,
+        "subject":  "politics",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "违法行为分为民事、行政、刑事违法行为，其分类依据是",
+        "options":  [
+                        "行为人的年龄",
+                        "违反的法律类别",
+                        "行为发生的地点",
+                        "行为人的身份"
+                    ],
+        "answer":  1,
+        "explain":  "根据违反法律的类别，违法行为分为民事、行政和刑事违法行为。"
+    },
+    {
+        "id":  208,
+        "subject":  "politics",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "犯罪的最本质特征是",
+        "options":  [
+                        "刑事违法性",
+                        "应受刑罚处罚性",
+                        "严重社会危害性",
+                        "主观恶性大小"
+                    ],
+        "answer":  2,
+        "explain":  "严重社会危害性是犯罪的最本质特征。"
+    },
+    {
+        "id":  209,
+        "subject":  "politics",
+        "grade":  8,
+        "difficulty":  1,
+        "text":  "我国的根本大法是",
+        "options":  [
+                        "宪法",
+                        "刑法",
+                        "民法典",
+                        "未成年人保护法"
+                    ],
+        "answer":  0,
+        "explain":  "宪法是国家的根本法，具有最高法律效力。"
+    },
+    {
+        "id":  210,
+        "subject":  "politics",
+        "grade":  8,
+        "difficulty":  3,
+        "text":  "关于公民权利与义务的关系，下列说法正确的是",
+        "options":  [
+                        "只享受权利不履行义务",
+                        "权利与义务完全对立",
+                        "权利可以放弃，义务可以不履行",
+                        "权利与义务相互依存、相互促进"
+                    ],
+        "answer":  3,
+        "explain":  "公民的权利与义务相互依存、相互促进，要坚持二者统一。"
+    },
+    {
+        "id":  211,
+        "subject":  "politics",
+        "grade":  8,
+        "difficulty":  2,
+        "text":  "在网络生活中，我们应该",
+        "options":  [
+                        "随意泄露个人信息",
+                        "随意传播网络谣言",
+                        "恪守道德、遵守法律",
+                        "沉迷网络放弃学习"
+                    ],
+        "answer":  2,
+        "explain":  "网络无限，自由有界，要恪守道德、遵守法律。"
+    },
+    {
+        "id":  212,
+        "subject":  "politics",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "决定当代中国命运的关键抉择是",
+        "options":  [
+                        "计划生育",
+                        "改革开放",
+                        "科教兴国",
+                        "人才强国"
+                    ],
+        "answer":  1,
+        "explain":  "改革开放是决定当代中国命运的关键抉择。"
+    },
+    {
+        "id":  213,
+        "subject":  "politics",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "我国坚持公有制为主体、多种所有制经济",
+        "options":  [
+                        "相互排斥",
+                        "相互替代",
+                        "共同发展",
+                        "逐步取消"
+                    ],
+        "answer":  2,
+        "explain":  "我国坚持公有制为主体、多种所有制经济共同发展。"
+    },
+    {
+        "id":  214,
+        "subject":  "politics",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "当今综合国力竞争的决定性因素是",
+        "options":  [
+                        "人口数量",
+                        "国土面积",
+                        "资源总量",
+                        "科技创新能力"
+                    ],
+        "answer":  3,
+        "explain":  "科技创新能力已成为综合国力竞争的决定性因素。"
+    },
+    {
+        "id":  215,
+        "subject":  "politics",
+        "grade":  9,
+        "difficulty":  2,
+        "text":  "我国社会主义民主的本质特征是",
+        "options":  [
+                        "人民当家作主",
+                        "少数服从多数",
+                        "依法治国",
+                        "基层群众自治"
+                    ],
+        "answer":  0,
+        "explain":  "人民当家作主是社会主义民主政治的本质特征。"
+    },
+    {
+        "id":  216,
+        "subject":  "politics",
+        "grade":  9,
+        "difficulty":  1,
+        "text":  "实现中华民族伟大复兴的中国梦，就是要实现",
+        "options":  [
+                        "经济高速增长",
+                        "国家富强、民族振兴、人民幸福",
+                        "军事力量世界第一",
+                        "城乡完全同质"
+                    ],
+        "answer":  1,
+        "explain":  "中国梦的内涵是国家富强、民族振兴、人民幸福。"
+    },
+    {
+        "id":  217,
+        "subject":  "politics",
+        "grade":  9,
+        "difficulty":  3,
+        "text":  "到新中国成立一百年时，我国的奋斗目标是",
+        "options":  [
+                        "全面建成小康社会",
+                        "基本实现现代化",
+                        "全面建成社会主义现代化强国",
+                        "实现共同富裕"
+                    ],
+        "answer":  2,
+        "explain":  "到本世纪中叶，全面建成社会主义现代化强国。"
+    },
+    {
+        "id":  218,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "在Python中，print(3+4) 的输出结果是",
+        "options":  [
+                        "7",
+                        "34",
+                        "3+4",
+                        "报错"
+                    ],
+        "answer":  0,
+        "explain":  "3+4是算术表达式，先计算得7再输出。"
+    },
+    {
+        "id":  219,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "Python语言中，用于单行注释的符号是",
+        "options":  [
+                        "//",
+                        "#",
+                        "/*",
+                        "--"
+                    ],
+        "answer":  1,
+        "explain":  "Python用井号开头表示单行注释。"
+    },
+    {
+        "id":  220,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在Python中，若 a=5，b=2，则 a//b 的值是",
+        "options":  [
+                        "2.5",
+                        "3",
+                        "2",
+                        "2.0"
+                    ],
+        "answer":  2,
+        "explain":  "双斜杠是整除运算，5整除2商为2。"
+    },
+    {
+        "id":  221,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在Python中执行 x=0 后运行 for i in range(5): x=x+i，循环结束后 x 的值是",
+        "options":  [
+                        "10",
+                        "15",
+                        "5",
+                        "4"
+                    ],
+        "answer":  0,
+        "explain":  "i依次取0到4，累加得0+1+2+3+4等于10。"
+    },
+    {
+        "id":  222,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  3,
+        "text":  "在Python中，s=abc，则 print(s[1]) 的输出是",
+        "options":  [
+                        "a",
+                        "c",
+                        "报错",
+                        "b"
+                    ],
+        "answer":  3,
+        "explain":  "字符串下标从0开始，s[1]是第二个字符b。"
+    },
+    {
+        "id":  223,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  3,
+        "text":  "在Python中，print(len(hello)+5) 的输出结果是",
+        "options":  [
+                        "hello5",
+                        "10",
+                        "5",
+                        "55"
+                    ],
+        "answer":  1,
+        "explain":  "len求字符串长度得5，再加5得10。"
+    },
+    {
+        "id":  224,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "C++程序的执行入口函数是",
+        "options":  [
+                        "main函数",
+                        "print函数",
+                        "start函数",
+                        "run函数"
+                    ],
+        "answer":  0,
+        "explain":  "C++程序从main函数开始执行。"
+    },
+    {
+        "id":  225,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  1,
+        "text":  "在C++中使用iostream库进行标准输出时，使用的对象是",
+        "options":  [
+                        "cin",
+                        "cout",
+                        "print",
+                        "echo"
+                    ],
+        "answer":  1,
+        "explain":  "cout配合输出运算符向屏幕输出数据，cin用于输入。"
+    },
+    {
+        "id":  226,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在C++中，若 int a=7，b=3，则表达式 a%b 的值是",
+        "options":  [
+                        "2",
+                        "3",
+                        "1",
+                        "0"
+                    ],
+        "answer":  2,
+        "explain":  "百分号是取余运算，7除以3余1。"
+    },
+    {
+        "id":  227,
+        "subject":  "coding",
+        "grade":  0,
+        "difficulty":  3,
+        "text":  "在C++中，int s=0，用for循环让i从1递增到4且每次执行 s+=i，循环结束后 s 的值是",
+        "options":  [
+                        "4",
+                        "6",
+                        "24",
+                        "10"
+                    ],
+        "answer":  3,
+        "explain":  "循环将1到4累加，s等于1+2+3+4即10。"
+    },
+    {
+        "id":  228,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有一个人捡到了一条红领巾，交给了老师。老师问是谁捡到的？小东说：不是小西；小西说：是小南；小南说：小东说的不对；小北说：小南说的也不对。他们之中只有一个人说对了，这个人是。",
+        "options":  [
+                        "小东",
+                        "小西",
+                        "小南",
+                        "小北"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  229,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "现在从甲、乙、丙、丁四个人中选出两个人参加一项活动．规定：如果甲去，那么乙也去；如果丙不去，那么乙也不去；如果丙去，那么丁不去．最后去参加活动的两个人是（~ ~ ）．",
+        "options":  [
+                        "甲、乙",
+                        "乙、丙",
+                        "甲、丙",
+                        "乙、丁"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  230,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "两根电线杆之间相隔115米，在它们之间等距离增加22根电线杆后，第2根和第16根电线杆之间相隔 (  )米.",
+        "options":  [
+                        "68",
+                        "70",
+                        "71",
+                        "72"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  231,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙、丁四人进行象棋比赛，并决出了一、二、三、四名．已知：①乙比丙的名次靠前；②甲和丁经常一起打篮球；③第一名和第三名在这次比赛时才认识；④第二名不会骑自行车，也不喜欢打篮球；⑤甲和丙每天一起骑自行车上班．  获得第四名的是谁？",
+        "options":  [
+                        "甲",
+                        "乙",
+                        "丙",
+                        "丁"
+                    ],
+        "answer":  0,
+        "explain":  "由②④⑤推断出乙为第二名，由于甲丁一起打球，甲丙一起上班，再由③推断出丙丁一个是第一名，另一个为第三名，则第四名为甲．"
+    },
+    {
+        "id":  232,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙、丁四人拿出同样多的钱，合伙订购同样规格的若干件货物，货物买来后，甲、乙、丙分别比丁多拿了3件，7件，14件，乙付给丁14元，那么，丙应付给丁(  ).",
+        "options":  [
+                        "28元",
+                        "56元",
+                        "70元",
+                        "112元"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  233,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "快慢两列火车相向而行，快车长50米，慢车长80米，快车速度是慢车的2倍，如果坐在慢车上的人见快车驶过窗口的时间是5秒，那么坐在快车上的人见慢车驶过窗口的时间是(  )秒.",
+        "options":  [
+                        "6",
+                        "7",
+                        "8",
+                        "10"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  234,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一个电子钟，每9分钟亮一次灯，每到整点响一次铃，中午12点时，电子钟恰好又亮灯又响铃，问下次既亮灯又响铃是(  ).",
+        "options":  [
+                        "2点",
+                        "3点",
+                        "4点",
+                        "5点"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  235,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "星星、希希、望望、贝贝四个人参加了``新希望杯\u0027\u0027全国数学大赛，他们的得分情况是：望望的分数没有希希的分数高，星星的分数比贝贝的分数高，希希的分数不是最高的，贝贝的分数没有希希的分数高，他们中分数最高的是（~~~ ）．",
+        "options":  [
+                        "星星",
+                        "希希",
+                        "望望",
+                        "贝贝"
+                    ],
+        "answer":  0,
+        "explain":  "星星和希希比贝贝高，希希比望望高，希希不是最高，那么只能是星星．"
+    },
+    {
+        "id":  236,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙三个小运动员参加100米赛跑，当甲到达终点时，乙离终点还有5米;当乙到达终点时，丙离终点还有5米;那么当甲到达终点时，丙离终点还有(  ).",
+        "options":  [
+                        "10米",
+                        "9.75米",
+                        "9.25米",
+                        "10.25米"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  237,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "2011的各位数字的和为4，具有这种性质的四位数共有(  )个",
+        "options":  [
+                        "10",
+                        "15",
+                        "20",
+                        "21"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  238,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "电视台要播放一部30集电视连续剧，若要求每天安排播出的集数互不相等，则该电视连续剧最多可以播(  ).",
+        "options":  [
+                        "7天",
+                        "8天",
+                        "9天",
+                        "10天"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  239,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一个数把小数点向左移动一位后，就比原数少2.844，这个数原来是（ ）.",
+        "options":  [
+                        "0.316",
+                        "3.16",
+                        "31.6",
+                        "316"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  240,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "保尔特、罗特、卢特三个人进行赛车比赛，最初的排名：第一是卢特，第二是罗特，第三是保尔特；在比赛过程中，保尔特和卢特三次相互超越，罗特和卢特五次相互超越，保尔特和罗特四次相互超越，经过这样的激战终于到达了终点线．三个人最终的排名，从高到低是（~ ~ ）．",
+        "options":  [
+                        "卢特一罗特一保尔特",
+                        "罗特一保尔特一卢特",
+                        "保尔特一罗特一卢特",
+                        "罗特一卢特一保尔特"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  241,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一个数的小数点向右移动一位，比原数大59.94，这个数是(  )",
+        "options":  [
+                        "6.66",
+                        "11.66",
+                        "66.6",
+                        "116.6"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  242,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "四年级（1）班50名同学帮助老师把20捆教科书搬到200米外的图书馆，两人抬一捆，大家轮流休息，平均每人抬(  )米.",
+        "options":  [
+                        "80",
+                        "160",
+                        "180",
+                        "200"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  243,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "周长都相等的圆，正方形和长方形，它们的面积相比．",
+        "options":  [
+                        "圆最大",
+                        "正方形最大",
+                        "长方形最大",
+                        "一样大"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  244,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下列说法正确的是（~~ ）．",
+        "options":  [
+                        "角的两边是两条直线",
+                        "知道了物体的方向，就能确定物体的位置",
+                        "平行四边形有一条对称轴",
+                        "长方体、正方体、圆柱体的体积都能用``底面积✖️ 高\u0027\u0027来计算"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  245,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "长方体的体积是12，有两对侧面的面积分别是3和12，那么第3对侧面的面积是(  ).",
+        "options":  [
+                        "12",
+                        "6",
+                        "4",
+                        "3"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  246,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小王说：小胖比我高；小胖说：我比园园矮；小朱说：我还没有小王高  呢；问四个小朋友哪个最高？答．",
+        "options":  [
+                        "小王",
+                        "小胖",
+                        "小朱",
+                        "园园"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  247,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "现在从甲、乙、丙、丁四个人中选出两个人参加一项活动．规定：如果甲去，那么乙也去；如果丙不去，那么乙也不去；如果丙去，那么丁不去．最后去参加活动的两个人是谁？",
+        "options":  [
+                        "甲、乙",
+                        "乙、丙",
+                        "甲、丙",
+                        "乙、丁"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  248,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某部83集的电视连续剧，从星期三开始在凤凰电视中文台播出，计划除星期六、星期日停播外，每天播出一集，那么最后一集将在星期（ ）播出.",
+        "options":  [
+                        "一",
+                        "二",
+                        "四",
+                        "五"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  249,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "桌子上并排放着三张扑克牌，A右边的两张中至少有一张K，而K的左边两张中至少有一张K，黑桃左边的两张至少有一张红桃，而红桃右边的两张中也至少有一张红桃，中间的那张牌是(  ).",
+        "options":  [
+                        "红桃A",
+                        "红桃K",
+                        "黑桃A",
+                        "黑桃K"
+                    ],
+        "answer":  1,
+        "explain":  "从左至右，顺次有三张牌，编号为①②③由第一、二个条件得①为A，②为K，③为K.因为，黑桃左边有两张可得③为黑桃，即可得出③为黑桃K，且①、②中至少有一张是红桃.因为红桃右边有两张，可得①为红桃，即得出①为红桃A，且②、③中至少有一张红桃.因为，③为黑桃K，所以②为红桃.因此得出②为红桃K，即中间的一张为红桃K.故选B"
+    },
+    {
+        "id":  250,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "从1000到2007的自然数中有奇数个因数的整数有(  )个.",
+        "options":  [
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  251,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "两个整数的最大公因数是15，最小公倍数是360，那么这两个整数的和是(  ).",
+        "options":  [
+                        "135",
+                        "165",
+                        "180",
+                        "195"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  252,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某月有三个星期日的日期都是偶数，这个月的15号是星期(  ).",
+        "options":  [
+                        "一",
+                        "四",
+                        "五",
+                        "六"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  253,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一根长2米的木棍，锯成每段长0.4米的短木棍需要20分钟，那么锯成每段长0.5米的木棍需要(  ).",
+        "options":  [
+                        "15分钟",
+                        "12分钟",
+                        "10分钟",
+                        "以上都不对"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  254,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "做一批零件，原计划每天生产40个，实际上每天比原计划多生产10个，结果提前5天完成任务，那么这批零件的个数是(  )个．",
+        "options":  [
+                        "500",
+                        "1000",
+                        "1500",
+                        "2000"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  255,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "传说中的九头鸟每只有9个头，1条尾巴;而九尾鸟每只9条尾巴，1个头.有一些九头鸟和九尾鸟在一起，数它们的头共有580个，数它们的尾巴共有900条.那么九头鸟和九尾鸟共有(  )只.",
+        "options":  [
+                        "138",
+                        "148",
+                        "158",
+                        "168"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  256,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "如果一个整数，与1，2，3这三个数，通过加减乘除运算(可以添加括号)组成算式，结果等于24，那么这个整数称为可用的，那么，在4，5，6，7，8，9，10这七个数中，可用的整数有(  )个.",
+        "options":  [
+                        "7",
+                        "5",
+                        "2",
+                        "4"
+                    ],
+        "answer":  0,
+        "explain":  "4，5，6，7，8，9，10这7个数中，每个数都能与1，2，3这三个数通过加减乘除组成算式，结果都可以为24，所以可用的数有7个 ，故选A"
+    },
+    {
+        "id":  257,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小东、小西、小南、小北四个小朋友在一起做游戏时，捡到了一条红领巾，交给了老师．老师问是谁捡到的？  小东说：``不是小西．\u0027\u0027  小西说：``是小南.\u0027\u0027  小南说：``小东说的不对．\u0027\u0027  小北说:~~``小南说的也不对．\u0027\u0027  他们之中只有一个人说对了，这个人是．",
+        "options":  [
+                        "小东",
+                        "小西",
+                        "小南",
+                        "小北"
+                    ],
+        "answer":  2,
+        "explain":  "由于只有一个人说对了，而小北支持小东，那么他们俩都错了，所以反对小东的小南说对了．"
+    },
+    {
+        "id":  258,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "兴农农机厂某车间共有61个工人，已知每个工人平均每天可加工甲种部件5个，或者乙种部件4个，或者丙种部件3个，但加工4个甲种部件，1个乙种部件和6个丙种部件才能配成一套，为了使加工出来的甲、乙、丙三种部件恰好都能配成套，那么，安排加工甲种部件的人数应是(  ).",
+        "options":  [
+                        "5人",
+                        "12人",
+                        "16人",
+                        "20人"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  259,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙三人出同样多的钱买同样的笔记本，最后甲、乙都比丙多得3本，甲、乙都给了丙2.4元，那么每本笔记本的价格是(  )元",
+        "options":  [
+                        "0.8",
+                        "1.2",
+                        "2.4",
+                        "4.8"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  260,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有一组自然数(数可以重复)，其中包含2003，但不包含数0，这组自然数的平均数是572，如果把2003去掉，那么剩下的平均数就变为413，这组数中出现的数最大可以是（ ）.",
+        "options":  [
+                        "2003",
+                        "3708",
+                        "3709",
+                        "3717"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  261,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙三人在讨论他们的数学成绩，丙给甲和乙看了他自己的数学成绩，但是甲、乙没给任何人看他俩的数学成绩．乙说：``我不是我们班的最低分\u0027\u0027，甲补充说：``我不是最高分\u0027\u0027．这三名学生成绩从高到低的顺序是．",
+        "options":  [
+                        "丙乙甲",
+                        "丙甲乙",
+                        "乙甲丙",
+                        "乙丙甲"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  262,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一艘轮船从甲港开往乙港，由于顺水，每小时可以航行28千米，3小时到达，这艘轮船从乙港返回甲港时，由于逆水，每小时只能航行21千米.这艘轮船往返一次每小时的平均速度是（ ）.",
+        "options":  [
+                        "12千米",
+                        "24千米",
+                        "24.5千米",
+                        "25千米"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  263,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "与30以内的奇质数的平均数最接近的整数是(  )．",
+        "options":  [
+                        "12",
+                        "13",
+                        "14",
+                        "15"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  264,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有一个人捡到一条红领巾，老师问是谁捡到的？小东说：不是小西；小西说：是小南；小南说：小东说的不对；小北说：小南说的也不对。他们之中只有一个人说对了，这个人是。",
+        "options":  [
+                        "小东",
+                        "小西",
+                        "小南",
+                        "小北"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  265,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "开学前6天，小明还没做寒假数学作业，而小强已完成了60道题，开学时，两人都完成了数学作业. 在这6天中，小明做的题的数目是小强的3倍，他平均每天做（ ）道题.",
+        "options":  [
+                        "6",
+                        "9",
+                        "12",
+                        "15"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  266,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "妈妈回到家，发现她的一个孩子把家里的巧克力都吃光了．她问了她的每个孩子是谁做的，他们的回答如下所示．  奥斯汀:卡洛斯吃了巧克力．  本尼:奥斯汀吃了巧克力．  卡洛斯:本尼在撒谎．  丹妮拉:吃巧克力的不是卡洛斯．  艾拉:我没有吃巧克力．  如果只有两个孩子说的是真话，那么是谁吃了巧克力?",
+        "options":  [
+                        "Austin",
+                        "Carlos",
+                        "Daniela",
+                        "Ella"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  267,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "相邻的两个奇数 ．",
+        "options":  [
+                        "一定是质数",
+                        "不一定是互质数",
+                        "没有公因数",
+                        "最小公倍数是他们的积"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  268,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "黑板上写有一个数，男同学从黑板前走过时，把它乘以3减去14，擦去原数，换上答案;女同学从黑板前走过时，把它乘以2减去7，擦去原数，换上答案.全班25名男生和15名女生都走过去以后，老师把最后的数乘以5，减去5，结果是30.那么，黑板上最初的数是(  ).",
+        "options":  [
+                        "5",
+                        "6",
+                        "7",
+                        "8"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  269,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "用两块同样大小的铁皮制成一个长方体和一个正方体铁桶，它们容积相比，（~ ~ ~ ）．",
+        "options":  [
+                        "长方体大",
+                        "正方体大",
+                        "同样大",
+                        "无法确定"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  270,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在桌子上有三个盖着盖子的盒子，其中一个盒子内有两粒绿豆，第二个盒子内有两粒红豆，另一个盒子内有一粒绿豆和一粒红豆，三个盒子盖子上分别写着``红豆\u0027\u0027，``红、绿豆\u0027\u0027和``绿豆\u0027\u0027，但是所有标签都标错了．最少（~ ）就能判断出所有盒子内各装着什么豆子．",
+        "options":  [
+                        "从一个盒子取一粒豆子",
+                        "从两个盒子各取一粒豆子",
+                        "从一个盒子取两粒豆子",
+                        "从三个盒子各取一粒豆子"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  271,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小王的年龄的3倍与小谢的年龄的5倍相等，他们的年龄相差4岁，那么10年后(  ).",
+        "options":  [
+                        "小王的年龄的5倍与小谢年龄的3倍相等",
+                        "小王的年龄的4倍与小谢年龄的5倍相等",
+                        "小王的年龄的5倍与小谢年龄的4倍相等",
+                        "小王的年龄的3倍与小谢年龄的5倍相等"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  272,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "五盘水果排成一排．苹果和橘子相邻，橘子和草莓相邻，苹果和香蕉不相邻，香蕉和芒果不相邻．那么一定和芒果相邻的是谁？",
+        "options":  [
+                        "只有苹果",
+                        "只有橘子",
+                        "香蕉和草莓",
+                        "橘子和香蕉"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  273,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小东、小西、小南、小北四个小朋友在一起做游戏时，捡到了一条红领巾，交给了老师．老师问是谁捡到的？小东说不是小西；小西说是小南；小南说小东说的不对；小北说小南说的也不对．他们之中只有一个人说对了，这个人是．",
+        "options":  [
+                        "小东",
+                        "小西",
+                        "小南",
+                        "小北"
+                    ],
+        "answer":  2,
+        "explain":  "首先发现矛盾，小东和小南的话存在矛盾，如果小南对，则小东不对因此小南和小东一真一假．其次，小北支持小东，如果小北对，则小南不对，小东对，因此小北和小东同真同假．而只有一个人说对了，那么小北和小东都为假，则小南为真，小南说对了，那么由小东说错可知小西捡到红领巾．"
+    },
+    {
+        "id":  274,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小华买1支钢笔和2支圆珠笔共用15元钱，小红买同样的钢笔2支和圆珠笔1支共用21元钱.那么，每支钢笔的价格是(  )元.",
+        "options":  [
+                        "8",
+                        "9",
+                        "10",
+                        "11"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  275,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小华期末考试，数学、语文、英语三科的平均分是92分，语文、英语两科的平均分是90分;又英语比语文高3分，那么数学比语文高(  ).",
+        "options":  [
+                        "8分",
+                        "7.5分",
+                        "7分",
+                        "6.5分"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  276,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "森林里举行比赛，要派出狮子、老虎、豹子和大象中的两个动物去参加．如果派狮子去，那么也要派老虎去；如果不派豹子去，那么也不能派老虎去；要是豹子参加的话，大象可不愿意去．那么，最后能去参加比赛的是．",
+        "options":  [
+                        "狮子、老虎",
+                        "老虎、豹子",
+                        "狮子、豹子",
+                        "老虎、大象"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  277,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "现在从甲、乙、丙、丁四个人中选出两个人参加一项活动。规定：如果甲去，那么乙也去；如果丙不去，那么乙也不去；如果丙去，那么丁不去。最后去参加活动的两个人是（  ）",
+        "options":  [
+                        "甲、乙",
+                        "乙、丙",
+                        "甲、丙",
+                        "乙、丁"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  278,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在某次足球比赛中，每个球队需要打6场比赛，其得分规则是:赢一场得5分，输一场得0分，平一场得2分.某队共得14分，则该球队(  )",
+        "options":  [
+                        "至多赢一场",
+                        "至少赢三场",
+                        "至少平三场",
+                        "赢两场"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  279,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "森林里举行比赛，要派出狮子、老虎、豹子和大象中的两个动物去参加．如果派狮子去，那么也要派老虎去；如果不派豹子去，那么也不能派老虎去；要是豹子参加的话，大象可不愿意去．那么，最后能去参加比赛的是（~~~~~~ ）．",
+        "options":  [
+                        "狮子、老虎",
+                        "老虎、豹子",
+                        "狮子、豹子",
+                        "老虎、大象"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  280,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "我们知道，闰年每隔4年一次，今年(2008年)就是一个闰年.但是在世纪之交时，只有年号是400的倍数时，才是闰年，例如1900年就不是闰年，但是2000年是闰年，那么从2001年到3001年，闰年有(  ).",
+        "options":  [
+                        "240个",
+                        "242个",
+                        "248个",
+                        "250个"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  281,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "把所有三位数的质数相乘，它们的积不会是一个．",
+        "options":  [
+                        "合数",
+                        "奇数",
+                        "偶数",
+                        "不确定"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  282,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "展览会上午9点开门，但早就有人排队等着入场，并且从第一个观众来到之后每分钟来到的人数是一定的，如果开3个入场口，9点9分就不再有人排队了;如果开5个入场口，9点5分就没人排队了，问第一个观众来到的时间是(  ).",
+        "options":  [
+                        "8:15",
+                        "8:30",
+                        "8:45",
+                        "8:50"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  283,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "植树节到了，某市举行大型植树活动，共有1430人参加植树，要把人分成人数相等的若干队，且每队人数在100至200之间，则有分法（ ）.",
+        "options":  [
+                        "3种",
+                        "7种",
+                        "11种",
+                        "13种"
+                    ],
+        "answer":  0,
+        "explain":  "只要找到100到200之间可以整除1430的数即可.1430可分解成2，5，11，13的乘积，所以可以按每组110人，130人，143人分组，共有3个方案.所以答案为A"
+    },
+    {
+        "id":  284,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "红星小学礼堂共24排座位，每排30座位，全校650人到礼堂开会，那么，至少有(  )排座位上坐的人数相同.",
+        "options":  [
+                        "3",
+                        "4",
+                        "5",
+                        "6"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  285,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "2008年父亲的年龄是兄弟二人年龄之和的2倍，是兄弟两人年龄差的7倍，父子三人年龄之和为84，那么哥哥生于(  )年.",
+        "options":  [
+                        "1995",
+                        "1990",
+                        "1992",
+                        "1989"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  286,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "圆锥的底面圆的周长和它的体积．",
+        "options":  [
+                        "成正比例",
+                        "成反比例",
+                        "不成比例",
+                        "无选项"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  287,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "9个连续自然数的和是2007，其中最小的自然数是(  ).",
+        "options":  [
+                        "225",
+                        "223",
+                        "221",
+                        "219"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  288,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "2008006共有(  )个质因数.",
+        "options":  [
+                        "4",
+                        "5",
+                        "6",
+                        "7"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  289,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某年某月内有三个星期天的日期都是偶数，那么这个月的14日是星期(  ).",
+        "options":  [
+                        "二",
+                        "三",
+                        "四",
+                        "五"
+                    ],
+        "answer":  3,
+        "explain":  "因为此月有三个星期天的日期都是偶数，所以该月必有两个星期天的日期为奇数，从而该月有5个星期天，由此可知该月的第一个星期天的日期只能是2号(否则，这个月就没有5个星期天)，从而5个星期天的日期为2，9，16，23，30，故14号为星期五"
+    },
+    {
+        "id":  290,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "琦琦身陷神秘房间中．房间大门紧锁，上面刻着一段话：``钥匙上的话只有一句是真的．\u0027\u0027往门旁一看，挂着三把钥匙，上面各贴着一句话．金钥匙：``这把钥匙不可以打开大门．\u0027\u0027银钥匙：``金钥匙可以打开大门．\u0027\u0027铜钥匙：``这把钥匙不可以打开大门．\u0027\u0027那么，（ ~ ~）．",
+        "options":  [
+                        "琦琦应该拿金钥匙打开大门",
+                        "琦琦应该拿银钥匙打开大门",
+                        "琦琦应该拿铜钥匙打开大门",
+                        "三把钥匙都不能打开大门，琦琦应该另想办法"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  291,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在下面的数字之间添上四个加号``+\u0027\u0027，不同的填法所算出的结果中最小值是(  ).  1(  )2(  )3(  )4(  )5(  )6(  )7(  )8",
+        "options":  [
+                        "117",
+                        "118",
+                        "119",
+                        "120"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  292,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一本书中间有一张被撕掉了，余下各页码数之和正好等于1000，这本书原有(  )页.",
+        "options":  [
+                        "40",
+                        "45",
+                        "48",
+                        "50"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  293,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小皮、小舒和小贝是同班同学，他们中一个是班长，一个是学习委员，一个是体育委员．现在知道：  ①小皮的年龄比体育委员的年龄大；  ②小舒比学习委员的年龄大；  ③小贝和学习委员年龄不同．  那么小皮、小舒和小贝分别担任．",
+        "options":  [
+                        "班长，学习委员，体育委员",
+                        "学习委员，体育委员，班长",
+                        "学习委员，班长，体育委员",
+                        "班长，体育委员，学习委员"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  294,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "用方砖铺地，当铺地面积一定时，方砖的边长和所需方砖块数的关系是(  )",
+        "options":  [
+                        "正比例关系",
+                        "反比例关系",
+                        "不成比例关系",
+                        "不能确定"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  295,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有7个相同的小球放入4个不同的盒子中，每个盒子中至少放一个球，则共有(  )种不同的放法.",
+        "options":  [
+                        "15",
+                        "18",
+                        "20",
+                        "24"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  296,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在黑板上任意写一个正整数，在不是它的因数的正整数中，找出最小的正整数，擦去原数，写上找到的这个数.这样继续下去，最多只要擦(  )次，黑板上就会出现2.",
+        "options":  [
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  297,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "从5名奥运志愿者中选出3名，分别从事翻译、导游、保洁三项不同的工作，每人承担一项，其中只有甲不能从事翻译工作，则不同的选派方案有(  ).",
+        "options":  [
+                        "24种",
+                        "36种",
+                        "48种",
+                        "60种"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  298,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "任意两个质数之和（  ）。",
+        "options":  [
+                        "一定是偶数",
+                        "一定是质数",
+                        "一定是合数",
+                        "可能是偶数，也可能是质数，也可能是合数"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  299,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有一个长方体，长、宽、高都是整数厘米，它的相邻三个面的面积分别是96平方厘米、40平方厘米和60平方厘米，这个长方体的体积是(  )立方厘米.",
+        "options":  [
+                        "300",
+                        "360",
+                        "400",
+                        "480"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  300,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "据日本一个联合小组最近在东京宣布，他们使用1秒钟能进行2万亿计算的超级计算机，将圆周率π计算到小数后12411亿位，计算过程耗时601小时56分，假如一个人1秒钟读2个阿拉伯数字，那么他日夜不停地读完这个π的数值要用的时间是（ ）.",
+        "options":  [
+                        "1万年",
+                        "2万年",
+                        "3万年",
+                        "4万年"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  301,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在一根长100厘米的木棍上，自左向右每隔6厘米染一个红点，同时自右向左每隔5厘米也染一个红点，然后沿红点处将木棍逐段锯开，那么，长度是1厘米的短木棍有(  )条.",
+        "options":  [
+                        "7",
+                        "8",
+                        "9",
+                        "10"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  302,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某小数的小数点向右移动一位，则数值比原来大25.65，原小数是(  ).",
+        "options":  [
+                        "2.565",
+                        "2.56",
+                        "2.855",
+                        "2.85"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  303,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小东、小西、小南、小北四个小朋友在一起做游戏时，捡到了一条红领巾，交给了老师．老师问是谁捡到的？小东说不是小西；小西说是小南；小南说小东说的不对；小北说小南说的不对．他们之中只有一个人说对了，这个人是．",
+        "options":  [
+                        "小东",
+                        "小西",
+                        "小南",
+                        "小北"
+                    ],
+        "answer":  2,
+        "explain":  "由于只有一个人说对了，而小北支持小东，那么他们俩都错了，所以反对小东的小南说对了．"
+    },
+    {
+        "id":  304,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "如果两个四位数的差等于2008，我们就称这两个四位数组成了一个``创新数对\u0027\u0027，那么``创新数对\u0027\u0027共有(  )个.",
+        "options":  [
+                        "6991",
+                        "6992",
+                        "6993",
+                        "6994"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  305,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "五名选手在一次数学竞赛中共得404分，每人得分互不相同，并且其中得分最高为90分，那么得分最低的选手至少得(  )分.",
+        "options":  [
+                        "45",
+                        "50",
+                        "55",
+                        "60"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  306,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "植树节时，某班每人应平均植树6株，如果只有女生来完成，每人应植树15株，如果只有男生来完成，则每人应植树(  )株.",
+        "options":  [
+                        "8",
+                        "10",
+                        "12",
+                        "14"
+                    ],
+        "answer":  1,
+        "explain":  "设共有[6,15]=90棵数，所以共有90÷6=15位同学，其中女生有90÷15=6，那么男生有15-6=9位，平均植树90÷9=10棵，故选B"
+    },
+    {
+        "id":  307,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲乙两人对同一数作除法，甲将其除以8，乙将其除以9，甲所得的商与乙所得的余数之和为13，则甲所得的余数为(  )．",
+        "options":  [
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  308,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下面的说法中正确的是（~ ~ ~）．",
+        "options":  [
+                        "单项式与单项式的和是单项式",
+                        "单项式与单项式的和是多项式",
+                        "多项式与多项式的和是多项式",
+                        "整式与整式的和是整式"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  309,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下面四个命题中，正确的是．",
+        "options":  [
+                        "一切有理数的倒数还是有理数",
+                        "一切正有理数的相反数必是负有理数",
+                        "一切有理数的绝对值必是正有理数",
+                        "一切有理数的平方是正有理数"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  310,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小明、小红、小华、小彬四人中的一人书包里有苹果，老师问：谁的书包里有苹果？四人回答如下：  小明：苹果不在我这里；  小红：苹果在小彬那里；  小华：苹果在小红那里；  小彬：苹果不在我这里．  若其中只有一人说了假话，则书包里有苹果的是（ ~ ~）．",
+        "options":  [
+                        "小明",
+                        "小红",
+                        "小华",
+                        "小彬"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  311,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一个凸四边形的四个内角可以（~ ）．",
+        "options":  [
+                        "都是锐角",
+                        "都是直角",
+                        "都是钝角",
+                        "有三个是直角，另一个是锐角或钝角"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  312,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "如果一个方程的解都能满足另一个方程，那么，这两个方程（~ ）．",
+        "options":  [
+                        "是同解方程",
+                        "不是同解方程",
+                        "是同一个方程",
+                        "可能不是同解方程"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  313,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "~下列四个命题：  ①如果两个角是对顶角，则这两个角相等．  ②如果两个角相等，则这两个角是对顶角．  ③如果两个角不是对顶角，则这两个角不相等．  ④如果两个角不相等，则这两个角不是对顶角．  其中正确的命题有（ ~）．",
+        "options":  [
+                        "1个",
+                        "2个",
+                        "3个",
+                        "4个"
+                    ],
+        "answer":  1,
+        "explain":  "②两个角相等，不一定为对顶角；  ③两个角不是对项角，也可以相等．"
+    },
+    {
+        "id":  314,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "在下列图形中，恰有三条对称轴的是（~ ）．",
+        "options":  [
+                        "平行四边形",
+                        "圆",
+                        "等边三角形",
+                        "正方形"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  315,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小尼、小浩、小莲、小雪四人中的一人书包里有苹果，老师问：谁的书包里有苹果？四人回答如下：  小尼：苹果不在我这里；  小浩：苹果在小雪那里；  小莲：苹果在小浩那里；  小雪：苹果不在我这里．  若其中只有一人说了假话，则书包里有苹果的是．",
+        "options":  [
+                        "小尼",
+                        "小浩",
+                        "小莲",
+                        "小雪"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  316,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "若一个数的立方小于这个数的相反数，那么这个数是（~ ）．",
+        "options":  [
+                        "正数",
+                        "负数",
+                        "奇数",
+                        "偶数"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  317,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下面说法中不正确的是．",
+        "options":  [
+                        "有最小的自然数",
+                        "没有最小的正有理数",
+                        "没有最大的负整数",
+                        "没有最大的非负数"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  318,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "两条相交直线所成的各角中（~ ~ ）．",
+        "options":  [
+                        "必有一个钝角",
+                        "必有一个锐角",
+                        "必有一个不是钝角",
+                        "必有两个锐角"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  319,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "正六棱柱的12个顶点的任意2个项点所在直线中，异面直线的对数为（~~~~~~~）",
+        "options":  [
+                        "1125",
+                        "1278",
+                        "1350",
+                        "1542"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  320,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小东、小西、小南、小北四个小朋友在一起做游戏时，捡到了一条红领巾，交给了老师。老师问是谁捡到的？小东说：不是小西；小西说：是小南；小南说：小东说的不对；小北说：小南说的也不对。他们之中只有一个人说对了，这个人是（  ）。",
+        "options":  [
+                        "小东",
+                        "小西",
+                        "小南",
+                        "小北"
+                    ],
+        "answer":  2,
+        "explain":  "解：根据题干分析可得，小南与小北说的话是相互矛盾的，所以两人中一定有一个人说的是正确的。  假设小北说的是正确的，则小南说``小东说的不对\u0027\u0027是错，可得：小东说的对，这样与已知只有一个人说对了相矛盾，所以此假设不成立，故小南说的是正确的。  故选：C。"
+    },
+    {
+        "id":  321,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某年某月有30天，4个星期六，5个星期五，那么这年这个月10号是星期(  ).",
+        "options":  [
+                        "四",
+                        "五",
+                        "六",
+                        "日"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  322,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有如下四个结论：  ①~~ 两个方程是同解方程，则有相同的解；  ②~~ 有相同解的两个方程组是同解方程组；  ③~~ 一个一元一次方程，如果有解，就一定有整数解；  ④~~ 一个方程，如果有整数解，则必定有无穷多个非整数解．  错误结论是（~ ）．",
+        "options":  [
+                        "①，②和③",
+                        "①，②和④",
+                        "①，③和④",
+                        "②，③和④"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  323,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某班在一次数学考试中，平均成绩为78分，男生的平均成绩为75.5分，女生的平均成绩为81分，则班上男、女生人数之比为(  ).",
+        "options":  [
+                        "5:4",
+                        "6:5",
+                        "7:6",
+                        "7:5"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  324,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小鲸鱼说:``妈妈，我长到您现在这么大年龄时，您就31岁啦!\u0027\u0027大鲸鱼说:``我像你这么大年龄时，你只有1岁\u0027\u0027，则大鲸鱼现在(  )岁.",
+        "options":  [
+                        "18",
+                        "20",
+                        "21",
+                        "22"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  325,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "森林里举行比赛，要派出狮子、老虎、豹子和大象中的两只动物去参加．  （1）如果派狮子去，那么也要派老虎去.  （2）如果不派豹子去，那么也不能派老虎去.  （3）要是豹子参加的话，大象可不愿意去．  那么，最后能去参加比赛的是．",
+        "options":  [
+                        "狮子、老虎",
+                        "老虎、豹子",
+                        "狮子、豹子",
+                        "老虎、大象"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  326,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "一个长方体的长、宽、高恰好是3个连续的自然数，并且它的体积的数值等于它的所有棱长之和的数值的2倍，那么这个长方体的表面积是(  )",
+        "options":  [
+                        "74",
+                        "148",
+                        "150",
+                        "154"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  327,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "分子、分母是相邻的自然数，这个分数一定是．",
+        "options":  [
+                        "真分数",
+                        "假分数",
+                        "带分数",
+                        "最简分数"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  328,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "期末考试五年级（I）班数学平均分为90分，全班总分为4950分，则五（I）班有(  )个同学.",
+        "options":  [
+                        "50",
+                        "54",
+                        "55",
+                        "56"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  329,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙、丁四支足球队进行比赛，小明说：``甲第一，丁第四。\u0027\u0027小伟说：``丁第二，丙第三。\u0027\u0027小凡说：``丙第二，乙第一。\u0027\u0027每个人的预测都只对了一半，那么，实际的第一名至第四名的球队依次是（  ）。",
+        "options":  [
+                        "甲乙丁丙",
+                        "甲丁乙丙",
+                        "乙甲丙丁",
+                        "丙甲乙丁"
+                    ],
+        "answer":  2,
+        "explain":  "解：根据分析，假设小明说的第一句是对的，即甲是第一，则小凡说的乙是第一是错的，  则丙是第二是对的，就可以推测出小伟说的丙第三是错的，则小伟说的丁第二是对的，  与丙第二矛盾，故假设不成立，故小明说的甲第一是错的，丁第四是对的；  由此可以推测出乙是第一，丙是第三，则甲是第二。  故排名是：乙甲丙丁。  故选：C。"
+    },
+    {
+        "id":  330,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有一个箱子，它的底部是正方形，长，宽，高都是整数，它的体积为144，则这个箱子的尺寸可以有(  ).",
+        "options":  [
+                        "4种",
+                        "5种",
+                        "6种",
+                        "8种"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  331,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "将长为15的木棒截成长度为整数的三段，使它们构成一个三角形的三边，则得到不同的三角形的个数为 (  )个.",
+        "options":  [
+                        "8",
+                        "7",
+                        "6",
+                        "5"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  332,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下面各题中，两种量成正比例关系的是．",
+        "options":  [
+                        "速度一定，路程和时间",
+                        "圆的半径和面积",
+                        "圆锥的体积一定，底面积和它的高",
+                        "一袋水泥，用去的部分和剩下的部分．"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  333,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲班和乙班共83人，乙班和丙班共86人，丙班和丁班共88人，那么甲班和丁班人数之和为(  )人.",
+        "options":  [
+                        "85",
+                        "86",
+                        "87",
+                        "88"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  334,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "妈妈回到家，发现她的一个孩子把她放在冰箱里的整个蛋糕都吃光了．她问了她的每个孩子是谁做的，他们的回答如下所示．  奥斯汀:卡洛斯吃了蛋糕．  本尼:奥斯汀吃了蛋糕．  卡洛斯:本尼在撒谎．  丹妮拉:吃蛋糕的不是卡洛斯．  艾拉:我没有吃蛋糕．  如果只有两个孩子说的是真话，那么是谁吃了蛋糕?",
+        "options":  [
+                        "本尼",
+                        "卡洛斯",
+                        "丹妮拉",
+                        "艾拉"
+                    ],
+        "answer":  3,
+        "explain":  "因为奥斯汀和丹妮拉说的话是相矛盾的，本尼和卡洛斯说的话是相矛盾的，所以四句话中必有两句真话和两句假话，因此艾拉说的这能是假话，因此真实情况是艾拉吃了蛋糕."
+    },
+    {
+        "id":  335,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某城市按以下规定收取每月煤气费:用煤气如果不超过60立方米，按每立方米0.8元收费;如果超过60立方米，超过部分按每立方米1.2元收费，已知某用户4月份的煤气费平均每立方米0.88元，那么，4月份这个用户应交煤气费(  ).",
+        "options":  [
+                        "60元",
+                        "66元",
+                        "75元",
+                        "78元"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  336,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "把数字1、2、3、6、7分别写在5张卡片上，从中任意取出两张拼成两位数，其中写着6的一张可以当9用.那么在这些拼成的两位数中，质数的个数是(  )",
+        "options":  [
+                        "10",
+                        "11",
+                        "12",
+                        "13"
+                    ],
+        "answer":  3,
+        "explain":  "质数有13、17、19、23、29、31、37、61、67、71、73、79、97共13个。"
+    },
+    {
+        "id":  337,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙、丁四人进行象棋比赛，并决出了一、二、三、四名．已知：①乙比丙的名次靠前；②甲和丁经常一起打篮球；③第一名和第三名在这次比赛时才认识；④第二名不会骑自行车，也不喜欢打篮球；⑤甲和丙每天一起骑自行车上班．获得第四名的是（~ ~ ~ ）．",
+        "options":  [
+                        "甲",
+                        "乙",
+                        "丙",
+                        "丁"
+                    ],
+        "answer":  0,
+        "explain":  "由②④⑤推断出乙为第二名，由于甲丁一起打球，甲丙一起上班，再由③推断出丙丁一个是第一名，另一个为第三名，则第四名为甲．"
+    },
+    {
+        "id":  338,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小强、小刚、小东、小平四个人比高矮．小强不是最矮的；小平不是最高的，但比小强高；小东不比大家高．最高的人是．",
+        "options":  [
+                        "小强",
+                        "小刚",
+                        "小东",
+                        "小平"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  339,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "把所有三位数的质数相乘，它们的积是一个．",
+        "options":  [
+                        "质数",
+                        "偶数",
+                        "奇数",
+                        "不确定"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  340,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "两个两位数的积是3927.这两个数的和是（ ）.",
+        "options":  [
+                        "124",
+                        "126",
+                        "128",
+                        "130"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  341,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙、丁四支足球队进行比赛．  懒羊羊说：甲第一，丁第四；  喜羊羊说：丁第二，丙第三；  沸羊羊说：丙第二，乙第一，每个的预测都只对了一半，那么，实际的第一名至第四名的球队依次是．",
+        "options":  [
+                        "甲乙丁丙",
+                        "甲丁乙丙",
+                        "乙甲丙丁",
+                        "丙甲乙丁"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  342,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有一群体育爱好者，他们之中所有的桥牌爱好者都爱好围棋，有围棋爱好者爱好武术；所有的武术爱好者都不爱好健身操，有桥牌爱好者同时爱好健身操，如果上述结论都是真实的，则以下说法不对的是(  )",
+        "options":  [
+                        "所有的围棋爱好者也都爱好桥牌；",
+                        "有的桥牌爱好者爱好武术；",
+                        "健身操爱好者都爱好围棋；",
+                        "围棋爱好者都爱好健身操。"
+                    ],
+        "answer":  3,
+        "explain":  "无"
+    },
+    {
+        "id":  343,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "由3，4，5，6排成没有重复数字的四位数，从小到大排起来，6345是第(  ).",
+        "options":  [
+                        "16个",
+                        "17个",
+                        "18个",
+                        "19个"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  344,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小东、小西、小南、小北四个小朋友在一起做游戏时，捡到了一条红领巾，交给了老师．  老师问：是谁捡到的？  小东说：不是小西．  小西说：是小南．  小南说：小东说的不对．  小北说：小南说的也不对．他们之中只有一个人说对了，这个人是．",
+        "options":  [
+                        "小东",
+                        "小西",
+                        "小南",
+                        "小北"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  345,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小王说：小南比我高；小南说：我比园园矮；小朱说：我还没有小王高  呢；问四个小朋友哪个最高？答．",
+        "options":  [
+                        "小王",
+                        "小南",
+                        "小朱",
+                        "园园"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  346,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙、丁四支足球队进行比赛．懒羊羊说：甲第一，丁第四；喜羊羊说：丁第二，丙第三；沸羊羊说：丙第二，乙第一，每个的预测都只对了一半，那么，实际的第一名至第四名的球队依次是（~ ~ ~ ）．",
+        "options":  [
+                        "甲乙丁丙",
+                        "甲丁乙丙",
+                        "乙甲丙丁",
+                        "丙甲乙丁"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  347,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "2010个连续自然数的和的最小值是(  ).",
+        "options":  [
+                        "2021055",
+                        "2019045",
+                        "2020050",
+                        "2009045"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  348,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有10个表面涂满红色的立方体，它们的棱长分别为1，2，3...10厘米，如果把这些立方体全部分割成棱长为1厘米的小立方体，在这些小立方体中至少有一面是红色的块数是(  )块.",
+        "options":  [
+                        "1000",
+                        "1250",
+                        "1729",
+                        "2007"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  349,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "动物园里猩猩比狒狒多，猴子比猩猩多.一天，饲养员拿了10箱香蕉分给它们.每只猩猩比每只狒狒多分1根，每只猴子比每只猩猩多分1根.分完后，只剩下2根香蕉.如果每箱香蕉数量相同，都是40多个，而且猴子比狒狒多6只，猩猩有16只.那么，动物园里有（ ）只猴子.",
+        "options":  [
+                        "18",
+                        "19",
+                        "20",
+                        "17"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  350,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "两个一位小数相乘，如果先把它们四舍五入到个位再相乘，其积是51，那么不四舍五入直接用原数相乘，则积最大值与最小值依次为（ ）.",
+        "options":  [
+                        "59.16， 25.25",
+                        "59.16， 41.25",
+                        "71.96， 25.05",
+                        "71.96， 25.25"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  351,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "两个小三角形不重叠放置可以拼成一个大三角形，那么这个大三角形不可能由（  ）拼成。",
+        "options":  [
+                        "两个锐角三角形",
+                        "两个直角三角形",
+                        "两个钝角三角形",
+                        "一个锐角三角形和一个钝角三角形"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  352,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "五位同学扮成奥运会吉祥物福娃贝贝、晶晶、欢欢、迎迎和妮妮，排成一排表演节目。如果贝贝和妮妮不相邻，共有（  ）种不同的排法。",
+        "options":  [
+                        "48",
+                        "72",
+                        "96",
+                        "120"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  353,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "刘老师给钱让小明去买每本1.4元的练习本，正好可以找回1元，但是小明在途中不小心弄丢了5元，又来不及回家取钱，小明就买回了同样本数每本1.2元的练习本，并找回3元，刘老师当时给小明的钱数是（ ）.",
+        "options":  [
+                        "50元",
+                        "36元",
+                        "22元",
+                        "15元"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  354,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "甲、乙、丙三人同时说了三句话．甲说：``乙正在说谎．\u0027\u0027乙说：``丙正在说谎．\u0027\u0027丙说：``他俩正在说谎．\u0027\u0027那么，说谎的人是 ．",
+        "options":  [
+                        "甲",
+                        "乙",
+                        "甲和丙",
+                        "乙和丙"
+                    ],
+        "answer":  2,
+        "explain":  "甲和丙"
+    },
+    {
+        "id":  355,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某次数学比赛，分两种方法给分，一种是答对了一题给5分，不答给2分，答错不给分;另一种是先给40分，答对一题给3分，不答不给分，答错扣1分.某考生两种判分方法均得81分，这次比赛共有(  )题.",
+        "options":  [
+                        "12",
+                        "15",
+                        "22",
+                        "17"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  356,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小皮、小舒和小贝是同班同学，他们中一个是班长，一个是学习委员，一个是体育委员．已知：  ①小皮的年龄比体育委员的年龄大；  ②小舒比学习委员的年龄大；  ③小贝和学习委员年龄不同．  那么小皮、小舒和小贝分别担任．",
+        "options":  [
+                        "班长，学习委员，体育委员",
+                        "学习委员，体育委员，班长",
+                        "学习委员，班长，体育委员",
+                        "班长，体育委员，学习委员"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  357,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有4名棋手进行循环比赛，每两人赛一局，胜一局得2分，平一局得1分，负一局得0分，如果每人得分互不相同，第一名不是全胜，那么至少有(  )局是平局.",
+        "options":  [
+                        "1",
+                        "2",
+                        "3",
+                        "4"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  358,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "轮船往返于一条河的两码头之间，如果船本身在静水中的速度是固定的，那么，当这条河的水流速度增大时，船往返一次所用的时间将（~ ）．",
+        "options":  [
+                        "增多",
+                        "减少",
+                        "不变",
+                        "增多、减少都有可能"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  359,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "顺次连结一个凸四边形各边的中点，得到一个菱形，则这个四边形一定是．",
+        "options":  [
+                        "任意的四边形",
+                        "两条对角线等长的四边形",
+                        "矩形",
+                        "平行四边形"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  360,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小伟、小胜、小臣、小琳四人中的一人书包里有苹果，老师问：谁的书包里有苹果？四人回答如下：  小伟：苹果不在我这里；  小胜：苹果在小琳那里；  小臣：苹果在小胜那里；  小琳：苹果不在我这里．  若其中只有一人说了假话，则书包里有苹果的是．",
+        "options":  [
+                        "小伟",
+                        "小胜",
+                        "小臣",
+                        "小琳"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  361,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "三条边长都是质数的三角形可能是（~ ）．  ①锐角三角形；②直角三角形；③钝角三角形；④等腰三角形；⑤等边三角形．",
+        "options":  [
+                        "①②③④",
+                        "②③④⑤",
+                        "①③④⑤",
+                        "①②③④⑤"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  362,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "下面四个命题中，正确的命题是．",
+        "options":  [
+                        "两个不同的整数之间必定有一个正数",
+                        "两个不同的整数之间必定有一个整数",
+                        "两个不同的整数之间必定有一个有理数",
+                        "两个不同的整数之间必定有一个负数"
+                    ],
+        "answer":  2,
+        "explain":  ""
+    },
+    {
+        "id":  363,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "如果一个三角形的面积和周长都被一直线平分，那么该直线必通过这个三角形的（~ ~ ）．",
+        "options":  [
+                        "内心",
+                        "外心",
+                        "重心",
+                        "垂心"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  364,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "有以下两个结论：  ①任何一个有理数和它的相反数之间至少有一个有理数；  ②如果一个有理数有倒数，则这个有理数与它的倒数之间至少有一个有理数．  则．",
+        "options":  [
+                        "①、②都不对",
+                        "①对，②不对",
+                        "①、②都对",
+                        "①不对，②对"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  365,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "对于三角形的三个外角，下面结论中正确的是．",
+        "options":  [
+                        "可能有两个直角",
+                        "最少有一个锐角",
+                        "不可能有三个钝角",
+                        "最多有一个锐角"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  366,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "某乡间小路的一侧共有12盏路灯，因行人较少，为节约用电，每晚仅开4盏灯，要求道路两头的路灯都不开，任何两盏开的路灯都不相邻，则不同的开灯方法共有（~~~~~~~）种．",
+        "options":  [
+                        "32",
+                        "35",
+                        "42",
+                        "46"
+                    ],
+        "answer":  1,
+        "explain":  ""
+    },
+    {
+        "id":  367,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "命题``所有实数的平方都是正数\u0027\u0027的否定为（~ ）．",
+        "options":  [
+                        "所有实数的平方都不是正数",
+                        "有的实数的平方是正数",
+                        "至少有一个实数的平方是正数",
+                        "至少有一个实数的平方不是正数"
+                    ],
+        "answer":  3,
+        "explain":  ""
+    },
+    {
+        "id":  368,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "对于简单随机抽样，每个个体每次被抽到的机会．",
+        "options":  [
+                        "相等",
+                        "不相等",
+                        "无法确定",
+                        "与抽取的次数有关"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    },
+    {
+        "id":  369,
+        "subject":  "math",
+        "grade":  0,
+        "difficulty":  2,
+        "text":  "小方，小明，小马，小红四人参加完某项比赛，当问到四人谁得第一时，回答如下：小方：``我得第一名\u0027\u0027；小明：``小红没得第一名\u0027\u0027；小马：``小明没得第一名\u0027\u0027；小红：``我得第一名\u0027\u0027．已知他们四个人中只有一人说真话，且只有一人得第一．根据以上信息可以判断出得第一名的人是．",
+        "options":  [
+                        "小明",
+                        "小马",
+                        "小红",
+                        "小方"
+                    ],
+        "answer":  0,
+        "explain":  ""
+    }
+]

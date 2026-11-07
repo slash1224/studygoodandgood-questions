@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="TVInstaller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="学习好电视 · 安装助手"
+        Height="780" Width="1020"
+        WindowStartupLocation="CenterScreen"
+        Background="#F4F6F9"
+        FontFamily="Microsoft YaHei">
+    <Grid Margin="22">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="学习好电视 · 电视安装助手" FontSize="26" FontWeight="Bold" Foreground="#16324F"/>
+            <TextBlock Margin="0,6,0,0" FontSize="14" Foreground="#5A7184"
+                       Text="手机/电脑和电视连同一个 WiFi，用下面的任意一种方式安装到电视。电脑版 StudyGoodAndGood 不受影响。"/>
+
+            <Border Background="White" CornerRadius="10" Margin="0,16,0,0" Padding="18">
+                <StackPanel>
+                    <TextBlock Text="方式一：局域网直连安装（推荐，需要电视开启 USB 调试）" FontSize="15" FontWeight="Bold" Foreground="#16324F"/>
+                    <TextBlock Margin="0,6,0,0" FontSize="13" Foreground="#5A7184"
+                               Text="电视：设置 → 关于 → 连续点「版本号」7 次开启开发者选项 → 开发者选项里打开「USB 调试」和「网络调试 / ADB over WiFi」。"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBlock Text="电视 IP：" VerticalAlignment="Center" FontSize="14"/>
+                        <TextBox x:Name="TxtIp" Width="180" Height="32" Margin="8,0,0,0" FontSize="14"
+                                 VerticalContentAlignment="Center" Text="192.168.1."/>
+                        <Button x:Name="BtnScan" Content="扫描局域网" Width="110" Height="32" Margin="10,0,0,0"
+                                Click="OnScan" Background="#2F80ED" Foreground="White" BorderThickness="0"/>
+                        <Button x:Name="BtnInstall" Content="连接并安装" Width="120" Height="32" Margin="10,0,0,0"
+                                Click="OnInstall" Background="#27AE60" Foreground="White" BorderThickness="0"/>
+                        <Button x:Name="BtnHome" Content="设为电视桌面" Width="140" Height="32" Margin="10,0,0,0"
+                                Click="OnSetHome" Background="#8E7CF7" Foreground="White" BorderThickness="0"
+                                ToolTip="严格模式：孩子按 HOME 键会回到答题/提醒页"/>
+                        <Button x:Name="BtnUninstall" Content="卸载" Width="80" Height="32" Margin="10,0,0,0"
+                                Click="OnUninstall" Background="#E0E6ED" Foreground="#33475B" BorderThickness="0"/>
+                    </StackPanel>
+                    <ListBox x:Name="LstDevices" Height="90" Margin="0,10,0,0" FontSize="13"
+                             DisplayMemberPath="Display"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="White" CornerRadius="10" Margin="0,12,0,0" Padding="18">
+                <StackPanel>
+                    <TextBlock Text="方式二：电视浏览器下载安装（不需要开发者选项）" FontSize="15" FontWeight="Bold" Foreground="#16324F"/>
+                    <TextBlock Margin="0,6,0,0" FontSize="13" Foreground="#5A7184"
+                               Text="在电视的浏览器/文件管理器里打开下面这个地址，下载 APK 后点击安装。安装时如果提示「未知来源」，选择允许即可。"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                        <TextBlock x:Name="TxtUrl" Text="http://127.0.0.1:8899/" FontSize="22" FontWeight="Bold" Foreground="#2F80ED"
+                                   VerticalAlignment="Center"/>
+                        <Button Content="复制地址" Width="90" Height="32" Margin="14,0,0,0" Click="OnCopyUrl"/>
+                        <TextBlock x:Name="TxtPhone" FontSize="13" Foreground="#5A7184" VerticalAlignment="Center" Margin="14,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Row="1" Background="White" CornerRadius="10" Margin="0,12,0,0" Padding="14">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top" Text="运行日志" FontSize="14" FontWeight="Bold" Foreground="#16324F" Margin="0,0,0,8"/>
+                <TextBox x:Name="TxtLog" IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+                         FontFamily="Consolas" FontSize="12" Background="#F8FAFC" BorderThickness="0" TextWrapping="Wrap"/>
+            </DockPanel>
+        </Border>
+    </Grid>
+</Window>

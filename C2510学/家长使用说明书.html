@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>学习好 · 家长使用说明书</title>
+<style>
+  :root{
+    --green:#2f7a5b;
+    --green-light:#e8f4ee;
+    --blue:#2b6cb0;
+    --blue-light:#e8f1fb;
+    --orange:#d97706;
+    --orange-light:#fdf1e3;
+    --ink:#22303c;
+    --gray:#6b7a88;
+    --line:#e3e9ee;
+    --paper:#fbfcfd;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Microsoft YaHei","PingFang SC","Hiragino Sans GB",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:920px;margin:0 auto;padding:0 22px 80px}
+
+  /* ---------- 封面 ---------- */
+  .cover{
+    margin:0 -22px 40px;
+    padding:52px 40px 44px;
+    background:linear-gradient(150deg,#2f7a5b 0%,#3f8f6a 55%,#5aa87f 100%);
+    color:#fff;
+    border-radius:0 0 34px 34px;
+  }
+  .cover .kicker{font-size:15px;letter-spacing:.24em;opacity:.85;margin-bottom:10px}
+  .cover h1{font-size:40px;line-height:1.35;margin:0 0 14px;font-weight:700}
+  .cover .sub{font-size:19px;opacity:.95;max-width:620px}
+  .cover .badges{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+  .cover .badges span{
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.28);
+    padding:5px 14px;border-radius:999px;font-size:14px;
+  }
+
+  /* ---------- 通用 ---------- */
+  section{margin:0 0 54px;scroll-margin-top:16px}
+  h2{
+    font-size:27px;line-height:1.45;margin:0 0 18px;
+    display:flex;align-items:center;gap:12px;
+  }
+  h2 .num{
+    flex:none;width:42px;height:42px;border-radius:12px;
+    background:var(--green);color:#fff;font-size:18px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 3px 8px rgba(47,122,91,.28);
+  }
+  h3{font-size:20px;margin:28px 0 12px;color:var(--green)}
+  p{margin:10px 0}
+  .lead{font-size:18px;color:#3a4a57}
+  .muted{color:var(--gray);font-size:15px}
+
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:20px 24px;margin:16px 0;
+    box-shadow:0 1px 2px rgba(20,40,60,.04);
+  }
+  .card.green{background:var(--green-light);border-color:#cfe6db}
+  .card.blue{background:var(--blue-light);border-color:#cfe0f5}
+  .card.orange{background:var(--orange-light);border-color:#f5dcbb}
+  .card h4{margin:0 0 8px;font-size:17px;color:var(--ink)}
+  .card p:last-child{margin-bottom:0}
+
+  .tip{
+    border-left:5px solid var(--orange);
+    background:var(--orange-light);
+    padding:14px 18px;border-radius:0 12px 12px 0;margin:16px 0;
+    font-size:16px;
+  }
+  .tip b{color:#b45309}
+
+  /* ---------- 步骤 ---------- */
+  .steps{counter-reset:step;list-style:none;padding:0;margin:18px 0}
+  .steps>li{
+    counter-increment:step;
+    position:relative;
+    padding:16px 18px 16px 66px;
+    background:#fff;border:1px solid var(--line);
+    border-radius:14px;margin-bottom:12px;
+  }
+  .steps>li::before{
+    content:counter(step);
+    position:absolute;left:16px;top:16px;
+    width:34px;height:34px;border-radius:50%;
+    background:var(--green);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:17px;font-weight:700;
+  }
+  .steps>li .t{font-weight:700;display:block;margin-bottom:2px}
+  .steps>li .d{font-size:16px;color:#4a5a68}
+
+  /* ---------- 目录 ---------- */
+  .toc{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:22px 26px;margin-bottom:44px;
+    box-shadow:0 2px 10px rgba(20,40,60,.05);
+  }
+  .toc h2{font-size:19px;margin:0 0 14px}
+  .toc ol{margin:0;padding-left:0;list-style:none;counter-reset:toc;
+    display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+  .toc li{counter-increment:toc}
+  .toc li a{
+    color:var(--ink);text-decoration:none;display:flex;gap:10px;
+    padding:6px 4px;border-radius:8px;font-size:16px;
+  }
+  .toc li a:hover{background:var(--green-light);color:var(--green)}
+  .toc li a::before{content:counter(toc,decimal-leading-zero);
+    color:var(--green);font-weight:700;font-size:14px}
+
+  /* ---------- 图示 ---------- */
+  .figure{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:18px 18px 10px;margin:22px 0;text-align:center;
+  }
+  .figure svg{max-width:100%;height:auto;display:block;margin:0 auto}
+  .figure figcaption{font-size:14px;color:var(--gray);margin-top:10px;padding-bottom:6px}
+
+  /* ---------- 手机示意 ---------- */
+  .phone-wrap{display:flex;justify-content:center;margin:24px 0}
+  .phone{
+    width:300px;background:#111;border-radius:32px;padding:10px;
+    box-shadow:0 12px 30px rgba(0,0,0,.22);
+  }
+  .phone-screen{background:#f0f2f5;border-radius:24px;overflow:hidden}
+  .ph-bar{background:var(--blue);color:#fff;padding:12px 14px;font-size:14px}
+  .ph-body{padding:10px}
+  .ph-card{background:#fff;border-radius:10px;padding:10px 12px;margin-bottom:8px;
+    box-shadow:0 1px 3px rgba(0,0,0,.07)}
+  .ph-card .k{font-size:13px;color:var(--blue);font-weight:700;margin-bottom:6px}
+  .ph-row{display:flex;justify-content:space-between;font-size:12px;
+    padding:3px 0;border-bottom:1px dashed #eef1f4}
+  .ph-row:last-child{border:none}
+  .ph-btn{background:var(--blue);color:#fff;border-radius:6px;
+    padding:5px 10px;font-size:11px;display:inline-block}
+  .ph-btn.g{background:#888}
+
+  /* ---------- 表格 ---------- */
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:16px;background:#fff;
+    border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{background:var(--green-light);color:var(--green);font-size:15px}
+  tr:last-child td{border-bottom:none}
+  td:first-child{font-weight:700;white-space:nowrap}
+
+  /* ---------- 问答 ---------- */
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;margin-bottom:10px;
+  }
+  details[open]{box-shadow:0 2px 8px rgba(20,40,60,.05)}
+  summary{cursor:pointer;font-weight:700;font-size:16px;color:var(--ink);outline:none}
+  summary::marker{color:var(--green)}
+  details p{margin:10px 0 2px;font-size:16px;color:#46525f}
+
+  /* ---------- 页脚 ---------- */
+  .footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--line);
+    font-size:14px;color:var(--gray);text-align:center;line-height:2}
+
+  /* ---------- 打印 ---------- */
+  .topbtn{
+    position:fixed;right:24px;bottom:24px;z-index:10;
+    background:var(--green);color:#fff;border:none;border-radius:999px;
+    padding:12px 20px;font-size:15px;cursor:pointer;
+    box-shadow:0 6px 18px rgba(47,122,91,.35);
+    font-family:inherit;
+  }
+  .topbtn:hover{background:#276a4d}
+  @page{size:A4;margin:13mm 12mm}
+  @media print{
+    body{background:#fff;font-size:12pt}
+    .page{max-width:none;padding:0}
+    .cover{border-radius:0;margin:0 0 20px;padding:30px;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+    .topbtn{display:none}
+    section{page-break-inside:avoid;margin-bottom:26px}
+    .toc{page-break-after:always}
+    details{border:none;padding:0}
+    details>summary{display:none}
+    details p{display:block!important}
+    .card,table,.figure{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  }
+  @media (max-width:640px){
+    .cover h1{font-size:30px}
+    .cover{padding:36px 24px}
+    .toc ol{grid-template-columns:1fr}
+    h2{font-size:23px}
+    .ph-body{font-size:12px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cover">
+    <div class="kicker">家长手册 · 一看就会</div>
+    <h1>学习好<br>安装与使用说明书</h1>
+    <p class="sub">不用懂技术，照着做就行。<br>装好之后，孩子每天先答几道题，再换来看视频的时间。</p>
+    <div class="badges">
+      <span>电脑版</span>
+      <span>电视版</span>
+      <span>手机远程管理</span>
+      <span>约 3 万道题</span>
+    </div>
+  </header>
+
+  <nav class="toc">
+    <h2>目录（点一下就能跳到那一页）</h2>
+    <ol>
+      <li><a href="#what">这套东西是干什么的</a></li>
+      <li><a href="#ready">动手前先准备三样</a></li>
+      <li><a href="#pc">电脑版怎么装</a></li>
+      <li><a href="#tv">电视版怎么装</a></li>
+      <li><a href="#phone">用手机管孩子</a></li>
+      <li><a href="#kid">孩子那边怎么用</a></li>
+      <li><a href="#weak">偏科加权（新功能）</a></li>
+      <li><a href="#rules">默认规则一览</a></li>
+      <li><a href="#faq">常见问题</a></li>
+      <li><a href="#remove">怎么卸载</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1 ============ -->
+  <section id="what">
+    <h2><span class="num">1</span>这套东西是干什么的</h2>
+
+    <p class="lead">一句话：<b>孩子答对题，才能继续看视频。</b></p>
+
+    <p>它不是一个“监控软件”，更像一个“零花钱罐子”。罐子里装的是看电视、玩电脑的时间。孩子想多拿一点，就得先答对几道题。</p>
+
+    <div class="card green">
+      <h4>里面其实有两个程序，互相独立</h4>
+      <p><b>电脑版</b>（StudyGoodAndGood）：管 Windows 电脑。孩子用电脑时先看到答题页，答完才能进桌面。</p>
+      <p><b>电视版</b>（学习好电视）：管安卓电视 / 电视盒子。时间用完会弹出提醒，答完题再多看一会儿。</p>
+      <p class="muted">两个可以只装一个，也可以都装。规则各管各的，互不影响。</p>
+    </div>
+
+    <div class="figure">
+      <svg viewBox="0 0 860 370" role="img" aria-label="电脑、电视、手机通过同一个WiFi连接">
+        <!-- WiFi 路由器 -->
+        <g>
+          <rect x="352" y="34" width="156" height="58" rx="14" fill="#e8f4ee" stroke="#9ccbb4" stroke-width="2"/>
+          <text x="430" y="60" text-anchor="middle" font-size="15" fill="#2f7a5b" font-weight="bold">家里的 WiFi</text>
+          <text x="430" y="80" text-anchor="middle" font-size="12" fill="#6b7a88">三台设备连同一个</text>
+          <!-- 信号弧 -->
+          <path d="M405 100 a30 30 0 0 1 50 0" fill="none" stroke="#2f7a5b" stroke-width="2" opacity=".5"/>
+          <path d="M395 92 a45 45 0 0 1 70 0" fill="none" stroke="#2f7a5b" stroke-width="2" opacity=".35"/>
+        </g>
+
+        <!-- 电脑 -->
+        <g>
+          <rect x="70" y="176" width="170" height="104" rx="10" fill="#e8f1fb" stroke="#9dbde2" stroke-width="2"/>
+          <rect x="82" y="188" width="146" height="72" rx="6" fill="#fff" stroke="#cddced"/>
+          <path d="M70 280 h170 l-14 20 h-142 z" fill="#cddced"/>
+          <text x="155" y="306" text-anchor="middle" font-size="13" fill="#2b6cb0" font-weight="bold">电脑（Windows）</text>
+          <text x="155" y="215" text-anchor="middle" font-size="12" fill="#6b7a88">先答题</text>
+          <text x="155" y="235" text-anchor="middle" font-size="12" fill="#6b7a88">再进桌面</text>
+        </g>
+
+        <!-- 电视 -->
+        <g>
+          <rect x="620" y="166" width="180" height="112" rx="10" fill="#fdf1e3" stroke="#e5bd8b" stroke-width="2"/>
+          <rect x="630" y="176" width="160" height="88" rx="6" fill="#fff" stroke="#f0d5b4"/>
+          <rect x="662" y="278" width="96" height="10" rx="4" fill="#e5bd8b"/>
+          <text x="710" y="306" text-anchor="middle" font-size="13" fill="#b45309" font-weight="bold">安卓电视 / 盒子</text>
+          <text x="710" y="212" text-anchor="middle" font-size="12" fill="#6b7a88">时间用完</text>
+          <text x="710" y="232" text-anchor="middle" font-size="12" fill="#6b7a88">弹窗提醒</text>
+        </g>
+
+        <!-- 手机 -->
+        <g>
+          <rect x="375" y="176" width="86" height="150" rx="16" fill="#f0f0f3" stroke="#c8c8d0" stroke-width="2"/>
+          <rect x="384" y="188" width="68" height="120" rx="10" fill="#fff"/>
+          <text x="418" y="230" text-anchor="middle" font-size="11" fill="#6b7a88">家长</text>
+          <text x="418" y="248" text-anchor="middle" font-size="11" fill="#6b7a88">管理页</text>
+          <text x="418" y="344" text-anchor="middle" font-size="13" fill="#4a5a68" font-weight="bold">手机（你的）</text>
+        </g>
+
+        <!-- 连线 -->
+        <path d="M352 82 C280 82 200 120 165 172" stroke="#9ccbb4" stroke-width="2" stroke-dasharray="7 6" fill="none"/>
+        <path d="M508 82 C580 82 660 120 700 162" stroke="#9ccbb4" stroke-width="2" stroke-dasharray="7 6" fill="none"/>
+        <path d="M430 92 L418 174" stroke="#9ccbb4" stroke-width="2" stroke-dasharray="7 6" fill="none"/>
+      </svg>
+      <figcaption>三台设备连到同一个 WiFi 上，手机才能管到电脑和电视。</figcaption>
+    </div>
+  </section>
+
+  <!-- ============ 2 ============ -->
+  <section id="ready">
+    <h2><span class="num">2</span>动手前先准备三样</h2>
+
+    <ol class="steps">
+      <li>
+        <span class="t">一台 Windows 电脑</span>
+        <span class="d">台式机、笔记本都行。用来装电脑版，也用来给电视装。</span>
+      </li>
+      <li>
+        <span class="t">一台安卓电视（或电视盒子）</span>
+        <span class="d">小米、海信、TCL、创维、长虹、康佳、当贝、天猫魔盒这一类都可以。<br>
+        <b>三星、LG、华为鸿蒙 NEXT</b> 这几种不是安卓，装不了。</span>
+      </li>
+      <li>
+        <span class="t">家里的 WiFi 名字和密码</span>
+        <span class="d">电脑、电视、手机要连<b>同一个</b> WiFi。用手机热点也行。</span>
+      </li>
+    </ol>
+
+    <div class="tip">
+      <b>小提醒：</b>别用“访客网络”。访客网络会把三台设备互相隔开，手机就连不上电视了。
+    </div>
+
+    <h3>你手上应该有三个文件</h3>
+    <table>
+      <tr><th>文件名</th><th>干什么用</th><th>装在哪儿</th></tr>
+      <tr><td>StudyGoodAndGood.exe</td><td>电脑版，管电脑</td><td>Windows 电脑</td></tr>
+      <tr><td>电视安装助手.exe</td><td>帮电视装软件</td><td>先放 Windows 电脑上运行</td></tr>
+      <tr><td>学习好电视-TV版.apk</td><td>电视版本体</td><td>安卓电视</td></tr>
+    </table>
+    <p class="muted">另外还有一个「题库编辑器（含导出给电视）.exe」，是给你自己出题用的，可以先不管它。</p>
+  </section>
+
+  <!-- ============ 3 ============ -->
+  <section id="pc">
+    <h2><span class="num">3</span>电脑版怎么装</h2>
+
+    <p class="lead">电脑版最省事，只要三步，全部是双击。</p>
+
+    <div class="figure">
+      <svg viewBox="0 0 820 190" role="img" aria-label="电脑版安装三步">
+        <g font-family="Microsoft YaHei" >
+          <rect x="8" y="30" width="220" height="118" rx="14" fill="#e8f4ee" stroke="#9ccbb4" stroke-width="2"/>
+          <circle cx="42" cy="66" r="15" fill="#2f7a5b"/>
+          <text x="42" y="72" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">1</text>
+          <text x="64" y="72" font-size="15" fill="#2f7a5b" font-weight="bold">双击 exe</text>
+          <text x="28" y="108" font-size="13" fill="#4a5a68">双击 StudyGoodAndGood.exe</text>
+          <text x="28" y="130" font-size="13" fill="#4a5a68">Windows 弹窗点「是 / 允许」</text>
+
+          <path d="M238 90 h54" stroke="#2f7a5b" stroke-width="2" stroke-dasharray="7 5"/>
+          <path d="M286 84 l10 6 l-10 6" fill="#2f7a5b"/>
+
+          <rect x="300" y="30" width="220" height="118" rx="14" fill="#e8f1fb" stroke="#9dbde2" stroke-width="2"/>
+          <circle cx="334" cy="66" r="15" fill="#2b6cb0"/>
+          <text x="334" y="72" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">2</text>
+          <text x="356" y="72" font-size="15" fill="#2b6cb0" font-weight="bold">自己装好</text>
+          <text x="320" y="108" font-size="13" fill="#4a5a68">自动装进 Program Files</text>
+          <text x="320" y="130" font-size="13" fill="#4a5a68">并设好开机自动启动</text>
+
+          <path d="M530 90 h54" stroke="#2b6cb0" stroke-width="2" stroke-dasharray="7 5"/>
+          <path d="M578 84 l10 6 l-10 6" fill="#2b6cb0"/>
+
+          <rect x="592" y="30" width="220" height="118" rx="14" fill="#fdf1e3" stroke="#e5bd8b" stroke-width="2"/>
+          <circle cx="626" cy="66" r="15" fill="#d97706"/>
+          <text x="626" y="72" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">3</text>
+          <text x="648" y="72" font-size="15" fill="#d97706" font-weight="bold">装上就用</text>
+          <text x="612" y="108" font-size="13" fill="#4a5a68">下次开机自动出现</text>
+          <text x="612" y="130" font-size="13" fill="#4a5a68">孩子先答题再进桌面</text>
+        </g>
+      </svg>
+      <figcaption>电脑版安装流程：双击一次，剩下的它自己做完。</figcaption>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <span class="t">把 StudyGoodAndGood.exe 拷到电脑上</span>
+        <span class="d">放桌面就行，不用建文件夹。</span>
+      </li>
+      <li>
+        <span class="t">双击它</span>
+        <span class="d">Windows 会问“是否允许”，点<b>「是」</b>。之后它自己复制到系统目录、自己设开机启动，全程不用你点下一步。</span>
+      </li>
+      <li>
+        <span class="t">看到答题页，就成功了</span>
+        <span class="d">屏幕上出现题目和孩子名字，说明装好了。下次开机也会自动出来。</span>
+      </li>
+    </ol>
+
+    <div class="card blue">
+      <h4>想调整规则？不用在电脑前操作</h4>
+      <p>电脑锁屏页右下角有个<b>「家长管理」</b>，点一下会显示二维码和网址。用手机扫一下，就能在手机上改规则、加时间、看错题。详见第 5 章。</p>
+    </div>
+
+    <div class="tip">
+      <b>装完发现没反应？</b>先看看是不是被 360、电脑管家拦了。把它加入“信任 / 白名单”再双击一次。
+    </div>
+  </section>
+
+  <!-- ============ 4 ============ -->
+  <section id="tv">
+    <h2><span class="num">4</span>电视版怎么装</h2>
+
+    <p class="lead">电视有两个装法，任选一个。<b>方法一更快</b>，方法二不用碰电视的设置。</p>
+
+    <h3>方法一：用电脑上的「电视安装助手」（推荐）</h3>
+    <p>原理很简单：电脑在同一个 WiFi 里“喊”一声，电视答应，就把软件递过去。</p>
+
+    <ol class="steps">
+      <li>
+        <span class="t">电视上打开“开发者模式”</span>
+        <span class="d">电视 <b>设置 → 关于（或“系统信息”）→ 连续点“版本号”7 次</b>，屏幕会提示“你已成为开发者”。<br>
+        然后进 <b>开发者选项</b>，把 <b>USB 调试</b> 和 <b>网络调试 / ADB 调试 / 无线调试</b> 都打开。</span>
+      </li>
+      <li>
+        <span class="t">电脑上双击「电视安装助手.exe」</span>
+        <span class="d">电脑和电视必须连同一个 WiFi。</span>
+      </li>
+      <li>
+        <span class="t">点「扫描局域网」</span>
+        <span class="d">列表里会出现电视的名字（比如客厅的电视、MiTV…），点选它。</span>
+      </li>
+      <li>
+        <span class="t">点「连接并安装」</span>
+        <span class="d">这时电视上会跳出一个“允许调试吗”的框，<b>用遥控器选「允许 / 确定」</b>。等进度条走完就好。</span>
+      </li>
+      <li>
+        <span class="t">电视上找到并打开「学习好电视」</span>
+        <span class="d">在应用列表最后一页，图标是绿色的。</span>
+      </li>
+    </ol>
+
+    <h3>方法二：电视浏览器下载（不碰开发者选项）</h3>
+
+    <ol class="steps">
+      <li>
+        <span class="t">电脑上双击「电视安装助手.exe」</span>
+        <span class="d">这次不用点扫描，只看窗口里那一行网址。</span>
+      </li>
+      <li>
+        <span class="t">记下窗口里的网址</span>
+        <span class="d">长得像 <b>http://192.168.1.10:8899/</b>。每家的数字会不一样，照抄你屏幕上的就行。</span>
+      </li>
+      <li>
+        <span class="t">在电视的「浏览器」里输入这个网址</span>
+        <span class="d">点下载 → 安装。电视提示“未知来源”时，选<b>「允许安装」</b>。</span>
+      </li>
+      <li>
+        <span class="t">没有浏览器怎么办</span>
+        <span class="d">打开当贝市场，里面有「远程安装」，输入同一个网址也能装。</span>
+      </li>
+    </ol>
+
+    <div class="figure">
+      <svg viewBox="0 0 820 250" role="img" aria-label="电视安装方式对比">
+        <g font-family="Microsoft YaHei">
+          <rect x="10" y="20" width="380" height="200" rx="16" fill="#e8f4ee" stroke="#9ccbb4" stroke-width="2"/>
+          <text x="34" y="54" font-size="17" fill="#2f7a5b" font-weight="bold">方法一 · 安装助手</text>
+          <text x="34" y="88" font-size="14" fill="#3f4f5d">✓ 速度快，一次到位</text>
+          <text x="34" y="116" font-size="14" fill="#3f4f5d">✓ 装完还能一键设为电视桌面</text>
+          <text x="34" y="144" font-size="14" fill="#3f4f5d">✗ 要在电视上开“开发者选项”</text>
+          <text x="34" y="180" font-size="13" fill="#6b7a88">适合：愿意点几下电视设置</text>
+          <text x="34" y="202" font-size="13" fill="#6b7a88">推荐给大多数家庭</text>
+
+          <rect x="430" y="20" width="380" height="200" rx="16" fill="#fdf1e3" stroke="#e5bd8b" stroke-width="2"/>
+          <text x="454" y="54" font-size="17" fill="#b45309" font-weight="bold">方法二 · 电视浏览器</text>
+          <text x="454" y="88" font-size="14" fill="#3f4f5d">✓ 不动电视设置，最省心</text>
+          <text x="454" y="116" font-size="14" fill="#3f4f5d">✓ 会打字就能装</text>
+          <text x="454" y="144" font-size="14" fill="#3f4f5d">✗ 电视上得有浏览器</text>
+          <text x="454" y="180" font-size="13" fill="#6b7a88">适合：电视自带浏览器</text>
+          <text x="454" y="202" font-size="13" fill="#6b7a88">或者装了当贝市场</text>
+        </g>
+      </svg>
+      <figcaption>两种方式装出来的效果完全一样，随便挑一个顺手的。</figcaption>
+    </div>
+  </section>
+
+  <!-- ============ 5 ============ -->
+  <section id="phone">
+    <h2><span class="num">5</span>用手机管孩子</h2>
+
+    <p class="lead">手机上<b>什么 App 都不用装</b>，用浏览器打开一个网址就行。</p>
+
+    <ol class="steps">
+      <li>
+        <span class="t">手机连上家里的同一个 WiFi</span>
+        <span class="d">用流量不行，因为要访问的是家里的电视和电脑。</span>
+      </li>
+      <li>
+        <span class="t">在电视上打开「家长管理」</span>
+        <span class="d">电视首页 → 家长管理 → 输入密码（默认 <b>123456</b>）。屏幕上会出现一个<b>二维码</b>和一个<b>网址</b>。</span>
+      </li>
+      <li>
+        <span class="t">手机扫这个二维码</span>
+        <span class="d">扫不出来就用手机浏览器手动输入那个网址，例如 <b>http://192.168.1.23:8787/</b>。</span>
+      </li>
+      <li>
+        <span class="t">输入 6 位访问码</span>
+        <span class="d">访问码就显示在电视屏幕上，照抄即可，<b>每次打开都要输</b>，这样孩子猜不到。</span>
+      </li>
+    </ol>
+
+    <div class="figure">
+      <svg viewBox="0 0 820 300" role="img" aria-label="电视显示二维码，手机扫码进入管理页">
+        <g font-family="Microsoft YaHei">
+          <!-- 电视 -->
+          <rect x="40" y="34" width="300" height="190" rx="12" fill="#fdf1e3" stroke="#e5bd8b" stroke-width="2"/>
+          <rect x="52" y="46" width="276" height="166" rx="8" fill="#fff" stroke="#f0d5b4"/>
+          <text x="190" y="78" text-anchor="middle" font-size="15" fill="#b45309" font-weight="bold">电视屏幕 · 家长管理</text>
+          <!-- 二维码简化 -->
+          <g transform="translate(110,92)">
+            <rect width="86" height="86" fill="#fff" stroke="#333"/>
+            <rect x="6" y="6" width="22" height="22" fill="#333"/>
+            <rect x="58" y="6" width="22" height="22" fill="#333"/>
+            <rect x="6" y="58" width="22" height="22" fill="#333"/>
+            <rect x="36" y="36" width="10" height="10" fill="#333"/>
+            <rect x="52" y="42" width="8" height="8" fill="#333"/>
+            <rect x="40" y="60" width="8" height="8" fill="#333"/>
+            <rect x="62" y="66" width="8" height="8" fill="#333"/>
+            <rect x="36" y="76" width="8" height="8" fill="#333"/>
+          </g>
+          <text x="236" y="118" text-anchor="middle" font-size="13" fill="#4a5a68">扫码打开</text>
+          <text x="236" y="142" text-anchor="middle" font-size="13" fill="#4a5a68">家长管理页</text>
+          <text x="190" y="200" text-anchor="middle" font-size="12" fill="#6b7a88">http://192.168.1.23:8787/</text>
+
+          <path d="M352 130 h96" stroke="#2f7a5b" stroke-width="2" stroke-dasharray="8 6"/>
+          <path d="M440 124 l12 6 l-12 6" fill="#2f7a5b"/>
+
+          <!-- 手机 -->
+          <g>
+            <rect x="470" y="20" width="300" height="252" rx="28" fill="#111"/>
+            <rect x="482" y="32" width="276" height="228" rx="20" fill="#f0f2f5"/>
+            <rect x="482" y="32" width="276" height="46" rx="20" fill="#2b6cb0"/>
+            <rect x="482" y="58" width="276" height="20" fill="#2b6cb0"/>
+            <text x="500" y="60" font-size="13" fill="#fff">家长管理</text>
+            <rect x="494" y="90" width="252" height="56" rx="8" fill="#fff"/>
+            <text x="508" y="112" font-size="12" fill="#2b6cb0" font-weight="bold">今日还能看</text>
+            <text x="734" y="112" text-anchor="end" font-size="12" fill="#d93025" font-weight="bold">32 分钟</text>
+            <text x="508" y="134" font-size="11" fill="#6b7a88">已答 15 题 · 对 13 题</text>
+            <rect x="494" y="152" width="252" height="52" rx="8" fill="#fff"/>
+            <text x="508" y="174" font-size="12" fill="#2b6cb0" font-weight="bold">一键加时间</text>
+            <text x="508" y="192" font-size="11" fill="#6b7a88">+15 分钟　+30 分钟　清零今日</text>
+            <rect x="494" y="210" width="252" height="42" rx="8" fill="#fff"/>
+            <text x="508" y="236" font-size="12" fill="#2b6cb0" font-weight="bold">改规则 · 偏科加权 · 更新题库</text>
+          </g>
+        </g>
+      </svg>
+      <figcaption>电视上显示二维码和访问码，手机扫码就进管理页。</figcaption>
+    </div>
+
+    <h3>手机页面上能做的事</h3>
+    <table>
+      <tr><th>想做的事</th><th>在哪儿点</th></tr>
+      <tr><td>看看今天还剩多久</td><td>首页最上面那行「今日还能看」</td></tr>
+      <tr><td>今天表现怎么样</td><td>「已答多少题、对了几题」</td></tr>
+      <tr><td>临时多给一点时间</td><td>「+15 分钟」「+30 分钟」</td></tr>
+      <tr><td>今天到此为止</td><td>「清零今日」</td></tr>
+      <tr><td>孩子最近老错哪些题</td><td>「错题本 TOP10」，可以看出薄弱环节</td></tr>
+      <tr><td>改每天给多少时间</td><td>「学习规则」里的基础时长</td></tr>
+      <tr><td>加重薄弱科目的题</td><td>「偏科加权」，见第 7 章</td></tr>
+      <tr><td>换成最新题库</td><td>「更新题库」（约 3 万道）</td></tr>
+      <tr><td>用自己出的题</td><td>「上传本地题库」，见下面小字</td></tr>
+    </table>
+
+    <div class="card green">
+      <h4>想用自己出的题？</h4>
+      <p>电脑上打开「题库编辑器」→ 录题 → 点「导出给电视（JSON）」→ 把文件发到手机（微信、QQ 都行）→ 回到手机管理页点「上传本地题库」选这个文件。</p>
+      <p class="muted">上传后电视上立刻生效。自出的题会优先出现，官方那 3 万道照旧保留；以后再点「更新题库」也不会把你上传的题覆盖掉。</p>
+    </div>
+
+    <div class="tip">
+      <b>电脑版也一样：</b>电脑锁屏页点「家长管理」→ 显示二维码 → 手机扫码 → 就能改电脑那边的规则。不用跑到电脑前。
+    </div>
+  </section>
+
+  <!-- ============ 6 ============ -->
+  <section id="kid">
+    <h2><span class="num">6</span>孩子那边怎么用</h2>
+
+    <p class="lead">孩子只会看到两件事：<b>还剩多少时间</b>，和<b>一道题</b>。</p>
+
+    <h3>电视上</h3>
+    <p>打开「学习好电视」，首页就是一个大数字：今天还能看多久。孩子点“开始学习”就能看视频（或者在电视上打开别的视频 App）。</p>
+    <p>时间快用完时，屏幕会弹出提醒。用完后画面会被一块提示挡住，上面有「去答题」按钮。</p>
+
+    <h3>答题怎么换时间</h3>
+
+    <div class="figure">
+      <svg viewBox="0 0 840 230" role="img" aria-label="答题解锁流程">
+        <g font-family="Microsoft YaHei">
+          <rect x="6" y="60" width="150" height="104" rx="14" fill="#fdecec" stroke="#efb3b3" stroke-width="2"/>
+          <text x="81" y="96" text-anchor="middle" font-size="14" fill="#c0392b" font-weight="bold">时间用完了</text>
+          <text x="81" y="122" text-anchor="middle" font-size="12" fill="#6b7a88">画面被挡住</text>
+          <text x="81" y="142" text-anchor="middle" font-size="12" fill="#6b7a88">出现「去答题」</text>
+
+          <path d="M164 112 h40" stroke="#9aa7b3" stroke-width="2" stroke-dasharray="7 5"/>
+          <path d="M198 106 l10 6 l-10 6" fill="#9aa7b3"/>
+
+          <rect x="212" y="60" width="150" height="104" rx="14" fill="#e8f1fb" stroke="#9dbde2" stroke-width="2"/>
+          <text x="287" y="96" text-anchor="middle" font-size="14" fill="#2b6cb0" font-weight="bold">答 5 道选择题</text>
+          <text x="287" y="122" text-anchor="middle" font-size="12" fill="#6b7a88">点选项就算答</text>
+          <text x="287" y="142" text-anchor="middle" font-size="12" fill="#6b7a88">答完马上出结果</text>
+
+          <path d="M370 112 h40" stroke="#9aa7b3" stroke-width="2" stroke-dasharray="7 5"/>
+          <path d="M404 106 l10 6 l-10 6" fill="#9aa7b3"/>
+
+          <rect x="418" y="60" width="150" height="104" rx="14" fill="#e8f4ee" stroke="#9ccbb4" stroke-width="2"/>
+          <text x="493" y="96" text-anchor="middle" font-size="14" fill="#2f7a5b" font-weight="bold">对 4 道以上</text>
+          <text x="493" y="122" text-anchor="middle" font-size="12" fill="#6b7a88">正确率到 80%</text>
+          <text x="493" y="142" text-anchor="middle" font-size="12" fill="#6b7a88">没到就再来一组</text>
+
+          <path d="M576 112 h40" stroke="#9aa7b3" stroke-width="2" stroke-dasharray="7 5"/>
+          <path d="M610 106 l10 6 l-10 6" fill="#9aa7b3"/>
+
+          <rect x="624" y="60" width="208" height="104" rx="14" fill="#fdf1e3" stroke="#e5bd8b" stroke-width="2"/>
+          <text x="728" y="96" text-anchor="middle" font-size="14" fill="#b45309" font-weight="bold">加 15 分钟</text>
+          <text x="728" y="122" text-anchor="middle" font-size="12" fill="#6b7a88">可以继续看</text>
+          <text x="728" y="142" text-anchor="middle" font-size="12" fill="#6b7a88">每天最多 8 组</text>
+        </g>
+      </svg>
+      <figcaption>孩子的时间是“答题赚来的”：一组 5 题，对了 80% 就给 15 分钟。</figcaption>
+    </div>
+
+    <div class="card blue">
+      <h4>题目从哪儿来？</h4>
+      <p>内置约 <b>3 万道</b>初中选择题，按年级抽（7 年级 / 8 年级 / 9 年级），数学、语文、英语、物理、化学、生物、历史、地理、道法、编程都有。</p>
+      <p>孩子<b>做错的题会更容易再次出现</b>——错 3 次的题，出现概率大约是普通题的 6 倍。所以刷题不是白刷，错的会被反复考。</p>
+    </div>
+
+    <h3>电脑上</h3>
+    <p>开机就进入答题页，答完这一组才能进桌面。中途想退出？家长管理页可远程加时间，孩子自己关不掉。</p>
+
+    <h3>两种电视模式，选一个</h3>
+    <table>
+      <tr><th>模式</th><th>什么效果</th><th>适合谁</th></tr>
+      <tr><td>普通提醒</td><td>时间用完弹浮窗提醒，孩子点「去答题」才继续</td><td>孩子比较自觉</td></tr>
+      <tr><td>严格模式</td><td>把「学习好电视」设为电视桌面，一按 HOME 就回学习页，浮窗盖住所有视频</td><td>需要盯紧一点的孩子</td></tr>
+    </table>
+    <p class="muted">严格模式在「家长管理 → 设为电视桌面」里开启。想取消：电视 设置 → 应用 → 默认应用 → 桌面，换回原来的桌面即可。</p>
+  </section>
+
+  <!-- ============ 7 ============ -->
+  <section id="weak">
+    <h2><span class="num">7</span>偏科加权（新功能）</h2>
+
+    <p class="lead">孩子哪门弱，就多考哪门。勾上之后，这门课的题会明显变多。</p>
+
+    <p>以前题目是所有科目平均抽的。现在你可以在手机管理页里，勾选一门或多门“偏科”。勾中的科目，每一轮的出题量会翻倍加重；没勾的科目照常。</p>
+
+    <div class="figure">
+      <svg viewBox="0 0 820 260" role="img" aria-label="偏科加权前后各科出题占比对比">
+        <g font-family="Microsoft YaHei">
+          <text x="40" y="34" font-size="15" fill="#4a5a68" font-weight="bold">没勾选：各科差不多</text>
+          <g>
+            <rect x="40" y="48" width="60" height="26" rx="4" fill="#2f7a5b"/><text x="70" y="66" text-anchor="middle" font-size="11" fill="#fff">数学</text>
+            <rect x="106" y="48" width="60" height="26" rx="4" fill="#2b6cb0"/><text x="136" y="66" text-anchor="middle" font-size="11" fill="#fff">语文</text>
+            <rect x="172" y="48" width="60" height="26" rx="4" fill="#d97706"/><text x="202" y="66" text-anchor="middle" font-size="11" fill="#fff">英语</text>
+            <rect x="238" y="48" width="60" height="26" rx="4" fill="#6b7a88"/><text x="268" y="66" text-anchor="middle" font-size="11" fill="#fff">物理</text>
+            <rect x="304" y="48" width="60" height="26" rx="4" fill="#8e7cc3"/><text x="334" y="66" text-anchor="middle" font-size="11" fill="#fff">化学</text>
+            <rect x="370" y="48" width="60" height="26" rx="4" fill="#4a9d9a"/><text x="400" y="66" text-anchor="middle" font-size="11" fill="#fff">其他</text>
+          </g>
+
+          <text x="40" y="140" font-size="15" fill="#4a5a68" font-weight="bold">勾了「英语」：英语明显变多</text>
+          <g>
+            <rect x="40" y="154" width="58" height="26" rx="4" fill="#2f7a5b"/><text x="69" y="172" text-anchor="middle" font-size="11" fill="#fff">数学</text>
+            <rect x="104" y="154" width="58" height="26" rx="4" fill="#2b6cb0"/><text x="133" y="172" text-anchor="middle" font-size="11" fill="#fff">语文</text>
+            <rect x="168" y="154" width="160" height="26" rx="4" fill="#d97706"/><text x="248" y="172" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">英语 ×3</text>
+            <rect x="334" y="154" width="58" height="26" rx="4" fill="#6b7a88"/><text x="363" y="172" text-anchor="middle" font-size="11" fill="#fff">物理</text>
+            <rect x="398" y="154" width="58" height="26" rx="4" fill="#8e7cc3"/><text x="427" y="172" text-anchor="middle" font-size="11" fill="#fff">化学</text>
+            <rect x="462" y="154" width="58" height="26" rx="4" fill="#4a9d9a"/><text x="491" y="172" text-anchor="middle" font-size="11" fill="#fff">其他</text>
+          </g>
+
+          <rect x="552" y="40" width="252" height="150" rx="14" fill="#e8f4ee" stroke="#9ccbb4" stroke-width="2"/>
+          <text x="574" y="70" font-size="14" fill="#2f7a5b" font-weight="bold">怎么设置</text>
+          <text x="574" y="98" font-size="13" fill="#3f4f5d">手机打开管理页</text>
+          <text x="574" y="122" font-size="13" fill="#3f4f5d">找到「偏科加权」</text>
+          <text x="574" y="146" font-size="13" fill="#3f4f5d">勾选科目 → 保存</text>
+          <text x="574" y="174" font-size="12" fill="#6b7a88">不勾 = 恢复平均出题</text>
+        </g>
+      </svg>
+      <figcaption>勾一门，这门课的题目大概会变成原来的 3 倍；勾多门，几门一起加重。</figcaption>
+    </div>
+
+    <ol class="steps">
+      <li>
+        <span class="t">手机打开家长管理页</span>
+        <span class="d">第 5 章那几步，扫码进来。</span>
+      </li>
+      <li>
+        <span class="t">往下找到「偏科加权」</span>
+        <span class="d">十个方框：数学、语文、英语、物理、化学、生物、历史、地理、道法、编程。</span>
+      </li>
+      <li>
+        <span class="t">勾上弱的那几门，点保存</span>
+        <span class="d">勾了就多考，不勾就保持平均。<b>随时可以改，改完立刻生效。</b></span>
+      </li>
+    </ol>
+
+    <div class="tip">
+      <b>建议：</b>一次只勾一到两门，效果最明显。全勾了等于没勾——又变回平均了。
+    </div>
+  </section>
+
+  <!-- ============ 8 ============ -->
+  <section id="rules">
+    <h2><span class="num">8</span>默认规则一览</h2>
+
+    <p>装好就是这样，不满意随时在手机管理页改。</p>
+
+    <table>
+      <tr><th>项目</th><th>默认设置</th><th>是什么意思</th></tr>
+      <tr><td>每天基础时长</td><td>60 分钟</td><td>不答题也能看的量</td></tr>
+      <tr><td>每组题量</td><td>5 道</td><td>答完一组算一次</td></tr>
+      <tr><td>过关正确率</td><td>80%</td><td>5 道里对 4 道才算过</td></tr>
+      <tr><td>每组奖励</td><td>15 分钟</td><td>过一组加这么多时间</td></tr>
+      <tr><td>每天最多</td><td>8 组 / 120 分钟</td><td>防止一口气刷到天亮</td></tr>
+      <tr><td>自由时段</td><td>12:00–13:00<br>18:30–20:00</td><td>这两个时段不限制，适合午休和晚饭</td></tr>
+      <tr><td>错题加权</td><td>自动</td><td>错 3 次的题，出现概率约 6 倍</td></tr>
+    </table>
+
+    <p class="muted">电脑版和电视版各自保存自己的规则。在电脑的管理页改，只影响电脑；在电视的管理页改，只影响电视。</p>
+  </section>
+
+  <!-- ============ 9 ============ -->
+  <section id="faq">
+    <h2><span class="num">9</span>常见问题</h2>
+
+    <details>
+      <summary>电视装不上，提示“解析包错误”</summary>
+      <p>多半是电视系统太老（低于 Android 5），或者被电视自带的安全软件拦住了。先关掉拦截再试；还是不行就是系统不支持。</p>
+    </details>
+
+    <details>
+      <summary>在电视设置里找不到“开发者选项”</summary>
+      <p>有的品牌叫“开发者模式”，位置在 <b>设置 → 系统 → 关于</b>。找不到就直接用第 4 章的方法二（浏览器下载），不用开这个。</p>
+    </details>
+
+    <details>
+      <summary>安装助手提示“连接失败”</summary>
+      <ul>
+        <li>确认电脑和电视连的是同一个 WiFi，不是访客网络。</li>
+        <li>确认电视上已经点了「允许调试」。</li>
+        <li>把电视和电脑都重启一次，再扫描。</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>手机打不开管理页</summary>
+      <p>三个原因：手机用的流量（要换成同一个 WiFi）；网址数字抄错（照着电视屏幕抄）；电视上的「学习好电视」被关掉了（先打开它，管理页才会在）。</p>
+    </details>
+
+    <details>
+      <summary>访问码输错了很多次</summary>
+      <p>回电视上看一眼，6 位数字就在二维码下面。也可以进「家长管理」重新看。</p>
+    </details>
+
+    <details>
+      <summary>时间用完了，浮窗却盖不住视频</summary>
+      <p>电视 <b>设置 → 应用 → 学习好电视 → 显示在其他应用上层</b>，把这个权限打开。</p>
+    </details>
+
+    <details>
+      <summary>孩子把电视时间改了 / 把时钟调了</summary>
+      <p>程序会记录“时间被改过”的次数，手机上能看到。改时间并不能白拿时长。</p>
+    </details>
+
+    <details>
+      <summary>上传本地题库提示“没有可用题目”</summary>
+      <p>请直接用题库编辑器里的「导出给电视（JSON）」导出的文件，不要手工改里面的字段名，也不要删掉题干或选项。</p>
+    </details>
+
+    <details>
+      <summary>孩子答题一直不过，怎么办</summary>
+      <p>在管理页把「过关正确率」调低一点（比如 60%），或者把「每组题量」调少。也可以看「错题本 TOP10」，找出他真正卡在哪儿。</p>
+    </details>
+
+    <details>
+      <summary>两个设备都要装吗</summary>
+      <p>不用。只关心电视就只装电视版；只关心电脑就只装电脑版。装了两个也是各管各的，规则分开设。</p>
+    </details>
+  </section>
+
+  <!-- ============ 10 ============ -->
+  <section id="remove">
+    <h2><span class="num">10</span>怎么卸载</h2>
+
+    <h3>电脑版</h3>
+    <p>打开手机管理页，最下面有「卸载」按钮，点一下电脑就恢复自由，几秒后自动退出。</p>
+    <p class="muted">这个入口故意放在家长管理页里，孩子在自己电脑上找不到。</p>
+
+    <h3>电视版</h3>
+    <p>电视 <b>设置 → 应用 → 学习好电视 → 卸载</b>。或者在电脑的安装助手窗口里点「卸载」。</p>
+    <p class="muted">如果开过严格模式，先在 设置 → 应用 → 默认应用 → 桌面，换回原来的桌面，再卸载。</p>
+
+    <div class="card orange">
+      <h4>卸载前顺手做一件事</h4>
+      <p>把孩子的错题本截图存一下。里面能看出他哪几章一直没掌握，比成绩单还直观。</p>
+    </div>
+  </section>
+
+  <div class="footer">
+    学习好 · 家长使用说明书<br>
+    电脑版 StudyGoodAndGood　·　电视版 学习好电视　·　题库约 3 万道<br>
+    遇到说明书里没写的情况，把屏幕上的提示拍下来，按提示里的文字对照着找就行。
+  </div>
+</div>
+
+<button class="topbtn" onclick="window.print()">打印 / 存为 PDF</button>
+</body>
+</html>

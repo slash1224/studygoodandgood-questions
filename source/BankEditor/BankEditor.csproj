@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>BankEditor</AssemblyName>
+    <RootNamespace>StudyLock</RootNamespace>
+    <ApplicationManifest>..\StudyLock\app.manifest</ApplicationManifest>
+    <StartupObject>StudyLock.EditorProgram</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- 与主程序共用同一套源码，保证读写规则一致 -->
+    <Compile Include="..\StudyLock\Models.cs" />
+    <Compile Include="..\StudyLock\Guardian.cs" />
+    <Compile Include="..\StudyLock\QuestionStats.cs" />
+    <Compile Include="..\StudyLock\QuestionBank.cs" />
+    <Compile Include="..\StudyLock\BankEditorWindow.xaml.cs" />
+    <Page Include="..\StudyLock\BankEditorWindow.xaml" Link="BankEditorWindow.xaml" Generator="MSBuild:Compile" />
+  </ItemGroup>
+</Project>
