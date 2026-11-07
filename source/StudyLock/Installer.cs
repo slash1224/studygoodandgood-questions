@@ -50,6 +50,9 @@ namespace StudyLock
         /// </summary>
         public static bool EnsureInstalled()
         {
+            // 清理改名前旧版（StudyLock）的残留：旧自启项会让新旧两版开机同时弹锁屏互抢前台
+            RemoveLegacyInstall();
+
             if (IsInstalled())
             {
                 // 已安装：每次启动都确认自启注册还在（防止被清理）
@@ -82,6 +85,53 @@ namespace StudyLock
             RegisterAutostart();
             Process.Start(new ProcessStartInfo(InstalledExe) { UseShellExecute = true });
             return true;
+        }
+
+        /// <summary>
+        /// 清理改名前旧版「StudyLock」的残留（进程、开机自启、安装目录、数据目录）。
+        /// 旧版不清理的话，装过旧版的机器重启后会出现新旧两个锁屏窗口交替互抢。
+        /// 全部静默容错，没装过旧版时什么都不做。
+        /// </summary>
+        private static void RemoveLegacyInstall()
+        {
+            const string legacy = "StudyLock";
+
+            // 1. 结束正在运行的旧版进程
+            try
+            {
+                foreach (var p in Process.GetProcessesByName(legacy))
+                {
+                    try { p.Kill(); } catch { }
+                    p.Dispose();
+                }
+            }
+            catch { }
+
+            // 2. 删除旧版开机自启（计划任务 + 注册表 Run 键）
+            Run("schtasks", $"/delete /tn \"{legacy}\" /f");
+            try
+            {
+                using var key = Registry.CurrentUser.OpenSubKey(
+                    @"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                key?.DeleteValue(legacy, false);
+            }
+            catch { }
+
+            // 3. 删除旧版安装目录和数据目录
+            try
+            {
+                var dir = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), legacy);
+                if (Directory.Exists(dir)) Directory.Delete(dir, true);
+            }
+            catch { }
+            try
+            {
+                var data = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), legacy);
+                if (Directory.Exists(data)) Directory.Delete(data, true);
+            }
+            catch { }
         }
 
         private static void Run(string file, string args)
