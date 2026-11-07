@@ -107,8 +107,23 @@ namespace StudyLock
             return false;
         }
 
+        /// <summary>家长手动触发的一键锁屏；答题通关或家长加时后自动解除</summary>
+        public bool ForceLock { get; private set; }
+
         public bool ShouldLock(DateTime now) =>
-            Rules.Enabled && !InFreeWindow(now) && State.BonusRemainingSeconds <= 0;
+            Rules.Enabled && (ForceLock || (!InFreeWindow(now) && State.BonusRemainingSeconds <= 0));
+
+        /// <summary>一键锁屏：立刻弹出锁屏窗口（不扣额度，可用来调试或临时管控）</summary>
+        public void ForceLockNow()
+        {
+            if (!ForceLock) Log("lock", "收到一键锁屏请求");
+            ForceLock = true;
+            if (!_lastLockState)
+            {
+                _lastLockState = true;
+                LockStateChanged?.Invoke(true);
+            }
+        }
 
         /// <summary>每秒主循环（由 App 调用）</summary>
         public void OnSecond()
@@ -190,6 +205,7 @@ namespace StudyLock
             State.GroupsDoneToday++;
             State.BonusEarnedTodaySeconds += grant;
             State.BonusRemainingSeconds += grant;
+            ForceLock = false;
             Log("pass", $"答题通过 {correct}/{total}，解锁 {grant / 60} 分钟");
             SaveState();
             return (GroupResult.Passed, grant);
@@ -200,6 +216,7 @@ namespace StudyLock
         {
             int sec = minutes * 60;
             State.BonusRemainingSeconds += sec;
+            ForceLock = false;
             Log("addbonus", $"{by} 临时增加 {minutes} 分钟");
             SaveState();
         }

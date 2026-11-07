@@ -17,6 +17,21 @@ namespace StudyLock
             Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), AppName);
         public static string InstalledExe => Path.Combine(InstallDir, AppName + ".exe");
 
+        /// <summary>第二个实例 / 管理页用来通知正在运行的实例弹出锁屏</summary>
+        public const string ShowLockEventName = "StudyGoodAndGood_ShowLock_9F3A";
+
+        /// <summary>通知已在运行的实例立刻弹出锁屏（双击图标、手机管理页「立即锁屏」都走这里）</summary>
+        public static bool RequestShowLock()
+        {
+            try
+            {
+                using var ev = System.Threading.EventWaitHandle.OpenExisting(ShowLockEventName);
+                ev.Set();
+                return true;
+            }
+            catch { return false; }
+        }
+
         /// <summary>当前进程是否运行在安装目录中</summary>
         public static bool IsInstalled()
         {
@@ -50,13 +65,15 @@ namespace StudyLock
             }
             catch (IOException)
             {
-                // 安装目录里的旧版本正在后台运行，exe 被占用，无法覆盖
+                // 安装目录里的版本正在后台运行，exe 被占用：
+                // 这次双击就当作「一键召唤锁屏」，不再弹错误框
                 if (File.Exists(InstalledExe))
                 {
-                    System.Windows.MessageBox.Show(
-                        "程序已经在后台运行，不需要重复打开。\n\n" +
-                        "如果确实要换成这个新版本：请先在手机家长管理页点「卸载」旧版，再双击本文件。",
-                        "StudyGoodAndGood");
+                    if (!RequestShowLock())
+                        System.Windows.MessageBox.Show(
+                            "程序已经在后台运行。\n\n" +
+                            "马上锁屏：请在手机家长管理页点「立即锁屏」。",
+                            "StudyGoodAndGood");
                     return true;
                 }
                 throw;

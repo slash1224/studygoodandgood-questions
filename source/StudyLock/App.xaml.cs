@@ -18,6 +18,7 @@ namespace StudyLock
         private AdminServer? _admin;
         private DispatcherTimer? _secondTimer;
         private DispatcherTimer? _killTimer;
+        private EventWaitHandle? _summon;
         private bool _locked = true;
 
         protected override void OnStartup(StartupEventArgs e)
@@ -62,6 +63,8 @@ namespace StudyLock
             _mutex = new Mutex(true, "StudyGoodAndGood_SingleInstance_9F3A", out bool created);
             if (!created)
             {
+                // 已经有实例在跑：这次启动就当成「一键召唤锁屏」，通知它弹窗后自己退出
+                Installer.RequestShowLock();
                 Shutdown();
                 return;
             }
@@ -82,6 +85,18 @@ namespace StudyLock
             _hook = new KeyboardHook();
             _lockWin = new LockWindow(_guardian, bank, _admin);
             _guardian.LockStateChanged += OnLockStateChanged;
+
+            // 一键召唤锁屏：第二个实例、手机管理页「立即锁屏」都通过这个命名事件通知本进程
+            _summon = new EventWaitHandle(false, EventResetMode.AutoReset, Installer.ShowLockEventName);
+            var summonThread = new Thread(() =>
+            {
+                while (_summon != null)
+                {
+                    try { _summon.WaitOne(); } catch { break; }
+                    try { Dispatcher.Invoke(() => _guardian.ForceLockNow()); } catch { break; }
+                }
+            }) { IsBackground = true };
+            summonThread.Start();
 
             // 题库自动在线更新：开启且距离上次检查超过3天时，后台静默更新
             if (_guardian.Rules.AutoUpdateBank && !string.IsNullOrWhiteSpace(_guardian.Rules.QuestionBankUrl))
@@ -111,6 +126,7 @@ namespace StudyLock
                 SystemGuard.Release();
                 _hook?.Dispose();
                 _admin?.Dispose();
+                _summon?.Dispose();
             };
 
             // 初始判定一次

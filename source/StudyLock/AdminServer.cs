@@ -115,6 +115,11 @@ namespace StudyLock
                             _g.AddBonusMinutes(min, "家长手机");
                         Write(res, 200, "application/json; charset=utf-8", "{\"ok\":true}");
                         break;
+                    case "/admin/lock":
+                        // 一键锁屏：立刻弹锁屏窗，孩子答题过关或家长加时后自动解除
+                        _g.ForceLockNow();
+                        Write(res, 200, "application/json; charset=utf-8", "{\"ok\":true}");
+                        break;
                     case "/admin/updatebank":
                         {
                             var msg = await _bank.UpdateFromUrlAsync(_g.Rules.QuestionBankUrl);
@@ -185,6 +190,7 @@ namespace StudyLock
             var obj = new
             {
                 enabled = r.Enabled,
+                locked = _g.ShouldLock(_g.TrustedNow),
                 grade = r.Grade,
                 bonusLeft = s.BonusRemainingSeconds / 60,
                 earnedToday = s.BonusEarnedTodaySeconds / 60,
@@ -235,6 +241,7 @@ button.gray{background:#888}
 <div class="row"><span>答对 / 总答</span><span id="acc">-</span></div>
 <div class="row"><span>时间篡改检测</span><span id="tamper" class="warn">-</span></div>
 <div class="row"><span>管控开关</span><span id="enabled">-</span></div>
+<div class="row"><span>锁屏状态</span><span id="lockstate">-</span></div>
 <div class="row"><span>当前题库</span><span id="bankcount">-</span></div>
 <div class="row"><span>其中本地自建</span><span id="localcount">-</span></div>
 </div>
@@ -248,10 +255,12 @@ button.gray{background:#888}
 <div class="row"><span>每3天自动更新</span><select id="autobank"><option value="true">开启</option><option value="false">关闭</option></select></div>
 <button onclick="updateBank()">立即更新题库</button><span id="bankmsg" style="font-size:12px;color:#666"></span>
 </div>
-<div class="card"><h3>临时加额度</h3>
+<div class="card"><h3>临时加额度 / 立即锁屏</h3>
 <button onclick="add(10)">+10分钟</button>
 <button onclick="add(30)">+30分钟</button>
 <button onclick="add(60)">+60分钟</button>
+<button class="gray" onclick="lockNow()">立即锁屏</button>
+<div style="font-size:12px;color:#666;margin-top:8px">「立即锁屏」会马上弹出锁屏页，孩子答题过关或加时后自动解除；调试时不用再等到时间用完。</div>
 </div>
 <div class="card"><h3>规则设置</h3>
 <div class="row"><span>年级(7=初一)</span><input id="grade" type="number" min="1" max="12"></div>
@@ -294,6 +303,7 @@ async function refresh(){
   acc.textContent = d.correct + ' / ' + d.answered;
   tamper.textContent = d.tamper + ' 次';
   enabled.textContent = d.enabled ? '启用中' : '已停用';
+  lockstate.textContent = d.locked ? '锁屏中' : '已解锁';
   bankcount.textContent = d.bankCount + ' 题';
   localcount.textContent = d.localCount + ' 题';
   uselocal.value = String(d.useLocalBank);
@@ -311,6 +321,7 @@ async function refresh(){
   events.innerHTML = d.events.map(e=>`<div class="ev">${e.Time.substring(5,16)} [${e.Type}] ${e.Detail}</div>`).join('');
 }
 async function add(m){ await fetch('/admin/addbonus?t='+t+'&min='+m); refresh(); alert('已加 '+m+' 分钟'); }
+async function lockNow(){ await fetch('/admin/lock?t='+t); refresh(); alert('已锁屏（孩子答题过关或加时后自动解除）'); }
 async function save(){ await save0(); alert('已保存'); refresh(); }
 async function updateBank(){
   bankmsg.textContent = ' 更新中...';
