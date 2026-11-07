@@ -9,6 +9,13 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AssemblyName>StudyGoodAndGood</AssemblyName>
     <RootNamespace>StudyLock</RootNamespace>
+    <!-- WPF + 单文件发布：必须把原生库（wpfgfx/PresentationNative 等）打包进 exe，
+         否则拷到别的机器上会报 DllNotFound -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
   </PropertyGroup>
 
   <ItemGroup>

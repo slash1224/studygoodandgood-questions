@@ -43,8 +43,24 @@ namespace StudyLock
             }
 
             var src = Environment.ProcessPath!;
-            Directory.CreateDirectory(InstallDir);
-            File.Copy(src, InstalledExe, true);
+            try
+            {
+                Directory.CreateDirectory(InstallDir);
+                File.Copy(src, InstalledExe, true);
+            }
+            catch (IOException)
+            {
+                // 安装目录里的旧版本正在后台运行，exe 被占用，无法覆盖
+                if (File.Exists(InstalledExe))
+                {
+                    System.Windows.MessageBox.Show(
+                        "程序已经在后台运行，不需要重复打开。\n\n" +
+                        "如果确实要换成这个新版本：请先在手机家长管理页点「卸载」旧版，再双击本文件。",
+                        "StudyGoodAndGood");
+                    return true;
+                }
+                throw;
+            }
             RegisterUrlAcl();
             RegisterAutostart();
             Process.Start(new ProcessStartInfo(InstalledExe) { UseShellExecute = true });

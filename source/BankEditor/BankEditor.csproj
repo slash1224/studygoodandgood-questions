@@ -9,6 +9,12 @@
     <RootNamespace>StudyLock</RootNamespace>
     <ApplicationManifest>..\StudyLock\app.manifest</ApplicationManifest>
     <StartupObject>StudyLock.EditorProgram</StartupObject>
+    <!-- 与主程序一致：单文件发布时把 WPF 原生库打包进 exe -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
   </PropertyGroup>
   <ItemGroup>
     <!-- 与主程序共用同一套源码，保证读写规则一致 -->
