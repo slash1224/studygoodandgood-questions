@@ -90,9 +90,27 @@ namespace StudyLock
 
         public static void RegisterAutostart()
         {
-            // 计划任务（最高权限，避免UAC弹窗）+ 注册表双保险
-            Run("schtasks", $"/delete /tn \"{AppName}\" /f");
-            Run("schtasks", $"/create /tn \"{AppName}\" /tr \"\\\"\"{InstalledExe}\"\\\"\" /sc onlogon /rl highest /f");
+            // 计划任务（最高权限，避免 UAC 弹窗）。用 XML 定义创建，避开命令行里嵌套引号导致失败的问题
+            try
+            {
+                var sid = System.Security.Principal.WindowsIdentity.GetCurrent().User?.Value ?? "";
+                var xml = $@"<?xml version=""1.0"" encoding=""UTF-16""?>
+<Task version=""1.2"" xmlns=""http://schemas.microsoft.com/windows/2004/02/mit/task"">
+  <RegistrationInfo><Description>StudyGoodAndGood 开机自启</Description></RegistrationInfo>
+  <Triggers><LogonTrigger><Enabled>true</Enabled></LogonTrigger></Triggers>
+  <Principals><Principal id=""Author""><UserId>{sid}</UserId><LogonType>InteractiveToken</LogonType><RunLevel>HighestAvailable</RunLevel></Principal></Principals>
+  <Settings><MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy><DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries><StopIfGoingOnBatteries>false</StopIfGoingOnBatteries><AllowHardTerminate>true</AllowHardTerminate><StartWhenAvailable>true</StartWhenAvailable><Enabled>true</Enabled></Settings>
+  <Actions Context=""Author""><Exec><Command>{InstalledExe}</Command></Exec></Actions>
+</Task>";
+                var tmp = Path.Combine(Path.GetTempPath(), "sgg_autostart.xml");
+                File.WriteAllText(tmp, xml, System.Text.Encoding.Unicode);
+                Run("schtasks", $"/delete /tn \"{AppName}\" /f");
+                Run("schtasks", $"/create /tn \"{AppName}\" /xml \"{tmp}\" /f");
+                try { File.Delete(tmp); } catch { }
+            }
+            catch { }
+
+            // 注册表双保险
             try
             {
                 using var key = Registry.CurrentUser.OpenSubKey(
