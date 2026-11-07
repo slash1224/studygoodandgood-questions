@@ -24,6 +24,29 @@ namespace StudyLock
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            // 卸载模式：家长双击「卸载学习好.bat」时触发。要家长密码，孩子卸不掉。
+            if (e.Args.Any(a => a.Trim().Equals("--uninstall", StringComparison.OrdinalIgnoreCase)))
+            {
+                base.OnStartup(e);
+                ShutdownMode = ShutdownMode.OnExplicitShutdown;
+                if (!BankEditorWindow.AskPassword(null, "卸载「学习好」需要家长密码", "确认卸载"))
+                {
+                    Shutdown();
+                    return;
+                }
+                Installer.Uninstall();
+                // 结束正在后台运行的实例（它会先于安装目录被清理而退出）
+                foreach (var p in System.Diagnostics.Process.GetProcessesByName(Installer.AppName))
+                {
+                    if (p.Id == Environment.ProcessId) { p.Dispose(); continue; }
+                    try { p.Kill(); } catch { }
+                    p.Dispose();
+                }
+                MessageBox.Show("已卸载。开机自启、后台服务都已清除，几秒内完成清理。", "学习好");
+                Shutdown();
+                return;
+            }
+
             // 编辑器模式：不安装、不锁屏、不接管防护，只提供本地题库维护界面。
             // 进入方式：--editor 参数，或把 exe 重命名为「题库编辑器.exe」双击。
             if (IsEditorRequested(e.Args))

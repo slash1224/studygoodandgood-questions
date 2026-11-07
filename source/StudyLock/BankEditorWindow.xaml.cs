@@ -314,8 +314,9 @@ namespace StudyLock
             catch { return new RuleConfig().ParentPassword; }
         }
 
-        /// <summary>弹出密码框；密码正确返回 true。</summary>
-        public static bool AskPassword(Window? owner)
+        /// <summary>弹出密码框；密码正确返回 true。prompt/okText 可自定义提示语和按钮文字。</summary>
+        public static bool AskPassword(Window? owner,
+            string prompt = "编辑本地题库需要家长密码", string okText = "进入编辑器")
         {
             string expected = ReadParentPassword();
             bool ok = false;
@@ -337,7 +338,7 @@ namespace StudyLock
             var root = new StackPanel { Margin = new Thickness(22) };
             root.Children.Add(new TextBlock
             {
-                Text = "编辑本地题库需要家长密码",
+                Text = prompt,
                 FontSize = 15,
                 FontWeight = FontWeights.Bold
             });
@@ -364,7 +365,7 @@ namespace StudyLock
             var bar = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 16, 0, 0) };
             var okBtn = new Button
             {
-                Content = "进入编辑器",
+                Content = okText,
                 Padding = new Thickness(16, 7, 16, 7),
                 Background = new SolidColorBrush(Color.FromRgb(0x1A, 0x73, 0xE8)),
                 Foreground = Brushes.White,
