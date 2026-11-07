@@ -16,7 +16,7 @@
 
 ## 二、下载
 
-所有可执行文件、安装包和说明书都在 [`C2510学`](./C2510学) 文件夹里：
+所有可执行文件、安装包和说明书都在 [`C2510`](./C2510) 文件夹里：
 
 | 文件 | 用途 |
 |---|---|
@@ -29,7 +29,7 @@
 | `安装说明.txt` | 纯文字速查版 |
 
 > 仓库里的二进制文件可直接用 `raw.githubusercontent.com` 链接下载，例如：
-> `https://raw.githubusercontent.com/slash1224/studygoodandgood-questions/main/C2510学/学习好电视-TV版.apk`
+> `https://raw.githubusercontent.com/slash1224/studygoodandgood-questions/main/C2510/学习好电视-TV版.apk`
 
 ## 三、题库
 
@@ -43,7 +43,7 @@
 
 ```
 ├─ questions.json              # 官方题库（CDN 更新源）
-├─ C2510学/                    # 发布包：EXE / APK / 说明书
+├─ C2510/                    # 发布包：EXE / APK / 说明书
 └─ source/
    ├─ StudyLock/               # 电脑版（C# / WPF, .NET 8）
    ├─ StudyTV/                 # 电视版（Java, 无 Gradle 构建）
@@ -81,4 +81,4 @@ node source\bankbuild\gen\build.js
 
 - 电视版签名密钥（`studygoodtv.keystore`）**未包含**在仓库中，请自行生成后再发布，避免更新包被他人冒签。
 - 本项目为家庭自用工具，安装前请确认设备为本人所有；电脑版会注册开机自启与本地管理端口（8099），电视版为 8787。
-- 使用前请先阅读 [`C2510学/家长使用说明书.pdf`](./C2510学/家长使用说明书.pdf)。
+- 使用前请先阅读 [`C2510/家长使用说明书.pdf`](./C2510/家长使用说明书.pdf)。
