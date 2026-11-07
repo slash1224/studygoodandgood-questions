@@ -118,11 +118,10 @@ namespace StudyLock
         {
             if (!ForceLock) Log("lock", "收到一键锁屏请求");
             ForceLock = true;
-            if (!_lastLockState)
-            {
-                _lastLockState = true;
-                LockStateChanged?.Invoke(true);
-            }
+            _lastLockState = true;
+            // 即使已经处于锁定状态也发一次通知：调试模式下 Alt+F4 关掉窗口后，
+            // 状态仍是锁定，需要靠这次通知把窗口重新弹出来。
+            LockStateChanged?.Invoke(true);
         }
 
         /// <summary>每秒主循环（由 App 调用）</summary>

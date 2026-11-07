@@ -13,6 +13,7 @@ namespace StudyLock
     {
         private static Mutex? _mutex;
         private Guardian? _guardian;
+        private QuestionBank? _bank;
         private LockWindow? _lockWin;
         private KeyboardHook? _hook;
         private AdminServer? _admin;
@@ -75,15 +76,15 @@ namespace StudyLock
             _guardian.DebugMode = Guardian.DetectDebugMode();
             if (_guardian.DebugMode)
                 _guardian.Log("unlock", "调试模式已开启：防护已降级，仅供开发测试");
-            var bank = new QuestionBank();
-            bank.UseLocalBank = _guardian.Rules.UseLocalBank;
-            bank.WeakSubjects = _guardian.Rules.WeakSubjects.ToHashSet();
-            bank.ForceReload();
-            _admin = new AdminServer(_guardian, bank);
+            _bank = new QuestionBank();
+            _bank.UseLocalBank = _guardian.Rules.UseLocalBank;
+            _bank.WeakSubjects = _guardian.Rules.WeakSubjects.ToHashSet();
+            _bank.ForceReload();
+            _admin = new AdminServer(_guardian, _bank);
             _admin.Start();
 
             _hook = new KeyboardHook();
-            _lockWin = new LockWindow(_guardian, bank, _admin);
+            CreateLockWindow();
             _guardian.LockStateChanged += OnLockStateChanged;
 
             // 一键召唤锁屏：第二个实例、手机管理页「立即锁屏」都通过这个命名事件通知本进程
@@ -103,7 +104,7 @@ namespace StudyLock
             {
                 _ = Task.Run(async () =>
                 {
-                    var msg = await bank.UpdateFromUrlIfStaleAsync(_guardian.Rules.QuestionBankUrl, TimeSpan.FromDays(3));
+                    var msg = await _bank.UpdateFromUrlIfStaleAsync(_guardian.Rules.QuestionBankUrl, TimeSpan.FromDays(3));
                     if (msg != null) _guardian.Log("unlock", "题库自动更新：" + msg);
                 });
             }
@@ -153,6 +154,8 @@ namespace StudyLock
             {
                 if (locked)
                 {
+                    // 调试模式下 Alt+F4 会真正关掉窗口并置空引用，这里按需重建
+                    if (_lockWin == null) CreateLockWindow();
                     if (_guardian!.DebugMode)
                     {
                         // 调试模式：只弹锁屏窗口，不启用防护（方便 Alt+F4 / 任务管理器调试）
@@ -172,6 +175,13 @@ namespace StudyLock
                     _lockWin?.HideUnlocked();
                 }
             });
+        }
+
+        private void CreateLockWindow()
+        {
+            _lockWin = new LockWindow(_guardian!, _bank!, _admin!);
+            // 窗口被关闭（调试模式 Alt+F4）后清空引用，下次召唤锁屏时重新创建
+            _lockWin.Closed += (_, _) => _lockWin = null;
         }
     }
 }

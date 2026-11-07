@@ -294,6 +294,14 @@ namespace StudyLock
         {
             // 锁定状态下禁止关闭窗口（调试模式除外）
             if (_topmostTimer.IsEnabled && !_g.DebugMode) e.Cancel = true;
+            if (!e.Cancel)
+            {
+                // 窗口确实要关闭（调试模式 Alt+F4）：停止计时器并退订事件，
+                // 否则下次召唤重建窗口时会出现重复订阅
+                _topmostTimer.Stop();
+                _g.Tick -= RefreshHome;
+                _g.Tick -= RotateQuote;
+            }
             base.OnClosing(e);
         }
     }
