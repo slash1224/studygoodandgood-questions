@@ -11,3 +11,12 @@ dist/
 
 # 签名密钥（不公开）
 *.keystore
+
+# Omni-Edu 本地 AI 老师：大文件不入库
+# 模型（约 12.4GB）首次运行时由 OmniEdu.exe 自动从魔搭下载；
+# 推理运行时（约 1.2GB，含超过 GitHub 100MB 限制的 DLL）用 Omni-Edu/获取运行时.ps1 下载。
+Omni-Edu/models/
+Omni-Edu/runtime/
+Omni-Edu/appdata/
+Omni-Edu/logs/
+Omni-Edu/*.rar

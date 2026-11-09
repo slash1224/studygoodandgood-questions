@@ -51,6 +51,17 @@ namespace StudyLock
         public bool UseLocalBank { get; set; } = true;
         /// <summary>家长指定的偏科科目（如 ["english","math"]），抽题时这些科目权重更高；空表示随机均衡</summary>
         public List<string> WeakSubjects { get; set; } = new();
+
+        // ---------------- 本地 AI 老师（Omni-Edu） ----------------
+
+        /// <summary>是否启用锁屏 AI 老师</summary>
+        public bool AiEnabled { get; set; } = true;
+        /// <summary>本地 AI 服务地址（Omni-Edu 的 llama.cpp 服务）</summary>
+        public string AiServerUrl { get; set; } = "http://127.0.0.1:8080";
+        /// <summary>Omni-Edu 启动器路径（AI 页面按需静默拉起）</summary>
+        public string AiLauncherPath { get; set; } = @"H:\Omni-Edu\OmniEdu.exe";
+        /// <summary>答题不达标时自动打开 AI 老师讲错题</summary>
+        public bool AiAutoOpenOnFail { get; set; } = true;
     }
 
     /// <summary>科目/年级的中文名称，界面和编辑器共用</summary>

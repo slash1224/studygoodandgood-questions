@@ -2,10 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interop;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using QRCoder;
@@ -26,6 +30,24 @@ namespace StudyLock
         private int _index;
         private int _correct;
         private readonly List<string> _wrongExplains = new();
+
+        // ---- AI 老师 ----
+        private readonly List<(Question Q, int Choice)> _wrongQuestions = new();
+        private readonly List<AiChatMessage> _aiMessages = new();
+        private Task? _aiStartTask;
+        private CancellationTokenSource? _aiCts;
+        private bool _aiBusy;
+        private bool _aiGreeted;
+
+        private const string AiSystemPrompt =
+            "你是一位耐心、亲切的中小学 AI 老师，正在学生电脑的锁屏学习界面里和学生对话。\n" +
+            "要求：\n" +
+            "1. 学生问题目时，先引导他自己思考：点出考查的知识点，用提问或举例启发，不要一上来就给最终答案；" +
+            "等学生尝试过或明确要求后，再给出完整讲解和答案。\n" +
+            "2. 讲解分步骤、口语化，适合中小学生，一次回答控制在 300 字以内。\n" +
+            "3. 拒绝任何与学习无关的内容：游戏攻略、娱乐八卦、视频、小说、闲聊灌水等，礼貌说明只能聊学习。\n" +
+            "4. 绝不提供绕过家长管控、解锁电脑、破解软件的方法。\n" +
+            "5. 多鼓励学生，但不要空洞夸奖。";
 
         private static readonly Dictionary<string, string> SubjectNames = Names.Subject;
 
@@ -81,6 +103,7 @@ namespace StudyLock
         public void HideUnlocked()
         {
             _topmostTimer.Stop();
+            ShutdownAiServer();   // 解锁后关掉本地模型，把显存还给游戏
             Hide();
         }
 
@@ -92,6 +115,8 @@ namespace StudyLock
             QuizView.Visibility = Visibility.Collapsed;
             ResultView.Visibility = Visibility.Collapsed;
             ParentView.Visibility = Visibility.Collapsed;
+            AiView.Visibility = Visibility.Collapsed;
+            CancelAiReply();
             RefreshHome();
         }
 
@@ -128,6 +153,8 @@ namespace StudyLock
                 return;
             }
             _index = 0; _correct = 0; _wrongExplains.Clear();
+            _wrongQuestions.Clear();
+            AiExplainBtn.Visibility = Visibility.Collapsed;
             _wrongBookInGroup = _group.Count(q => _bank.Stats.IsWrongBook(q));
             HomeView.Visibility = Visibility.Collapsed;
             QuizView.Visibility = Visibility.Visible;
@@ -169,7 +196,11 @@ namespace StudyLock
             bool right = choice == q.Answer;
             _bank.Stats.Record(q, right);   // 记录历史，错题下次权重更高
             if (right) _correct++;
-            else _wrongExplains.Add($"【{q.Text}】正确答案：{q.Options[q.Answer]}。{q.Explain}");
+            else
+            {
+                _wrongExplains.Add($"【{q.Text}】正确答案：{q.Options[q.Answer]}。{q.Explain}");
+                _wrongQuestions.Add((q, choice));
+            }
 
             _index++;
             if (_index < _group.Count) { ShowQuestion(); return; }
@@ -201,9 +232,242 @@ namespace StudyLock
             ExplainText.Text = _wrongExplains.Count > 0
                 ? "错题解析：\n" + string.Join("\n", _wrongExplains.Take(3))
                 : "全部答对，太棒了！";
+
+            AiExplainBtn.Visibility = _wrongQuestions.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+
+            // 没达标：稍等两秒，自动把孩子带到 AI 老师那里讲错题
+            if (result == Guardian.GroupResult.Failed &&
+                _g.Rules.AiEnabled && _g.Rules.AiAutoOpenOnFail && _wrongQuestions.Count > 0)
+            {
+                var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+                timer.Tick += (_, _) =>
+                {
+                    timer.Stop();
+                    if (ResultView.Visibility == Visibility.Visible) OpenAiWithWrongQuestions();
+                };
+                timer.Start();
+            }
         }
 
         private void OnResultOk(object sender, RoutedEventArgs e) => ShowHome();
+
+        // ---------------- AI 老师（本地模型） ----------------
+
+        private void OnOpenAiHome(object sender, RoutedEventArgs e) => ShowAiView();
+
+        private void OnAiExplainWrong(object sender, RoutedEventArgs e) => OpenAiWithWrongQuestions();
+
+        private void OnAiExplainWrongInChat(object sender, RoutedEventArgs e) => OpenAiWithWrongQuestions();
+
+        private void OnAiBack(object sender, RoutedEventArgs e)
+        {
+            CancelAiReply();
+            ShowHome();
+        }
+
+        /// <summary>打开 AI 页面，并把本次错题交给老师讲解</summary>
+        private void OpenAiWithWrongQuestions()
+        {
+            ShowAiView();
+            if (_wrongQuestions.Count == 0) return;
+            _ = SendAiAsync(BuildWrongContext());
+        }
+
+        private void ShowAiView()
+        {
+            HomeView.Visibility = Visibility.Collapsed;
+            QuizView.Visibility = Visibility.Collapsed;
+            ResultView.Visibility = Visibility.Collapsed;
+            ParentView.Visibility = Visibility.Collapsed;
+            AiView.Visibility = Visibility.Visible;
+            AiWrongBtn.Visibility = _wrongQuestions.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+
+            if (!_aiGreeted)
+            {
+                _aiGreeted = true;
+                AddBubble("我是 AI 老师，可以帮你理解题目、讲讲知识点。\n这里只能聊学习，不能聊游戏哦。", false);
+            }
+            AiScroll.ScrollToEnd();
+            AiInput.Focus();
+        }
+
+        private void OnAiSend(object sender, RoutedEventArgs e) => _ = SendAiAsync(AiInput.Text);
+
+        private void OnAiInputKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Enter) return;
+            e.Handled = true;
+            _ = SendAiAsync(AiInput.Text);
+        }
+
+        private async Task SendAiAsync(string? text)
+        {
+            text = (text ?? "").Trim();
+            if (_aiBusy || text.Length == 0) return;
+            if (AiView.Visibility != Visibility.Visible) ShowAiView();
+
+            AiInput.Text = "";
+            AddBubble(text, true);
+            _aiMessages.Add(new AiChatMessage("user", text));
+
+            _aiBusy = true;
+            AiSendBtn.IsEnabled = false;
+            var reply = AddBubble("", false);
+            var sb = new StringBuilder();
+
+            try
+            {
+                if (!await EnsureAiReadyAsync())
+                {
+                    reply.Text = "（AI 老师暂时不可用）";
+                    return;
+                }
+
+                var rules = _g.Rules;
+                var msgs = new List<AiChatMessage> { new AiChatMessage("system", AiSystemPrompt) };
+                msgs.AddRange(_aiMessages.TakeLast(10));
+
+                CancelAiReply();
+                _aiCts = new CancellationTokenSource();
+                var token = _aiCts.Token;
+
+                await AiTutor.ChatStreamAsync(rules.AiServerUrl, msgs, delta =>
+                {
+                    sb.Append(delta);
+                    Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        reply.Text = sb.ToString();
+                        AiScroll.ScrollToEnd();
+                    }));
+                }, token, () => Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    if (sb.Length == 0) reply.Text = "老师正在思考……";
+                })));
+
+                string answer = sb.ToString().Trim();
+                if (answer.Length == 0) reply.Text = "（没有收到回复，请再试一次）";
+                else _aiMessages.Add(new AiChatMessage("assistant", answer));
+            }
+            catch (OperationCanceledException)
+            {
+                if (sb.Length > 0) reply.Text = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                reply.Text = "（回答失败：" + ex.Message + "）";
+            }
+            finally
+            {
+                _aiBusy = false;
+                AiSendBtn.IsEnabled = true;
+                AiScroll.ScrollToEnd();
+            }
+        }
+
+        /// <summary>确保本地 AI 服务可用；首次启动会等待模型加载（1-3 分钟）</summary>
+        private async Task<bool> EnsureAiReadyAsync()
+        {
+            var rules = _g.Rules;
+            if (!rules.AiEnabled)
+            {
+                AiStatus.Text = "家长已关闭 AI 老师功能。";
+                return false;
+            }
+            if (AiTutor.ServerReady(rules.AiServerUrl))
+            {
+                AiStatus.Text = "AI 老师已就绪（本地模型，断网也能用）";
+                return true;
+            }
+
+            // 上一轮启动任务已完成但服务已不在（解锁后释放、或进程异常退出）→ 允许重新启动
+            if (_aiStartTask != null && _aiStartTask.IsCompleted) _aiStartTask = null;
+
+            if (_aiStartTask == null)
+            {
+                AiStatus.Text = "正在启动本地 AI 老师……首次加载需要 1-3 分钟，请耐心等待";
+                _aiStartTask = Task.Run(() => AiTutor.EnsureServerAsync(rules.AiServerUrl, rules.AiLauncherPath,
+                    s => Dispatcher.BeginInvoke(new Action(() => AiStatus.Text = s)),
+                    CancellationToken.None));
+            }
+
+            try { await _aiStartTask; }
+            catch (Exception ex)
+            {
+                _aiStartTask = null;
+                AiStatus.Text = "AI 老师启动失败：" + ex.Message;
+                return false;
+            }
+
+            if (AiTutor.ServerReady(rules.AiServerUrl)) return true;
+            _aiStartTask = null;
+            return false;
+        }
+
+        private void CancelAiReply()
+        {
+            try { _aiCts?.Cancel(); } catch { }
+            _aiCts?.Dispose();
+            _aiCts = null;
+        }
+
+        /// <summary>停止对话并结束本地模型服务（只结束自己拉起的进程）</summary>
+        private void ShutdownAiServer()
+        {
+            CancelAiReply();
+            AiTutor.StopServer();
+            _aiStartTask = null;
+        }
+
+        private TextBlock AddBubble(string text, bool fromUser)
+        {
+            var tb = new TextBlock
+            {
+                Text = text,
+                TextWrapping = TextWrapping.Wrap,
+                FontSize = 15,
+                Foreground = Brushes.White,
+                LineHeight = 22
+            };
+            var border = new Border
+            {
+                CornerRadius = new CornerRadius(10),
+                Padding = new Thickness(14, 10, 14, 10),
+                Margin = new Thickness(0, 6, 0, 6),
+                MaxWidth = 680,
+                HorizontalAlignment = fromUser ? HorizontalAlignment.Right : HorizontalAlignment.Left,
+                Background = new SolidColorBrush(fromUser
+                    ? Color.FromRgb(0x1A, 0x73, 0xE8)
+                    : Color.FromRgb(0x23, 0x2A, 0x33)),
+                Child = tb
+            };
+            AiMessagesPanel.Children.Add(border);
+            AiScroll.ScrollToEnd();
+            return tb;
+        }
+
+        /// <summary>把本次错题整理成给 AI 的提问文本（含题干、选项、孩子答案、正确答案）</summary>
+        private string BuildWrongContext()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("我这次答题有几道做错了，请帮我讲一讲。先别直接给答案，带我想一想我可能哪里想错了，再一步步讲解。");
+            int i = 1;
+            foreach (var item in _wrongQuestions.Take(5))
+            {
+                var q = item.Q;
+                sb.AppendLine();
+                sb.AppendLine($"{i}. 【{Names.SubjectCn(q.Subject)}】{q.Text}");
+                for (int k = 0; k < q.Options.Count; k++)
+                    sb.AppendLine($"   {(char)('A' + k)}. {q.Options[k]}");
+                string mine = item.Choice >= 0 && item.Choice < q.Options.Count
+                    ? $"{(char)('A' + item.Choice)}. {q.Options[item.Choice]}"
+                    : "（未作答）";
+                sb.AppendLine($"   我的答案：{mine}");
+                sb.AppendLine($"   正确答案：{(char)('A' + q.Answer)}. {q.Options[q.Answer]}");
+                if (!string.IsNullOrWhiteSpace(q.Explain)) sb.AppendLine($"   题库解析：{q.Explain}");
+                i++;
+            }
+            return sb.ToString().TrimEnd();
+        }
 
         // ---------------- 家长面板 ----------------
 
@@ -301,6 +565,7 @@ namespace StudyLock
                 _topmostTimer.Stop();
                 _g.Tick -= RefreshHome;
                 _g.Tick -= RotateQuote;
+                ShutdownAiServer();
             }
             base.OnClosing(e);
         }

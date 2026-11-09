@@ -1,7 +1,7 @@
 # 学习好 · StudyGoodAndGood
 
 给初中生用的学习管控工具：**先答题，再换取看视频 / 用电脑的时间**。
-包含 Windows 电脑版、安卓电视版、手机远程管理页，以及一套约 3 万道初中选择题的题库。
+包含 Windows 电脑版、安卓电视版、手机远程管理页、本地 AI 讲题老师，以及一套约 3 万道初中选择题的题库。
 
 ---
 
@@ -44,6 +44,11 @@
 ```
 ├─ questions.json              # 官方题库（CDN 更新源）
 ├─ C2510/                    # 发布包：EXE / APK / 说明书
+├─ Omni-Edu/                  # 本地 AI 老师（启动器、说明书、运行时下载脚本）
+│  ├─ OmniEdu.exe             # 启动器（模型缺失时自动从魔搭下载）
+│  ├─ 获取运行时.ps1          # 首次使用前运行，下载 llama.cpp 推理运行时
+│  ├─ models/                 # 模型文件（不入库，首次运行自动下载约 12.4GB）
+│  └─ runtime/                # 推理运行时（不入库，用脚本下载约 1.2GB）
 └─ source/
    ├─ StudyLock/               # 电脑版（C# / WPF, .NET 8）
    ├─ StudyTV/                 # 电视版（Java, 无 Gradle 构建）
@@ -77,7 +82,36 @@ node source\bankbuild\gen\build.js
 
 输出会写到 `bankbuild/dist/questions.json`、`StudyLock/questions.json`、`StudyTV/assets/questions.json` 三处。
 
-## 六、说明
+## 六、本地 AI 老师（Omni-Edu，可选）
+
+电脑版答错题时，可以调用本机的 Omni-Edu 小老师把题目讲明白。**完全离线运行，题目和对话内容不出本机。**
+
+### 使用限制
+
+| 项目 | 要求 |
+|---|---|
+| 操作系统 | **仅 Windows 10 / 11**；安卓手机、安卓电视、苹果设备暂不支持 |
+| 显卡 | **NVIDIA 显卡，推荐 RTX 3060 12GB 及以上**；显存低于 8GB 无法运行，8GB 只能跑 4B 小模型 |
+| 磁盘 | 模型约 12.4GB、运行时约 1.2GB，另需临时下载空间 |
+| 运行占用 | 9B 模型约占用 7–8GB 显存，关闭 AI 页面后自动释放 |
+
+### 首次准备（只需做一次）
+
+1. 把仓库里的 `Omni-Edu` 文件夹剪切到 `H:\Omni-Edu`（程序默认去这里找；电脑没有 H 盘时放别处，并修改 rules.json 里的 `AiLauncherPath`）。
+2. 在 `Omni-Edu` 文件夹里运行 `获取运行时.ps1`，从 llama.cpp 官方发布页下载 Windows CUDA 12.4 运行时（两个 zip，约 650MB）。
+   - 仓库里为什么不带 runtime：其中 `ggml-cuda.dll` 和 `cublasLt64_12.dll` 分别有 585MB / 451MB，超过 GitHub 单文件 100MB 限制，无法直接提交。
+3. 先双击 `OmniEdu.exe`，等它自动从魔搭下载模型（约 12.4GB，需联网，只需一次）。下载完成后，电脑版锁屏里的 AI 老师就能离线使用。
+
+### 使用方式
+
+- 锁屏界面点「有问题？问 AI 老师」
+- 答题没过关时，结果页点「AI 老师讲解错题」
+- AI 页面关闭后，推理进程自动退出并释放显存
+
+> 官方运行时下载地址（脚本已内置；国内访问 GitHub 慢时可挂代理）：
+> `https://github.com/ggml-org/llama.cpp/releases/tag/b12211`
+
+## 七、说明
 
 - 电视版签名密钥（`studygoodtv.keystore`）**未包含**在仓库中，请自行生成后再发布，避免更新包被他人冒签。
 - 本项目为家庭自用工具，安装前请确认设备为本人所有；电脑版会注册开机自启与本地管理端口（8099），电视版为 8787。
