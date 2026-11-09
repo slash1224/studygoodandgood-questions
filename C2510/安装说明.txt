@@ -82,7 +82,9 @@
 2. 电脑必须是 NVIDIA 显卡，推荐 RTX 3060 12GB 及以上。显存低于 8GB 跑不起来；
    8GB 只能跑 4B 小模型，速度一般。
 3. 首次准备（只需一次）：
-   - 把项目里的 Omni-Edu 文件夹放到 H:\Omni-Edu（程序默认去这里找）。
+   - 不用单独安装：保持项目里 Omni-Edu 和 C2510 的相对位置，双击 C2510 里的
+     StudyGoodAndGood.exe，首次安装会自动记录 Omni-Edu 的路径（任意盘符都可以）。
+     如果之后移动了 Omni-Edu 文件夹，需要把新路径填到 rules.json 的 AiLauncherPath。
    - 双击 Omni-Edu 里的「获取运行时.ps1」，从 llama.cpp 官方发布页下载约 650MB 的
      推理运行时。仓库里不带 runtime，是因为其中两个 DLL 超过 GitHub 单文件 100MB 限制。
    - 先双击 Omni-Edu 里的 OmniEdu.exe，等它自动从魔搭下载模型（约 12.4GB，需要联网，

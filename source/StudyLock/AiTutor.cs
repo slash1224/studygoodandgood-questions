@@ -78,9 +78,10 @@ namespace StudyLock
             string? exe = ResolveLauncherPath(launcherPath);
             if (exe == null)
                 throw new InvalidOperationException(
-                    "找不到本地 AI 程序：\n" + DefaultLauncherPath
-                    + "\n\n请确认 Omni-Edu 文件夹的位置（可请家长修改 rules.json 里的 AiLauncherPath，"
-                    + "或把 Omni-Edu 文件夹放在 H:\\Omni-Edu）。");
+                    "找不到本地 AI 程序（OmniEdu.exe）。\n\n"
+                    + "请保持 Omni-Edu 文件夹与 C2510 安装包在同一个项目目录里，"
+                    + "或把 Omni-Edu 放到程序所在目录（或其上一级），"
+                    + "也可以在 rules.json 里填写完整的 AiLauncherPath。");
 
             status?.Invoke("正在启动本地 AI 老师……首次加载需要 1-3 分钟，请耐心等待");
 
@@ -243,23 +244,27 @@ namespace StudyLock
         }
 
         /// <summary>
-        /// 找可用的 Omni-Edu 启动器：优先用规则里的路径，其次 H:\Omni-Edu（默认位置），
-        /// 最后找 EXE 旁边的 Omni-Edu 文件夹（把项目直接解压/克隆后使用的便携布局）。
+        /// 找可用的 Omni-Edu 启动器：优先用规则里的路径，其次在程序所在目录及各级上级目录里
+        /// 找 Omni-Edu 文件夹（便携/仓库布局），最后兼容旧默认位置 H:\Omni-Edu。
         /// </summary>
         private static string? ResolveLauncherPath(string? configured)
         {
             var candidates = new List<string>();
             if (!string.IsNullOrWhiteSpace(configured)) candidates.Add(configured!.Trim());
-            candidates.Add(DefaultLauncherPath);
 
-            string baseDir = AppContext.BaseDirectory;
-            candidates.Add(Path.Combine(baseDir, "Omni-Edu", "OmniEdu.exe"));
             try
             {
-                candidates.Add(Path.GetFullPath(Path.Combine(baseDir, "..", "Omni-Edu", "OmniEdu.exe")));
-                candidates.Add(Path.GetFullPath(Path.Combine(baseDir, "..", "..", "Omni-Edu", "OmniEdu.exe")));
+                var dir = new DirectoryInfo(AppContext.BaseDirectory);
+                for (int i = 0; i < 6 && dir != null; i++)
+                {
+                    candidates.Add(Path.Combine(dir.FullName, "Omni-Edu", "OmniEdu.exe"));
+                    dir = dir.Parent;
+                }
             }
             catch { }
+
+            // 旧版默认位置：兼容已经按 H:\Omni-Edu 摆好文件夹的用户
+            candidates.Add(DefaultLauncherPath);
 
             foreach (var c in candidates)
                 if (File.Exists(c)) return c;

@@ -97,7 +97,7 @@ node source\bankbuild\gen\build.js
 
 ### 首次准备（只需做一次）
 
-1. 把仓库里的 `Omni-Edu` 文件夹剪切到 `H:\Omni-Edu`（程序默认去这里找；电脑没有 H 盘时放别处，并修改 rules.json 里的 `AiLauncherPath`）。
+1. 不用单独安装：保持仓库里 `Omni-Edu` 和 `C2510` 的相对位置不变，双击 `C2510\StudyGoodAndGood.exe` 首次安装时会自动记录 `Omni-Edu` 的路径，**任意盘符都可以**（也兼容旧的 `H:\Omni-Edu`）。如果之后移动了文件夹，请把新路径填到 `rules.json` 的 `AiLauncherPath`。
 2. 在 `Omni-Edu` 文件夹里运行 `获取运行时.ps1`，从 llama.cpp 官方发布页下载 Windows CUDA 12.4 运行时（两个 zip，约 650MB）。
    - 仓库里为什么不带 runtime：其中 `ggml-cuda.dll` 和 `cublasLt64_12.dll` 分别有 585MB / 451MB，超过 GitHub 单文件 100MB 限制，无法直接提交。
 3. 先双击 `OmniEdu.exe`，等它自动从魔搭下载模型（约 12.4GB，需联网，只需一次）。下载完成后，电脑版锁屏里的 AI 老师就能离线使用。

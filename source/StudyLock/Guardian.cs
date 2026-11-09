@@ -261,7 +261,9 @@ namespace StudyLock
                 if (!File.Exists(path)) return fallback;
                 var bytes = File.ReadAllBytes(path);
                 if (encrypt) bytes = ProtectedData.Unprotect(bytes, null, DataProtectionScope.CurrentUser);
-                return JsonSerializer.Deserialize<T>(Encoding.UTF8.GetString(bytes)) ?? fallback;
+                // 兼容记事本 / PowerShell 5 保存的带 BOM 的 UTF-8，避免外部编辑后整份规则被静默重置
+                var text = Encoding.UTF8.GetString(bytes).Trim().TrimStart('\uFEFF').Trim();
+                return JsonSerializer.Deserialize<T>(text) ?? fallback;
             }
             catch { return fallback; } // 文件损坏时回退默认，不让程序崩溃
         }

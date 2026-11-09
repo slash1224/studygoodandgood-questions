@@ -58,8 +58,8 @@ namespace StudyLock
         public bool AiEnabled { get; set; } = true;
         /// <summary>本地 AI 服务地址（Omni-Edu 的 llama.cpp 服务）</summary>
         public string AiServerUrl { get; set; } = "http://127.0.0.1:8080";
-        /// <summary>Omni-Edu 启动器路径（AI 页面按需静默拉起）</summary>
-        public string AiLauncherPath { get; set; } = @"H:\Omni-Edu\OmniEdu.exe";
+        /// <summary>Omni-Edu 启动器路径（留空时自动在程序目录/上一级目录查找 Omni-Edu）</summary>
+        public string AiLauncherPath { get; set; } = "";
         /// <summary>答题不达标时自动打开 AI 老师讲错题</summary>
         public bool AiAutoOpenOnFail { get; set; } = true;
     }

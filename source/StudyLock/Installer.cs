@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Text.Json;
 using Microsoft.Win32;
 
 namespace StudyLock
@@ -53,6 +54,10 @@ namespace StudyLock
             // 清理改名前旧版（StudyLock）的残留：旧自启项会让新旧两版开机同时弹锁屏互抢前台
             RemoveLegacyInstall();
 
+            // 先记录项目内 Omni-Edu 的实际路径；即使安装目录里的旧版正在运行导致复制失败，
+            // 下次启动也能用上正确的 AI 路径
+            AutoConfigureAiPath();
+
             if (IsInstalled())
             {
                 // 已安装：每次启动都确认自启注册还在（防止被清理）
@@ -85,6 +90,58 @@ namespace StudyLock
             RegisterAutostart();
             Process.Start(new ProcessStartInfo(InstalledExe) { UseShellExecute = true });
             return true;
+        }
+
+        /// <summary>
+        /// 首次安装/升级时，如果项目里自带 Omni-Edu 文件夹，就把它的绝对路径写进 rules.json，
+        /// 这样换一台电脑、换一个盘符也能直接用，不再依赖固定的 H:\Omni-Edu。
+        /// 如果配置里已经有可用的路径，则保持不变。
+        /// </summary>
+        private static void AutoConfigureAiPath()
+        {
+            try
+            {
+                var detected = DetectOmniEduNear(Environment.ProcessPath ?? "");
+                if (detected == null) return;
+
+                var rulesPath = Path.Combine(Guardian.DataDir, "rules.json");
+                RuleConfig rules;
+                if (File.Exists(rulesPath))
+                {
+                    var text = System.Text.Encoding.UTF8.GetString(File.ReadAllBytes(rulesPath))
+                        .Trim().TrimStart('\uFEFF').Trim();
+                    rules = JsonSerializer.Deserialize<RuleConfig>(text) ?? new RuleConfig();
+                    if (!string.IsNullOrWhiteSpace(rules.AiLauncherPath)
+                        && File.Exists(rules.AiLauncherPath)) return;
+                }
+                else
+                {
+                    rules = new RuleConfig();
+                }
+
+                rules.AiLauncherPath = detected;
+                Directory.CreateDirectory(Guardian.DataDir);
+                File.WriteAllBytes(rulesPath,
+                    System.Text.Encoding.UTF8.GetBytes(JsonSerializer.Serialize(rules)));
+            }
+            catch { }
+        }
+
+        /// <summary>从 EXE 所在目录向上找 Omni-Edu\OmniEdu.exe（最多 6 层，覆盖仓库和构建目录布局）。</summary>
+        private static string? DetectOmniEduNear(string exePath)
+        {
+            try
+            {
+                var dir = new DirectoryInfo(Path.GetDirectoryName(exePath) ?? "");
+                for (int i = 0; i < 6 && dir != null; i++)
+                {
+                    var path = Path.Combine(dir.FullName, "Omni-Edu", "OmniEdu.exe");
+                    if (File.Exists(path)) return path;
+                    dir = dir.Parent;
+                }
+            }
+            catch { }
+            return null;
         }
 
         /// <summary>
