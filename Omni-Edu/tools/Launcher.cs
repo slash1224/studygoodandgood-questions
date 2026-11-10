@@ -5,11 +5,6 @@
 //          -> 显存 >= 16GB：运行 9B 模型
 //          -> 检查所选模型的两个文件（缺失自动从魔搭下载，显示进度/速度/剩余时间）
 //          -> 后台启动 llama-server -> 欢迎窗口等待 -> 应用模式浏览器窗口 -> 关窗自动停止服务
-// 静默服务模式（供学习锁屏程序调用，无界面、无浏览器）：
-//   OmniEdu.exe --server
-//   -> 检测硬件/检查模型（缺模型不自动下载，直接写错误日志并退出）
-//   -> 启动 llama-server -> 等待 /health 就绪 -> 常驻直到被外部结束
-//   -> 失败信息写入 logs\ai-server-error.txt
 // 编译: csc /nologo /target:winexe /codepage:65001 /out:OmniEdu.exe Launcher.cs /r:System.dll /r:System.Windows.Forms.dll /r:System.Drawing.dll /r:System.Management.dll
 
 using System;
@@ -343,23 +338,16 @@ internal static class Program
     private static Mutex _mutex;
 
     [STAThread]
-    private static void Main(string[] args)
+    private static void Main()
     {
-        // 以 EXE 所在目录为根目录，整个文件夹可随意迁移（不写绝对路径）
-        RootDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-        // 静默服务模式：学习锁屏程序（StudyLock）按需拉起，不显示任何界面
-        if (HasArg(args, "--server"))
-        {
-            RunServerMode();
-            return;
-        }
-
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
         // 魔搭要求 TLS1.2；老系统默认协议可能连不上
         try { ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072; } catch { }
         try { ServicePointManager.Expect100Continue = false; } catch { }
+
+        // 以 EXE 所在目录为根目录，整个文件夹可随意迁移（不写绝对路径）
+        RootDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
         string serverExe = Path.Combine(RootDir, "runtime\\llama.cpp\\llama-server.exe");
         if (!File.Exists(serverExe))
@@ -425,117 +413,6 @@ internal static class Program
             try { _mutex.ReleaseMutex(); } catch { }
             try { _mutex.Dispose(); } catch { }
         }
-    }
-
-    // ---------------- 静默服务模式（给学习锁屏程序用） ----------------
-
-    private static bool HasArg(string[] args, string name)
-    {
-        if (args == null) return false;
-        foreach (string a in args)
-        {
-            if (string.Equals((a ?? "").Trim(), name, StringComparison.OrdinalIgnoreCase)) return true;
-        }
-        return false;
-    }
-
-    /// <summary>
-    /// 无界面服务模式：检测硬件 -> 要求模型已存在 -> 启动 llama-server -> 等待就绪 -> 常驻。
-    /// 失败时不弹窗，把原因写入 logs\ai-server-error.txt，供锁屏程序读取展示。
-    /// </summary>
-    private static void RunServerMode()
-    {
-        string logDir = Path.Combine(RootDir, "logs");
-        string errPath = Path.Combine(logDir, "ai-server-error.txt");
-        try { Directory.CreateDirectory(logDir); } catch { }
-        try { if (File.Exists(errPath)) File.Delete(errPath); } catch { }
-
-        try
-        {
-            string serverExe = Path.Combine(RootDir, "runtime\\llama.cpp\\llama-server.exe");
-            if (!File.Exists(serverExe))
-            {
-                ServerFail(errPath, "启动失败：找不到推理引擎\r\n" + serverExe
-                    + "\r\n\r\n解决办法：重新解压完整的 Omni-Edu 文件夹，保持目录结构不变。", 2);
-                return;
-            }
-
-            GpuInfo gpu = Hardware.DetectGpu();
-            HardwareDecision decision = Hardware.Evaluate(gpu);
-            if (decision.Profile == null)
-            {
-                ServerFail(errPath, Hardware.BuildFailMessage(gpu, decision)
-                    + "\r\n\r\n【说明】AI 老师功能在本机运行，需要 NVIDIA 显卡且显存 8 GB 以上。", 3);
-                return;
-            }
-
-            ModelProfile profile = decision.Profile;
-            string modelPath = Path.Combine(RootDir, "models\\" + profile.MainName);
-            string mmprojPath = Path.Combine(RootDir, "models\\" + profile.MmprojName);
-            if (!FileIsComplete(modelPath, profile.Files[0].Size) || !FileIsComplete(mmprojPath, profile.Files[1].Size))
-            {
-                ServerFail(errPath, "启动失败：" + profile.Key + " 模型文件缺失或不完整\r\n" + modelPath
-                    + "\r\n\r\n解决办法：先双击运行一次 OmniEdu.exe，等模型下载完成后再使用 AI 老师。", 4);
-                return;
-            }
-
-            if (IsReady()) return; // 已经有服务在跑，直接复用
-
-            int ctxSize = Hardware.ChooseContextSize(profile, gpu.VramMb);
-            if (!StartServer(serverExe, modelPath, mmprojPath, profile, ctxSize, true))
-            {
-                ServerFail(errPath, "启动失败：推理引擎进程无法启动\r\n详情见日志：" + LogPath, 5);
-                return;
-            }
-
-            // 等待模型加载完成，最多 5 分钟
-            int waited = 0;
-            while (waited < 300)
-            {
-                if (IsReady()) break;
-                if (ServerProc != null && ServerProc.HasExited)
-                {
-                    ServerFail(errPath, "启动失败：推理引擎异常退出\r\n详情见日志：" + LogPath
-                        + "\r\n\r\n常见原因：显存不足、模型文件损坏。", 6);
-                    return;
-                }
-                Thread.Sleep(1000);
-                waited++;
-            }
-            if (!IsReady())
-            {
-                ServerFail(errPath, "启动失败：等待模型加载超时（5 分钟）\r\n详情见日志：" + LogPath
-                    + "\r\n\r\n建议：关闭其它占用显存的程序后重试。", 7);
-                StopServer();
-                return;
-            }
-
-            // 就绪后常驻，由 StudyLock 结束本进程（taskkill /T 会一并结束 llama-server）
-            if (ServerProc != null)
-            {
-                while (!ServerProc.HasExited) Thread.Sleep(1000);
-            }
-        }
-        catch (Exception ex)
-        {
-            ServerFail(errPath, "启动失败：" + ex.Message, 8);
-        }
-    }
-
-    private static bool FileIsComplete(string path, long expectedSize)
-    {
-        try { return File.Exists(path) && new FileInfo(path).Length == expectedSize; }
-        catch { return false; }
-    }
-
-    private static void ServerFail(string errPath, string message, int exitCode)
-    {
-        try
-        {
-            File.WriteAllText(errPath, message, new UTF8Encoding(false));
-        }
-        catch { }
-        Environment.ExitCode = exitCode;
     }
 
     // ---------------- 模型文件检查与下载 ----------------
@@ -723,7 +600,7 @@ internal static class Program
 
     // ---------------- 服务启动与等待 ----------------
 
-    private static bool StartServer(string serverExe, string modelPath, string mmprojPath, ModelProfile profile, int ctxSize, bool quiet = false)
+    private static bool StartServer(string serverExe, string modelPath, string mmprojPath, ModelProfile profile, int ctxSize)
     {
         try
         {
@@ -757,7 +634,7 @@ internal static class Program
         }
         catch (Exception ex)
         {
-            if (!quiet) ShowError("模型服务启动失败：\r\n" + ex.Message, profile.Title);
+            ShowError("模型服务启动失败：\r\n" + ex.Message, profile.Title);
             return false;
         }
     }
@@ -844,6 +721,7 @@ internal static class Program
             {
                 // 独立 user-data-dir：应用窗口与普通浏览器互不影响
                 string userData = Path.Combine(RootDir, "appdata\\browser");
+                EnsureFreshBrowserProfile(userData, browser);
                 Directory.CreateDirectory(userData);
 
                 ProcessStartInfo psi = new ProcessStartInfo();
@@ -947,6 +825,65 @@ internal static class Program
             }
             Thread.Sleep(500);
         }
+    }
+
+    // 浏览器 user-data-dir 跨机器拷贝、浏览器升级或崩溃后，Edge 会在启动时触发
+    // 内部断点（SubCode=0x80000003，msedge.dll），表现为问答窗口一闪即退。
+    // 这里在每次打开问答窗口前做一次轻量自检：本机 Edge 版本与上次记录的
+    // Last Version 不一致，或 Crashpad 里已有崩溃转储，都判定为损坏，删除
+    // 整个配置目录让 Edge 自动重建。自愈失败吞掉异常，保证主流程还能退回
+    // 默认浏览器（OpenChatAndWait 末尾的兜底分支）。
+    private static void EnsureFreshBrowserProfile(string userData, string browserExe)
+    {
+        try
+        {
+            if (!Directory.Exists(userData)) return;
+
+            bool corrupted = false;
+
+            // 信号 1：浏览器版本变更（跨机器拷贝、Edge/Chrome 升级都触发）
+            string expectedVersion = null;
+            try
+            {
+                System.Diagnostics.FileVersionInfo vi = System.Diagnostics.FileVersionInfo.GetVersionInfo(browserExe);
+                if (vi != null) expectedVersion = vi.ProductVersion;
+            }
+            catch { }
+
+            if (!string.IsNullOrEmpty(expectedVersion))
+            {
+                string lastVersionFile = Path.Combine(userData, "Last Version");
+                if (File.Exists(lastVersionFile))
+                {
+                    string recordedVersion;
+                    try { recordedVersion = File.ReadAllText(lastVersionFile).Trim(); } catch { recordedVersion = ""; }
+                    if (!string.IsNullOrEmpty(recordedVersion) && recordedVersion != expectedVersion)
+                        corrupted = true;
+                }
+            }
+
+            // 信号 2：已有崩溃转储（上次用这个 profile 启动 Edge 崩过）
+            if (!corrupted)
+            {
+                string crashpadDir = Path.Combine(userData, "Crashpad");
+                if (Directory.Exists(crashpadDir))
+                {
+                    try
+                    {
+                        foreach (string dmp in Directory.EnumerateFiles(crashpadDir, "*.dmp", SearchOption.AllDirectories))
+                        { corrupted = true; break; }
+                    }
+                    catch { }
+                }
+            }
+
+            if (corrupted)
+            {
+                KillStaleAppBrowsers();
+                try { Directory.Delete(userData, true); } catch { }
+            }
+        }
+        catch { }
     }
 
     private static string FindBrowser()
