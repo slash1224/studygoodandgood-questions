@@ -9,7 +9,7 @@ namespace StudyLock
         public int Id { get; set; }
         /// <summary>科目: math/chinese/english/coding</summary>
         public string Subject { get; set; } = "";
-        /// <summary>适用年级(7=初一 ... 12=高三)，0=通用</summary>
+        /// <summary>适用年级(1-6=小学, 7-9=初中)，0=通用</summary>
         public int Grade { get; set; }
         /// <summary>难度 1-3</summary>
         public int Difficulty { get; set; } = 1;
@@ -23,7 +23,7 @@ namespace StudyLock
     /// <summary>家长规则配置</summary>
     public class RuleConfig
     {
-        /// <summary>孩子当前年级 7-9(初中)，用于筛题</summary>
+        /// <summary>孩子当前年级 1-9(1-6小学, 7-9初中)，用于筛题</summary>
         public int Grade { get; set; } = 7;
         /// <summary>每组题量</summary>
         public int QuestionsPerGroup { get; set; } = 5;
@@ -76,7 +76,10 @@ namespace StudyLock
 
         public static readonly Dictionary<int, string> Grade = new()
         {
-            [0] = "通用", [7] = "初一", [8] = "初二", [9] = "初三"
+            [0] = "通用",
+            [1] = "一年级", [2] = "二年级", [3] = "三年级",
+            [4] = "四年级", [5] = "五年级", [6] = "六年级",
+            [7] = "初一", [8] = "初二", [9] = "初三"
         };
 
         public static string SubjectCn(string s) => Subject.TryGetValue(s, out var n) ? n : s;

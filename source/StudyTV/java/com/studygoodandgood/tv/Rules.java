@@ -15,7 +15,7 @@ public class Rules {
 
     public static final String PREF = "sgag_rules";
 
-    /** 孩子年级 7-9，0=通用 */
+    /** 孩子年级 1-9(1-6小学, 7-9初中)，0=通用 */
     public int grade = 7;
     public int questionsPerGroup = 5;
     /** 每组通过所需正确率 0-100 */

@@ -14,6 +14,7 @@ require('./physics');
 require('./chemistry');
 require('./biology');
 require('./coding');
+require('./elementary');
 
 const preGenerated = core.sortedBySubject();
 const preTotal = core.stats(preGenerated).total;

@@ -391,7 +391,11 @@ public class AdminServer {
                 .append("</div></div>");
 
         s.append("<div class=\"card\"><h2>学习规则</h2>")
-                .append(row("孩子年级", "<select id=\"grade\"><option value=\"7\">初一</option><option value=\"8\">初二</option><option value=\"9\">初三</option><option value=\"0\">通用</option></select>"))
+                .append(row("孩子年级", "<select id=\"grade\">"
+                        + "<option value=\"1\">小学一年级</option><option value=\"2\">小学二年级</option><option value=\"3\">小学三年级</option>"
+                        + "<option value=\"4\">小学四年级</option><option value=\"5\">小学五年级</option><option value=\"6\">小学六年级</option>"
+                        + "<option value=\"7\">初一</option><option value=\"8\">初二</option><option value=\"9\">初三</option>"
+                        + "<option value=\"0\">通用</option></select>"))
                 .append(row("每天基础时长(分钟)", "<input id=\"baseDailyMinutes\" type=\"number\">"))
                 .append(row("每组题量", "<input id=\"questionsPerGroup\" type=\"number\">"))
                 .append(row("通过正确率(%)", "<input id=\"passPercent\" type=\"number\">"))

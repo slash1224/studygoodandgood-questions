@@ -263,7 +263,11 @@ button.gray{background:#888}
 <div style="font-size:12px;color:#666;margin-top:8px">「立即锁屏」会马上弹出锁屏页，孩子答题过关或加时后自动解除；调试时不用再等到时间用完。</div>
 </div>
 <div class="card"><h3>规则设置</h3>
-<div class="row"><span>年级(7=初一)</span><input id="grade" type="number" min="1" max="12"></div>
+<div class="row"><span>孩子年级</span><select id="grade">
+<option value="1">小学一年级</option><option value="2">小学二年级</option><option value="3">小学三年级</option>
+<option value="4">小学四年级</option><option value="5">小学五年级</option><option value="6">小学六年级</option>
+<option value="7">初一</option><option value="8">初二</option><option value="9">初三</option>
+</select></div>
 <div class="row"><span>每组题数</span><input id="qpg" type="number" min="3" max="20"></div>
 <div class="row"><span>通过正确率%</span><input id="pass" type="number" min="50" max="100"></div>
 <div class="row"><span>每组解锁分钟</span><input id="umin" type="number" min="5" max="120"></div>
