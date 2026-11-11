@@ -93,8 +93,8 @@ namespace StudyLock
         }
 
         /// <summary>
-        /// 首次安装/升级时，如果项目里自带 Omni-Edu 文件夹，就把它的绝对路径写进 rules.json，
-        /// 这样换一台电脑、换一个盘符也能直接用，不再依赖固定的 H:\Omni-Edu。
+        /// 首次安装/升级时，如果项目里自带 Omni-Edu 文件夹，就把探测到的路径写进 rules.json，
+        /// 这样换一台电脑、换一个盘符也能直接用（探测基于程序自身位置，不写死绝对路径）。
         /// 如果配置里已经有可用的路径，则保持不变。
         /// </summary>
         private static void AutoConfigureAiPath()

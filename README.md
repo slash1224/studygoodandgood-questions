@@ -116,3 +116,19 @@ node source\bankbuild\gen\build.js
 - 电视版签名密钥（`studygoodtv.keystore`）**未包含**在仓库中，请自行生成后再发布，避免更新包被他人冒签。
 - 本项目为家庭自用工具，安装前请确认设备为本人所有；电脑版会注册开机自启与本地管理端口（8099），电视版为 8787。
 - 使用前请先阅读 [`C2510/家长使用说明书.pdf`](./C2510/家长使用说明书.pdf)。
+
+## 八、开发约定：绝对不要用绝对路径（必须遵守）
+
+整个项目文件夹要能**拷到任意电脑、任意盘符直接运行**，因此代码、脚本、配置里一律不得写死绝对路径，例如 `H:\Omni-Edu`、`C:\Users\xxx\...`、`D:\...`。
+
+具体要求：
+
+1. **程序根目录**：用 `AppContext.BaseDirectory` 或 `Assembly.GetExecutingAssembly().Location` 推导，再用 `Path.Combine` 拼子路径，不要猜盘符。
+2. **查找配套文件**（如 Omni-Edu、题库、运行时）：从程序自身位置向上逐级查找，最多 6 层；找不到就给出明确提示，不要兜底到某个固定盘符。
+3. **配置里的路径**：只能是运行时探测的结果（如安装时自动写入 `AiLauncherPath`）；读取时必须先 `File.Exists` 校验，失效就回退到自动探测重新找。
+4. **数据目录**：统一用 `Environment.GetFolderPath(CommonApplicationData)` 拼接，不手写 `C:\ProgramData`。
+5. **脚本**：PowerShell 用 `$PSScriptRoot`、批处理用 `%~dp0`，不要写死工作目录。
+6. **便携数据随文件夹走**：`appdata\`、`logs\`、`models\` 等都放在程序目录下，不写到系统盘固定位置。
+7. **提交流程自检**：在仓库根目录执行 `rg "[A-Za-z]:\\\\[A-Za-z]"`，代码与脚本中不应有命中（文档举例说明除外）。
+
+违反该约定的典型症状：换电脑或改盘符后功能失效，例如 AI 老师找不到 `OmniEdu.exe`、问答窗口一闪即退、题库加载失败。

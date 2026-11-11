@@ -38,7 +38,6 @@ namespace StudyLock
     public static class AiTutor
     {
         public const string DefaultServerUrl = "http://127.0.0.1:8080";
-        public const string DefaultLauncherPath = @"H:\Omni-Edu\OmniEdu.exe";
 
         private static readonly HttpClient Http = new HttpClient
         {
@@ -245,7 +244,8 @@ namespace StudyLock
 
         /// <summary>
         /// 找可用的 Omni-Edu 启动器：优先用规则里的路径，其次在程序所在目录及各级上级目录里
-        /// 找 Omni-Edu 文件夹（便携/仓库布局），最后兼容旧默认位置 H:\Omni-Edu。
+        /// 找 Omni-Edu 文件夹（便携/仓库布局）。全部按程序自身位置推导，不写死任何绝对路径，
+        /// 这样整个项目文件夹拷到别的电脑/盘符也能直接使用。
         /// </summary>
         private static string? ResolveLauncherPath(string? configured)
         {
@@ -262,9 +262,6 @@ namespace StudyLock
                 }
             }
             catch { }
-
-            // 旧版默认位置：兼容已经按 H:\Omni-Edu 摆好文件夹的用户
-            candidates.Add(DefaultLauncherPath);
 
             foreach (var c in candidates)
                 if (File.Exists(c)) return c;
